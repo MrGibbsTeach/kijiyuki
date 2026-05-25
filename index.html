@@ -124,7 +124,7 @@ nav.scrolled .btn-nav:hover { background: var(--forest); color: #fff; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg');
+  background-image: url('assets/img/IMG20260122130312.jpg');
   background-size: cover;
   background-position: center 40%;
   transform: scale(1.08);
@@ -1188,7 +1188,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
     <div class="stat-box"><span class="stat-n">14</span><span class="stat-l">Guests max</span></div>
     <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Bedrooms</span></div>
     <div class="stat-box"><span class="stat-n">10</span><span class="stat-l">Beds + 4 futons</span></div>
-    <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Seasons to visit</span></div>
+    <div class="stat-box"><span class="stat-n">8 min</span><span class="stat-l">To ski resort</span></div>
   </div>
 
   <!-- ABOUT -->
@@ -1281,7 +1281,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
     <h2 class="s-title reveal reveal-delay-1">Any season is<br><em>a good season</em></h2>
   </div>
   <div class="seasons-grid reveal">
-    <div class="season-card">
+    <a class="season-card" href="guide.html#resorts" style="display:block;text-decoration:none;cursor:pointer;">
       <img src="https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg" alt="Winter" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
@@ -1289,17 +1289,17 @@ footer a:hover { color: rgba(255,255,255,0.9); }
         <h3 class="season-h">Ski &amp; Onsen</h3>
         <p class="season-p">Multiple resorts minutes away with Japan's famous powder. Warm up at outdoor onsens under falling snow.</p>
       </div>
-    </div>
-    <div class="season-card">
-      <img src="https://static.wixstatic.com/media/f05c73_522a0ac64a924fce8487a76acff482f3~mv2.jpg/v1/fill/w_1200,h_720,al_c,q_85,enc_avif,quality_auto/PXL_20260126_233207676.jpg" alt="Spring" loading="lazy">
+    </a>
+    <a class="season-card" href="guide.html#blossoms" style="display:block;text-decoration:none;cursor:pointer;">
+      <img src="https://static.wixstatic.com/media/f05c73_e6fa2c5d2e1947af8917edfd056a78f0~mv2.jpg/v1/fill/w_1200,h_720,al_c,q_90,enc_avif,quality_auto/Takada%20Castle%20Park%20%E2%80%93%20Joetsu.jpg" alt="Cherry blossoms at Takada Castle Park" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
         <span class="season-badge">Spring · Apr – May</span>
         <h3 class="season-h">Cherry Blossoms</h3>
         <p class="season-p">The valley turns pink. The iiyama Line in bloom is one of Japan's great train journeys.</p>
       </div>
-    </div>
-    <div class="season-card">
+    </a>
+    <a class="season-card" href="guide.html#outdoors" style="display:block;text-decoration:none;cursor:pointer;">
       <img src="https://static.wixstatic.com/media/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg" alt="Summer" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
@@ -1307,8 +1307,8 @@ footer a:hover { color: rgba(255,255,255,0.9); }
         <h3 class="season-h">Hikes &amp; Cycling</h3>
         <p class="season-p">Alpine trails, hire bikes from the shed. Snow monkey park open all year at Jigokudani.</p>
       </div>
-    </div>
-    <div class="season-card">
+    </a>
+    <a class="season-card" href="guide.html#outdoors" style="display:block;text-decoration:none;cursor:pointer;">
       <img src="https://static.wixstatic.com/media/f05c73_7716dd0dc53943b6ba2ed3af4df9a82c~mv2.jpg/v1/fill/w_1200,h_720,al_c,q_85,enc_avif,quality_auto/internal%20022.jpg" alt="Autumn" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
@@ -1316,7 +1316,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
         <h3 class="season-h">Foliage</h3>
         <p class="season-p">Red and gold maples across the hillsides. Cool air, no crowds, excellent local restaurants.</p>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -1344,10 +1344,15 @@ footer a:hover { color: rgba(255,255,255,0.9); }
         <span class="nearby-name">Snow Monkeys</span>
         <p class="nearby-desc">Jigokudani Monkey Park is a short drive — wild macaques in hot springs, open all year.</p>
       </a>
-      <a class="nearby-card" href="guide.html#train" style="text-decoration:none;color:inherit;display:block;">
+      <a class="nearby-card" href="guide.html#blossoms" style="text-decoration:none;color:inherit;display:block;">
         <span class="nearby-icon">🌸</span>
         <span class="nearby-name">Cherry Blossoms</span>
         <p class="nearby-desc">The Chikuma River valley and iiyama Line in late April and early May are spectacular.</p>
+      </a>
+      <a class="nearby-card" href="guide.html#food" style="text-decoration:none;color:inherit;display:block;">
+        <span class="nearby-icon">🍜</span>
+        <span class="nearby-name">Eating &amp; Drinking</span>
+        <p class="nearby-desc">Lawson convenience store directly opposite. Local restaurants, ramen, and izakaya all within easy reach.</p>
       </a>
     </div>
     <p style="font-size:13px;color:var(--stone);margin-top:14px;">3107-1 Hotaka, Kijimadaira, Shimotakai District, Nagano 389-2301 · <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open in Google Maps ↗</a></p>
