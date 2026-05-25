@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Area guide for Kiji Yuki guests — ski resorts, onsens, restaurants, snow monkeys, hikes, cycling and the iiyama Line in northern Nagano.">
+<meta name="theme-color" content="#253D2F">
+<title>Area Guide — Kiji Yuki, Kijimadaira, Nagano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─── BASE ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:  #F7F3EE;
+  --paper:  #F0EBE3;
+  --white:  #FFFFFF;
+  --forest: #253D2F;
+  --forest2:#3A5C49;
+  --rust:   #B05A3E;
+  --stone:  #7A7268;
+  --text:   #1E1A16;
+  --text-2: #4A4540;
+  --border: rgba(30,26,22,0.1);
+  --border2:rgba(30,26,22,0.18);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+body { background: var(--cream); color: var(--text); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; font-size: 15px; overflow-x: hidden; }
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1000; opacity: 0.4;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 0 48px; height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(247,243,238,0.96); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; color:var(--forest); }
+.nav-links { display:flex; align-items:center; gap:20px; }
+.nav-link { font-size:12px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-weight:300; color:var(--text-2); transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:var(--forest); }
+.btn-nav { font-family:'Jost',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; padding:9px 20px; border:1px solid var(--forest); cursor:pointer; text-decoration:none; display:inline-block; color:var(--forest); background:transparent; transition:background 0.2s,color 0.2s; }
+.btn-nav:hover { background:var(--forest); color:#fff; }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; background:none; border:none; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--forest); transition:transform 0.3s,opacity 0.3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+.mobile-menu { display:none; position:fixed; top:70px; left:0; right:0; background:rgba(247,243,238,0.98); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); flex-direction:column; padding:20px 24px 28px; z-index:490; }
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-size:15px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; color:var(--text-2); padding:14px 0; border-bottom:1px solid var(--border); font-weight:300; transition:color 0.2s; }
+.mobile-menu a:hover { color:var(--forest); }
+.mobile-menu a.menu-cta { margin-top:16px; background:var(--forest); color:#fff; text-align:center; padding:14px; border:none; letter-spacing:0.14em; }
+
+/* ─── PAGE HEADER ─────────────────────────────────────── */
+.page-header { padding: 100px 48px 0; max-width: 1080px; margin: 0 auto; }
+.page-eyebrow {
+  font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust);
+  font-weight:400; margin-bottom:16px; display:flex; align-items:center; gap:14px;
+  opacity:0; transform:translateY(16px); animation:fadeUp 0.8s 0.2s forwards;
+}
+.page-eyebrow::after { content:''; flex:0 0 60px; height:1px; background:var(--rust); opacity:0.4; }
+.page-title {
+  font-family:'Playfair Display',serif; font-size:clamp(36px,5.5vw,66px); font-weight:400;
+  line-height:1.08; color:var(--text); margin-bottom:16px;
+  opacity:0; transform:translateY(20px); animation:fadeUp 0.9s 0.35s forwards;
+}
+.page-title em { font-style:italic; color:var(--forest); }
+.page-intro {
+  font-size:16px; color:var(--text-2); max-width:640px; line-height:1.8;
+  opacity:0; animation:fadeUp 0.8s 0.5s forwards;
+}
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+/* ─── TAB NAV ─────────────────────────────────────────── */
+.tab-bar-wrap {
+  position: sticky; top: 70px; z-index: 400;
+  background: rgba(247,243,238,0.97); backdrop-filter:blur(12px);
+  border-bottom: 1px solid var(--border);
+  margin-top: 36px;
+}
+.tab-bar {
+  max-width: 1080px; margin: 0 auto; padding: 0 48px;
+  display: flex; gap: 0; overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  font-family:'Jost',sans-serif; font-size:12px; font-weight:300;
+  letter-spacing:0.12em; text-transform:uppercase;
+  padding: 16px 22px; border:none; background:none; cursor:pointer;
+  color:var(--stone); white-space:nowrap;
+  border-bottom: 2px solid transparent; transition:color 0.2s, border-color 0.2s;
+  position:relative; top:1px;
+}
+.tab-btn:hover { color:var(--text); }
+.tab-btn.active { color:var(--forest); border-bottom-color:var(--forest); font-weight:400; }
+
+/* ─── TAB PANELS ──────────────────────────────────────── */
+.tab-panel { display:none; max-width:1080px; margin:0 auto; padding:56px 48px 80px; }
+.tab-panel.active { display:block; }
+
+/* ─── SECTION HEADINGS ────────────────────────────────── */
+.s-eyebrow { font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust); font-weight:400; margin-bottom:12px; display:block; }
+.s-title { font-family:'Playfair Display',serif; font-size:clamp(26px,3.5vw,40px); font-weight:400; color:var(--text); line-height:1.15; margin-bottom:20px; }
+.s-title em { font-style:italic; color:var(--forest); }
+.s-intro { font-size:15.5px; color:var(--text-2); line-height:1.85; max-width:680px; margin-bottom:40px; }
+.s-intro strong { color:var(--text); font-weight:400; }
+hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
+
+/* ─── OVERVIEW TAB ────────────────────────────────────── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.overview-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 24px 22px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: block;
+}
+.overview-card:hover { border-color: var(--forest2); transform: translateY(-2px); }
+.ov-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+.ov-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:6px; display:block; }
+.ov-desc { font-size:13px; color:var(--stone); line-height:1.6; }
+.ov-tag { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--rust); margin-top:10px; display:block; }
+.map-frame { width:100%; height:280px; overflow:hidden; border:1px solid var(--border); background:var(--paper); margin-top:32px; }
+.map-frame iframe { width:100%; height:100%; border:none; }
+
+/* ─── RESORT IMAGES ────────────────────────────────────── */
+.resort-img {
+  width: 100%; height: 160px; object-fit: cover; display: block;
+  transition: transform 0.6s ease, filter 0.4s;
+  filter: brightness(0.9);
+}
+.resort-card:hover .resort-img { transform: scale(1.03); filter: brightness(1); }
+
+/* ─── PHOTO GRIDS ──────────────────────────────────────── */
+.photo-grid-3 {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 4px;
+  margin: 28px 0;
+}
+.photo-grid-3 img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  transition: transform 0.5s ease; cursor: pointer;
+}
+.photo-grid-3 img:hover { transform: scale(1.02); }
+
+.photo-grid-4 {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 4px;
+  margin: 24px 0 0;
+}
+.photo-grid-4 img {
+  width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.photo-grid-4 img:hover { transform: scale(1.03); }
+
+/* ─── SECTION HERO IMAGES ──────────────────────────────── */
+.section-hero-img {
+  width: 100%; height: 300px; object-fit: cover; display: block;
+  margin-bottom: 32px;
+}
+.section-hero-img-wide {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+  margin-bottom: 28px; object-position: center 30%;
+}
+
+/* ─── TRAIN HERO WITH IMAGE ────────────────────────────── */
+.train-hero {
+  position: relative; overflow: hidden;
+  color: #fff; padding: 56px 48px; margin-bottom: 32px;
+  min-height: 240px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.train-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://static.wixstatic.com/media/f05c73_e6fa2c5d2e1947af8917edfd056a78f0~mv2.jpg/v1/fill/w_1440,h_500,al_c,q_90,enc_avif,quality_auto/Takada%20Castle%20Park%20%E2%80%93%20Joetsu.jpg');
+  background-size: cover; background-position: center 45%;
+  filter: brightness(0.45);
+}
+.train-hero > * { position: relative; z-index: 1; }
+
+/* ─── FOOD HERO ─────────────────────────────────────────── */
+.food-hero-img {
+  width: 100%; height: 200px; object-fit: cover; display: block;
+  margin-bottom: 28px; object-position: center 60%;
+}
+
+/* ─── RESPONSIVE IMAGES ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .photo-grid-4 { grid-template-columns: repeat(2,1fr); }
+  .photo-grid-3 { grid-template-columns: repeat(2,1fr); }
+  .resort-img { height: 130px; }
+  .section-hero-img { height: 220px; }
+  .train-hero { padding: 40px 24px; }
+}
+@media (max-width: 560px) {
+  .photo-grid-3 { grid-template-columns: 1fr 1fr; }
+  .photo-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── RESORT CARDS ────────────────────────────────────── */
+.resort-intro { font-size:15.5px; color:var(--text-2); line-height:1.85; max-width:680px; margin-bottom:40px; }
+.resort-grid { display:flex; flex-direction:column; gap:0; }
+.resort-card {
+  background:var(--white); border:1px solid var(--border);
+  border-top:none; overflow:hidden; transition:border-color 0.15s;
+}
+.resort-card:first-child { border-top:1px solid var(--border); }
+.resort-card:hover { border-color:var(--forest2); }
+.resort-header {
+  display:grid; grid-template-columns:1fr auto;
+  padding:24px 28px; cursor:pointer; align-items:start; gap:16px;
+  user-select:none;
+}
+.resort-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; color:var(--text); margin-bottom:6px; }
+.resort-meta { display:flex; gap:16px; flex-wrap:wrap; }
+.resort-meta-item { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); }
+.resort-meta-item strong { color:var(--text); font-weight:400; }
+.resort-badge {
+  font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:4px 12px; background:var(--forest); color:#fff; white-space:nowrap; flex-shrink:0; align-self:start;
+}
+.resort-badge.far { background:var(--stone); }
+.resort-badge.mid { background:var(--forest2); }
+.resort-body { padding:0 28px 24px; display:none; }
+.resort-body.open { display:block; }
+.resort-chevron { font-size:14px; color:var(--stone); transition:transform 0.3s; margin-top:4px; }
+.resort-chevron.open { transform:rotate(180deg); }
+.resort-points { list-style:none; margin-bottom:16px; }
+.resort-points li { display:flex; align-items:baseline; gap:10px; padding:6px 0; border-bottom:1px solid var(--border); font-size:14px; color:var(--text-2); }
+.resort-points li:last-child { border-bottom:none; }
+.rp-dot { width:4px; height:4px; border-radius:50%; background:var(--forest2); flex-shrink:0; margin-top:8px; }
+.resort-link { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(37,61,47,0.35); }
+
+/* ─── FOOD GRID ───────────────────────────────────────── */
+.food-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:32px; }
+.food-card { background:var(--white); border:1px solid var(--border); padding:24px; }
+.food-icon { font-size:22px; margin-bottom:10px; display:block; }
+.food-cat { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:10px; }
+.food-h { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; color:var(--text); margin-bottom:14px; }
+.food-list { list-style:none; }
+.food-list li { padding:8px 0; border-bottom:1px solid var(--border); font-size:14px; color:var(--text-2); line-height:1.5; display:flex; gap:10px; align-items:baseline; }
+.food-list li:last-child { border-bottom:none; }
+.food-list li::before { content:'—'; color:var(--text-faint); flex-shrink:0; font-size:12px; color:var(--stone); }
+.food-list li strong { color:var(--text); font-weight:400; }
+.food-highlight {
+  background:var(--forest); color:#fff;
+  padding:28px 28px; margin-top:4px; grid-column:1/-1;
+}
+.food-highlight-h { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; margin-bottom:12px; }
+.food-highlight-p { font-size:14px; color:rgba(255,255,255,0.75); line-height:1.8; }
+.food-highlight-p strong { color:#fff; font-weight:400; }
+
+/* ─── ONSEN SECTIONS ──────────────────────────────────── */
+.onsen-etiquette {
+  background:var(--white); border:1px solid var(--border);
+  padding:28px; margin-bottom:32px;
+  display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:start;
+}
+.etiq-icon { font-size:36px; }
+.etiq-h { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; color:var(--text); margin-bottom:12px; }
+.etiq-list { list-style:none; display:flex; flex-wrap:wrap; gap:8px; }
+.etiq-item { background:var(--paper); border:1px solid var(--border); padding:6px 14px; font-size:12px; letter-spacing:0.06em; color:var(--text-2); }
+.onsen-area { margin-bottom:36px; }
+.onsen-area-h {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:12px; border-bottom:2px solid var(--forest); margin-bottom:16px;
+}
+.onsen-area-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:var(--text); }
+.onsen-area-dist { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--stone); }
+.onsen-list { list-style:none; }
+.onsen-item { display:flex; align-items:baseline; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); font-size:14px; color:var(--text-2); }
+.onsen-item:last-child { border-bottom:none; }
+.onsen-name { color:var(--text); font-weight:400; }
+.onsen-star { color:var(--rust); font-size:12px; }
+.onsen-note { font-size:12px; color:var(--stone); margin-left:4px; }
+
+/* ─── MONKEYS ─────────────────────────────────────────── */
+.monkey-hero { width:100%; height:280px; object-fit:cover; display:block; margin-bottom:32px; }
+.monkey-info { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:28px 0; }
+.info-box { background:var(--white); border:1px solid var(--border); padding:20px; }
+.info-box-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone); display:block; margin-bottom:6px; }
+.info-box-val { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; color:var(--forest); display:block; }
+.info-box-sub { font-size:12px; color:var(--text-2); margin-top:4px; display:block; }
+
+/* ─── HIKES ───────────────────────────────────────────── */
+.hike-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:32px; }
+.hike-card { background:var(--white); border:1px solid var(--border); overflow:hidden; transition:border-color 0.2s; }
+.hike-card:hover { border-color:var(--forest2); }
+.hike-img { width:100%; height:160px; object-fit:cover; display:block; background:var(--paper); }
+.hike-body { padding:20px 22px; }
+.hike-tag { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:8px; }
+.hike-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; color:var(--text); margin-bottom:8px; }
+.hike-desc { font-size:13.5px; color:var(--text-2); line-height:1.65; margin-bottom:14px; }
+.hike-stats { display:flex; gap:16px; flex-wrap:wrap; }
+.hike-stat { font-size:11px; color:var(--stone); letter-spacing:0.06em; }
+.hike-stat strong { color:var(--text); font-weight:400; }
+.hike-full { grid-column:1/-1; }
+.shin-etsu { background:var(--white); border:1px solid var(--border); padding:24px; margin-top:10px; }
+.se-h { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:var(--text); margin-bottom:18px; }
+.se-section { margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--border); }
+.se-section:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.se-name { font-size:14px; font-weight:400; color:var(--forest); margin-bottom:6px; }
+.se-stats { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:6px; }
+.se-stat { font-size:12px; color:var(--stone); }
+.se-stat strong { color:var(--text); font-weight:400; }
+.se-highlight { font-size:13px; color:var(--text-2); font-style:italic; }
+
+/* ─── CYCLING ─────────────────────────────────────────── */
+.cycle-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:28px; }
+.cycle-block { background:var(--white); border:1px solid var(--border); padding:22px; }
+.cycle-h { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:12px; }
+.cycle-list { list-style:none; }
+.cycle-list li { padding:7px 0; border-bottom:1px solid var(--border); font-size:14px; color:var(--text-2); display:flex; gap:10px; align-items:baseline; }
+.cycle-list li:last-child { border-bottom:none; }
+.cycle-list li::before { content:'—'; color:var(--stone); font-size:12px; flex-shrink:0; }
+.season-table { width:100%; border-collapse:collapse; margin-top:28px; }
+.season-table th { background:var(--forest); color:#fff; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; font-weight:400; padding:12px 16px; text-align:left; }
+.season-table td { padding:11px 16px; border-bottom:1px solid var(--border); font-size:13.5px; color:var(--text-2); background:var(--white); }
+.season-table tr:last-child td { border-bottom:none; }
+.season-good { color:var(--forest); font-weight:400; }
+.season-bad { color:var(--stone); }
+
+/* ─── IIYAMA LINE ─────────────────────────────────────── */
+.train-hero { background:var(--forest); color:#fff; padding:40px 40px; margin-bottom:32px; }
+.train-hero-h { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:10px; }
+.train-hero-h em { font-style:italic; }
+.train-hero-p { font-size:15px; color:rgba(255,255,255,0.72); line-height:1.8; max-width:560px; }
+.train-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:28px; }
+.train-box { background:var(--white); border:1px solid var(--border); padding:22px; }
+.train-box-h { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:12px; }
+.train-stops { list-style:none; position:relative; padding-left:20px; }
+.train-stops::before { content:''; position:absolute; left:5px; top:8px; bottom:8px; width:1px; background:var(--border2); }
+.train-stops li { position:relative; padding:7px 0 7px 12px; font-size:14px; color:var(--text-2); }
+.train-stops li::before { content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:8px; height:8px; border-radius:50%; background:var(--cream); border:2px solid var(--forest2); }
+.train-stops li.highlight { color:var(--forest); font-weight:400; }
+.train-stops li.highlight::before { background:var(--forest); border-color:var(--forest); }
+.pdf-link {
+  display:flex; align-items:center; gap:16px;
+  background:var(--white); border:1px solid var(--border2);
+  padding:20px 24px; text-decoration:none; color:var(--text);
+  transition:border-color 0.2s; margin-top:16px;
+}
+.pdf-link:hover { border-color:var(--forest); }
+.pdf-icon { font-size:28px; flex-shrink:0; }
+.pdf-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone); display:block; margin-bottom:4px; }
+.pdf-name { font-size:15px; font-weight:400; color:var(--text); display:block; margin-bottom:3px; }
+.pdf-sub { font-size:12px; color:var(--stone); }
+
+/* ─── REVEAL ──────────────────────────────────────────── */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+footer { background:var(--text); color:rgba(255,255,255,0.5); padding:48px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:24px; margin-top:0; }
+.footer-logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:#fff; letter-spacing:0.16em; text-transform:uppercase; }
+.footer-links { display:flex; gap:20px; justify-content:center; }
+footer a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:12px; letter-spacing:0.1em; transition:color 0.2s; }
+footer a:hover { color:rgba(255,255,255,0.9); }
+.footer-right { text-align:right; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.35); }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width:900px) {
+  nav { padding:0 20px; }
+  .nav-links .nav-link, .btn-nav { display:none; }
+  .hamburger { display:flex; }
+  .page-header { padding:92px 24px 0; }
+  .tab-bar { padding:0 20px; }
+  .tab-panel { padding:40px 24px 60px; }
+  .overview-grid { grid-template-columns:1fr 1fr; }
+  .food-grid { grid-template-columns:1fr; }
+  .monkey-info { grid-template-columns:1fr 1fr; }
+  .hike-cards { grid-template-columns:1fr; }
+  .hike-full { grid-column:auto; }
+  .cycle-grid { grid-template-columns:1fr; }
+  .train-grid { grid-template-columns:1fr; }
+  .onsen-etiquette { grid-template-columns:1fr; gap:12px; }
+  footer { grid-template-columns:1fr; text-align:center; gap:16px; padding:36px 24px; }
+  .footer-right { text-align:center; }
+  .footer-links { flex-wrap:wrap; justify-content:center; }
+}
+@media (max-width:560px) {
+  .overview-grid { grid-template-columns:1fr; }
+  .monkey-info { grid-template-columns:1fr; }
+  .resort-header { grid-template-columns:1fr; }
+  .resort-badge { align-self:start; width:fit-content; }
+  .tab-btn { padding:14px 14px; font-size:11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Kiji Yuki</a>
+  <div class="nav-links">
+    <a href="index.html#the-house" class="nav-link">The House</a>
+    <a href="#" class="nav-link active">Area Guide</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="index.html#availability" class="nav-link">Availability</a>
+    <a href="index.html#availability" class="btn-nav">Check Dates</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#the-house" onclick="closeMenu()">The House</a>
+  <a href="#" onclick="closeMenu()">Area Guide</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="index.html#availability" onclick="closeMenu()">Availability</a>
+  <a href="index.html#availability" class="menu-cta" onclick="closeMenu()">Check Dates</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="page-eyebrow">Kijimadaira &amp; surroundings</span>
+  <h1 class="page-title">Area<br><em>Guide</em></h1>
+  <p class="page-intro">Everything you need to know about the area around Kiji Yuki — ski resorts, onsens, eating &amp; drinking, the snow monkeys, hikes, cycling, and getting around on the iiyama Line.</p>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar-wrap">
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tab-btn-overview" onclick="switchTab('overview', this)">Overview</button>
+    <button class="tab-btn" id="tab-btn-resorts" onclick="switchTab('resorts', this)">⛷ Ski Resorts</button>
+    <button class="tab-btn" id="tab-btn-food" onclick="switchTab('food', this)">🍜 Eating &amp; Drinking</button>
+    <button class="tab-btn" id="tab-btn-onsens" onclick="switchTab('onsens', this)">♨ Onsens</button>
+    <button class="tab-btn" id="tab-btn-monkeys" onclick="switchTab('monkeys', this)">🐒 Snow Monkeys</button>
+    <button class="tab-btn" id="tab-btn-outdoors" onclick="switchTab('outdoors', this)">🥾 Hikes &amp; Cycling</button>
+    <button class="tab-btn" id="tab-btn-train" onclick="switchTab('train', this)">🚃 iiyama Line</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- OVERVIEW TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-overview">
+  <span class="s-eyebrow">Where you are</span>
+  <h2 class="s-title">Kijimadaira, <em>northern Nagano</em></h2>
+  <p class="s-intro">A small rural village in the mountains of northern Nagano. Quiet, authentic, and remarkably well-placed — multiple ski resorts within 20 minutes, onsens in every direction, snow monkeys 30 minutes away, and the historic iiyama Line running right through the valley.</p>
+
+  <!-- Seasonal photo strip -->
+  <div class="photo-grid-4 reveal" style="margin-bottom:32px;">
+    <img src="https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_600,h_400,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg" alt="Winter at Kijimadaira" loading="eager">
+    <img src="https://static.wixstatic.com/media/f05c73_e6fa2c5d2e1947af8917edfd056a78f0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85,enc_avif,quality_auto/Takada%20Castle%20Park%20%E2%80%93%20Joetsu.jpg" alt="Cherry blossoms in spring" loading="eager">
+    <img src="https://static.wixstatic.com/media/f05c73_20cef6555efd4968a3c2f5a347703f1f~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85,enc_avif,quality_auto/166941_web.jpg" alt="Snow monkeys" loading="eager">
+    <img src="https://static.wixstatic.com/media/f05c73_522a0ac64a924fce8487a76acff482f3~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85,enc_avif,quality_auto/PXL_20260126_233207676.jpg" alt="Mountain views" loading="eager">
+  </div>
+
+  <div class="overview-grid reveal">
+    <a class="overview-card" onclick="switchTab('resorts', document.getElementById('tab-btn-resorts'))">
+      <span class="ov-icon">⛷</span>
+      <span class="ov-title">Ski Resorts</span>
+      <p class="ov-desc">11+ resorts within 60 minutes. Kijimadaira Snow Resort is 5 min away. Nozawa, Madarao, Shiga Kogen all close by.</p>
+      <span class="ov-tag">5 min – 60 min drive →</span>
+    </a>
+    <a class="overview-card" onclick="switchTab('food', document.getElementById('tab-btn-food'))">
+      <span class="ov-icon">🍜</span>
+      <span class="ov-title">Eating &amp; Drinking</span>
+      <p class="ov-desc">Lawson convenience store directly opposite. Local restaurants, izakaya, bakeries and cafés all in easy walking distance.</p>
+      <span class="ov-tag">Walking distance →</span>
+    </a>
+    <a class="overview-card" onclick="switchTab('onsens', document.getElementById('tab-btn-onsens'))">
+      <span class="ov-icon">♨</span>
+      <span class="ov-title">Onsens</span>
+      <p class="ov-desc">From quiet local baths in Iiyama to the famous public baths of Nozawa Onsen village. Some private family options too.</p>
+      <span class="ov-tag">5 min – 40 min drive →</span>
+    </a>
+    <a class="overview-card" onclick="switchTab('monkeys', document.getElementById('tab-btn-monkeys'))">
+      <span class="ov-icon">🐒</span>
+      <span class="ov-title">Snow Monkeys</span>
+      <p class="ov-desc">Jigokudani — the only place in the world where wild macaques bathe in natural hot springs. A short forest walk to reach them.</p>
+      <span class="ov-tag">~35 min drive →</span>
+    </a>
+    <a class="overview-card" onclick="switchTab('outdoors', document.getElementById('tab-btn-outdoors'))">
+      <span class="ov-icon">🥾</span>
+      <span class="ov-title">Hikes &amp; Cycling</span>
+      <p class="ov-desc">Mt. Kosha, Kayanotaira Kogen forest, the Shin-etsu Trail. Plus quiet country roads and Madarao mountain trails for bikes.</p>
+      <span class="ov-tag">From the house →</span>
+    </a>
+    <a class="overview-card" onclick="switchTab('train', document.getElementById('tab-btn-train'))">
+      <span class="ov-icon">🚃</span>
+      <span class="ov-title">The iiyama Line</span>
+      <p class="ov-desc">One of Japan's great scenic train journeys — especially stunning during cherry blossom season. Connects to Nagano and the Shinkansen.</p>
+      <span class="ov-tag">Local line guide →</span>
+    </a>
+  </div>
+
+  <div class="map-frame reveal">
+    <iframe title="Kijimadaira location" src="https://maps.google.com/maps?q=Kijimadaira,+Shimotakai+District,+Nagano&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p style="font-size:13px;color:var(--stone);margin-top:12px;"><a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" style="color:var(--forest);text-underline-offset:3px;">3107-1 Hotaka, Kijimadaira, Shimotakai District, Nagano 389-2301 ↗</a></p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SKI RESORTS TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-resorts">
+  <span class="s-eyebrow">Winter</span>
+  <h2 class="s-title">Ski <em>Resorts</em></h2>
+  <p class="s-intro">The house is well positioned for a wide range of ski resorts within a short drive — from small local hills perfect for beginners to large internationally recognised resorts with deep powder and long vertical. Options for every level and style.</p>
+
+  <div class="resort-grid">
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_e11f8430429d4e6a830af4287bc68222~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/romance.jpg" alt="Kijimadaira Snow Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Kijimadaira Snow Resort</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>5–7 min</strong> drive</span>
+            <span class="resort-meta-item">7–8 lifts · ~10 runs · 800m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge">Closest</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Big wide runs, kids' inflatables at the bottom, great beginner areas</li>
+          <li><span class="rp-dot"></span>Long toboggan track down the side of the run with a lift back up</li>
+          <li><span class="rp-dot"></span>Small terrain park with a banked slalom course</li>
+          <li><span class="rp-dot"></span>Best run starts with a short hike from the top of the quad</li>
+          <li><span class="rp-dot"></span>Amazing views of the village and the house from the upper slopes</li>
+          <li><span class="rp-dot"></span>Great restaurant — order from machines, take tickets to the counter. The self-pouring beer machine is Japanese ingenuity at its finest</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">No ski school · Limited private lessons some seasons · English: limited</p>
+        <a class="resort-link" href="https://www.powderhounds.com/Japan/Honshu/Kijimadaira.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_d4244338c3e64a2ea1ff6c75934990a6~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/Kijima.jpg" alt="Kijima Snow Park" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Kijima Snow Park</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>5 min</strong> drive</span>
+            <span class="resort-meta-item">3 lifts · 8 runs · 400m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge">Closest</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Closest mountain to the house — cheap lift tickets</li>
+          <li><span class="rp-dot"></span>Mainly used by local ski race clubs — uncrowded</li>
+          <li><span class="rp-dot"></span>Top car park sits right on the snow, about 15m from the lifts</li>
+          <li><span class="rp-dot"></span>Easy to leave lunch and drinks in the car and ski laps</li>
+          <li><span class="rp-dot"></span>Almost no off-piste traffic — fresh snow can be found days after a dump</li>
+          <li><span class="rp-dot"></span>Half pipe is perfect for the groms</li>
+        </ul>
+        <a class="resort-link" href="https://www.snowmonkeyresorts.com/activities/the-kijima-snow-park/" target="_blank">More info ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_d8f925944eb048ff8fbbcb2948059f0b~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/x-jam.jpg" alt="X-Jam & Yomase" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">X-Jam &amp; Yomase</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>10–15 min</strong> drive</span>
+            <span class="resort-meta-item">6 combined lifts · ~18 runs · 600m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge mid">Nearby</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Great value and very close to the house</li>
+          <li><span class="rp-dot"></span>One lift pass covers both areas</li>
+          <li><span class="rp-dot"></span>Yomase has open beginner runs and great side hits</li>
+          <li><span class="rp-dot"></span>X-Jam is a dedicated snow park with massive features</li>
+          <li><span class="rp-dot"></span>Ideal for bluebird slushy days</li>
+        </ul>
+        <a class="resort-link" href="https://www.japan.travel/en/sports/snow/top-recommendations/x-jam-takai-fuji/" target="_blank">More info ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_59559c07fd704353a2201e584a8fad21~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/togari.jpg" alt="Togari Onsen Ski Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Togari Onsen Ski Resort</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>15–20 min</strong> drive</span>
+            <span class="resort-meta-item">4 lifts · 13 runs · 650m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge mid">Nearby</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Snowboarders' dream with heaps of off-piste lines</li>
+          <li><span class="rp-dot"></span>Mainly Japanese boarders stay on piste — leaving powder runs off the side untouched</li>
+          <li><span class="rp-dot"></span>Basic park with a super fun banked slalom course</li>
+          <li><span class="rp-dot"></span>Great resort for chasing powder a few days after a dump</li>
+          <li><span class="rp-dot"></span>Small traditional town feel with few western visitors</li>
+          <li><span class="rp-dot"></span>Close to an amazing onsen for after skiing</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: limited</p>
+        <a class="resort-link" href="https://www.powderhounds.com/japan/honshu/togari-onsen.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_fac8f55c0b17481aa9cf2847d29af4c2~mv2.jpeg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/nozowa.jpeg" alt="Nozawa Onsen Ski Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Nozawa Onsen Ski Resort</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>20–25 min</strong> drive</span>
+            <span class="resort-meta-item">20 lifts · 36 runs · 1,085m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge mid">Nearby</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Large, snow-reliable mountain with long groomed cruisers</li>
+          <li><span class="rp-dot"></span>Moguls, steep off-piste and sidecountry terrain</li>
+          <li><span class="rp-dot"></span>Consistent deep snowfall, especially in January</li>
+          <li><span class="rp-dot"></span>Iconic traditional onsen village at the base — don't miss it</li>
+          <li><span class="rp-dot"></span>Can be crowded at busy times, but there's a reason it's busy. It's quality!</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: Yes, several established English-speaking ski schools</p>
+        <a class="resort-link" href="https://www.powderhounds.com/Japan/Honshu/Nozawa-Onsen.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_53e16d8a62ed4b3bafbb499b6495fbfa~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/Ryuoo.jpg" alt="Ryuoo Ski Park" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Ryuoo Ski Park</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>25–30 min</strong> drive</span>
+            <span class="resort-meta-item">10 lifts · 17 runs · 1,080m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge mid">Nearby</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Very good learner park with two magic carpets and small kids' area</li>
+          <li><span class="rp-dot"></span>Beginner zone at the very top, often above the clouds</li>
+          <li><span class="rp-dot"></span>Powder tree runs off the top lifts are often untracked after snowfall</li>
+          <li><span class="rp-dot"></span>Advanced bowl worth doing early — hug hard left for deep powder</li>
+          <li><span class="rp-dot"></span>Good rental gear, great food, small crowds, short lift lines</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: Yes</p>
+        <a class="resort-link" href="https://www.powderhounds.com/japan/honshu/ryuoo.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_6e5f1bdd8e354291b2beb86eec49e60a~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/madarao.jpg" alt="Madarao Mountain Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Madarao Mountain Resort</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>35–40 min</strong> drive</span>
+            <span class="resort-meta-item">9 lifts · 30+ runs · 440m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge far">Further</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Powder, powder, powder — built for 20cm+ days. Known locally as "Madapow"</li>
+          <li><span class="rp-dot"></span>Strong international ski school presence with English-speaking instructors</li>
+          <li><span class="rp-dot"></span>Tree runs and off-piste are the major draw</li>
+          <li><span class="rp-dot"></span>Interconnected with Tangram Ski Circus — more family-friendly terrain on one pass</li>
+          <li><span class="rp-dot"></span>Best suited to experienced riders wanting steep and deep</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: Yes, multiple English-speaking ski schools</p>
+        <a class="resort-link" href="https://www.powderhounds.com/japan/honshu/madarao.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_053fa586f3bf4dd78d546cb119b9478c~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/shiga.jpg" alt="Shiga Kogen Ski Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Shiga Kogen Ski Resort</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>50–60 min</strong> drive</span>
+            <span class="resort-meta-item">48+ lifts · 80+ runs · 18 interconnected areas</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge far">Further</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Japan's largest interconnected ski area</li>
+          <li><span class="rp-dot"></span>High elevation delivers consistently cold temperatures and reliable snow</li>
+          <li><span class="rp-dot"></span>Long cruisers, strong intermediate terrain, quieter off-piste zones</li>
+          <li><span class="rp-dot"></span>Very Japanese feel — combine with the snow monkey park nearby</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: Available in selected areas (Ichinose, Okushiga)</p>
+        <a class="resort-link" href="https://www.powderhounds.com/Japan/Honshu/Shiga-Kogen.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_87220ef599bb45a5ac9500798028c1fb~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/lotte%20arai.jpg" alt="Lotte Arai Resort" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Lotte Arai Resort (Myoko)</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>60–70 min</strong> drive</span>
+            <span class="resort-meta-item">14 lifts · 14 runs · 950m vertical</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge far">Further</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span>Upmarket resort with premium facilities — food is more expensive</li>
+          <li><span class="rp-dot"></span>Excellent beginner area and English ski lessons</li>
+          <li><span class="rp-dot"></span>World-class lift infrastructure and luxury onsite onsen</li>
+          <li><span class="rp-dot"></span>On a powder bluebird day, hiking to the top gives long open powder runs with ocean views</li>
+        </ul>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:10px;">English lessons: Yes, strong English-speaking presence</p>
+        <a class="resort-link" href="https://www.powderhounds.com/japan/honshu/arai.aspx" target="_blank">More info at Powderhounds ↗</a>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <img class="resort-img" src="https://static.wixstatic.com/media/f05c73_21460b0650a34fd09bf4409c3e58824e~mv2.jpg/v1/fill/w_900,h_320,al_c,q_85,enc_avif,quality_auto/Akakura.jpg" alt="Akakura Onsen - Myoko" loading="lazy">
+      <div class="resort-header" onclick="toggleResort(this)">
+        <div>
+          <div class="resort-name">Akakura Onsen / Suginohara / Seki Onsen (Myoko)</div>
+          <div class="resort-meta">
+            <span class="resort-meta-item"><strong>55–70 min</strong> drive</span>
+            <span class="resort-meta-item">Multiple resorts in Myoko area</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:start;flex-shrink:0;">
+          <span class="resort-badge far">Further</span>
+          <span class="resort-chevron">▾</span>
+        </div>
+      </div>
+      <div class="resort-body">
+        <ul class="resort-points">
+          <li><span class="rp-dot"></span><strong>Akakura</strong> — one of Japan's most recognised powder destinations. Strong international presence, excellent tree skiing, consistent deep snow</li>
+          <li><span class="rp-dot"></span><strong>Suginohara</strong> — huge vertical (1,124m), long sustained groomed runs, often quieter than Akakura. Great views over Lake Nojiri</li>
+          <li><span class="rp-dot"></span><strong>Seki Onsen</strong> — small cult resort famous for extremely deep snowfall. Tight tree skiing, steep terrain, very local feel. A proper powder hunter's mountain</li>
+        </ul>
+        <a class="resort-link" href="https://www.powderhounds.com/japan/honshu/akakura.aspx" target="_blank">Akakura at Powderhounds ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- FOOD TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-food">
+  <span class="s-eyebrow">Eating &amp; Drinking</span>
+  <h2 class="s-title">Food &amp; drink <em>nearby</em></h2>
+  <img class="food-hero-img" src="https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fill/w_1200,h_320,al_c,q_85,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg" alt="Kijimadaira village in winter" loading="lazy">
+  <p class="s-intro">A Lawson convenience store and bar are directly opposite the house. Local restaurants, izakaya, cafés and bakeries are all within easy walking distance of the house.</p>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <span class="food-icon">🍴</span>
+      <span class="food-cat">Restaurants</span>
+      <h3 class="food-h">Local Dining</h3>
+      <ul class="food-list">
+        <li><strong>Saturdays</strong> — Casual Italian-style dining</li>
+        <li><strong>渡辺食堂 (Watanabe Shokudo)</strong> — Local teishoku set meals and homestyle Japanese food</li>
+        <li><strong>湖北食堂 (Kohoku Shokudo)</strong> — Traditional village eatery with simple Japanese dishes</li>
+        <li><strong>丸富食堂 (Marutomi Shokudo)</strong> — Small local restaurant serving classic comfort meals</li>
+        <li><strong>遊膳 (Yuzen)</strong> — Soba-focused restaurant near the village centre</li>
+        <li><strong>もも寿司 (Momo Sushi)</strong> — Local sushi with fresh sushi and set meals</li>
+        <li><strong>デンバー (Denver)</strong> — Steak house, hearty Western-style meals</li>
+      </ul>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">☕</span>
+      <span class="food-cat">Cafés &amp; Bakeries</span>
+      <h3 class="food-h">Morning &amp; Light Bites</h3>
+      <ul class="food-list">
+        <li><strong>Bread Workshop Maru (ぱん工房〇)</strong> — Fresh bread and baked goods, ideal for breakfast or takeaway</li>
+        <li><strong>パティスリー レーヴ (Pâtisserie Rêve)</strong> — Cakes, desserts, and sweets</li>
+        <li><strong>ラスベリー (Raspberry)</strong> — Small local café</li>
+      </ul>
+      <span class="food-icon" style="margin-top:16px;">🛍</span>
+      <span class="food-cat" style="margin-top:0;">Convenience &amp; Groceries</span>
+      <h3 class="food-h" style="font-size:17px;">Everyday Essentials</h3>
+      <ul class="food-list">
+        <li><strong>Lawson Shinshu Kijimadaira</strong> — Full-service convenience store directly opposite the house</li>
+        <li><strong>イーストア滝沢商店</strong> — Local supermarket for everyday groceries</li>
+      </ul>
+    </div>
+
+    <div class="food-highlight">
+      <h3 class="food-highlight-h">🍶 Tsudoy — The bar next door</h3>
+      <p class="food-highlight-p">
+        The bar next to Lawson. The owner <strong>Daiso-san is an absolute legend</strong> — he speaks excellent English and will warmly welcome you every time you enter. He'll happily give advice about the area and anything you want to know. Please go here and spend some money! Supporting locals is a big part of what staying at this house is about, plus who doesn't like cheap drinks and chatting with locals.
+        <br><br>
+        Be warned: you may realise it's 3am and you're still talking and drinking. The locals smoke inside, so leave the kids at home and be prepared to wash your clothes in the morning.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- ONSENS TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-onsens">
+  <span class="s-eyebrow">Hot Springs</span>
+  <h2 class="s-title">Onsens <em>of the area</em></h2>
+  <p class="s-intro">Onsens are a normal part of daily life in rural Japan, especially in mountain regions like northern Nagano. They're used for relaxation and recovery after skiing or time outdoors. Options range from quiet local baths to the famous public bathhouses of Nozawa Onsen.</p>
+
+  <img class="section-hero-img" src="https://static.wixstatic.com/media/f05c73_0f3589329c8b45ec8afdc96b46ee6200~mv2.webp/v1/fill/w_1200,h_400,al_c,q_85,enc_avif,quality_auto/ginzan_onsen_yamagata_2_le9ekk.webp" alt="Japanese outdoor onsen in snow" loading="lazy">
+
+  <div class="onsen-etiquette reveal">
+    <div class="etiq-icon">♨</div>
+    <div>
+      <h3 class="etiq-h">What to expect</h3>
+      <ul class="etiq-list">
+        <li class="etiq-item">Nude, gender-separated bathing</li>
+        <li class="etiq-item">Wash before entering the bath</li>
+        <li class="etiq-item">Towels stay out of the water</li>
+        <li class="etiq-item">Quiet, respectful behaviour</li>
+        <li class="etiq-item">Some tattoo restrictions</li>
+        <li class="etiq-item">⭐ = private family options available</li>
+      </ul>
+      <p style="font-size:13px;color:var(--stone);margin-top:12px;">If you're new to onsens, the routine is easy to learn and quickly becomes a highlight of any stay in Japan.</p>
+    </div>
+  </div>
+
+  <div class="onsen-area reveal">
+    <div class="onsen-area-h">
+      <span class="onsen-area-name">Kijimadaira &amp; Iiyama</span>
+      <span class="onsen-area-dist">5–15 min drive</span>
+    </div>
+    <p style="font-size:14px;color:var(--text-2);margin-bottom:14px;">Quiet, local onsens close to the house with a simple, authentic rural feel.</p>
+    <ul class="onsen-list">
+      <li class="onsen-item"><span class="onsen-name">Iiyama Yutaki Onsen</span><span class="onsen-note">— Amazing paid onsen with outdoor and indoor options. Outdoor is stunning in snow. Restaurant on site. A must visit!</span></li>
+      <li class="onsen-item"><span class="onsen-name">Iiyama West Onsen</span><span class="onsen-note">— Outdoor onsen on the river with mountain views. Very close to Iiyama main strip. Showers inside. A must visit!</span></li>
+      <li class="onsen-item"><span class="onsen-name">Maguse Onsen (馬曲温泉)</span><span class="onsen-note">— Highly regarded, stunning mountain views. One of the best in the area.</span><span class="onsen-star"> ⚠ Closed Feb 2026 — check before visiting</span></li>
+    </ul>
+  </div>
+
+  <div class="onsen-area reveal">
+    <div class="onsen-area-h">
+      <span class="onsen-area-name">Madarao &amp; Togari</span>
+      <span class="onsen-area-dist">15–25 min drive</span>
+    </div>
+    <p style="font-size:14px;color:var(--text-2);margin-bottom:14px;">Relaxed, uncrowded onsens often linked to ski lodges — easy to pair with a ski day.</p>
+    <ul class="onsen-list">
+      <li class="onsen-item"><span class="onsen-name">Madarao Kogen Onsen</span><span class="onsen-note">— Easy stop near the ski base</span></li>
+      <li class="onsen-item"><span class="onsen-name">Hotel Tangram Onsen</span><span class="onsen-note">— Large, comfortable baths open to day visitors</span></li>
+      <li class="onsen-item"><span class="onsen-name">Hotel Tangram — Private Family Bath</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Bookable private rooms, very family-friendly</span></li>
+      <li class="onsen-item"><span class="onsen-name">Akatsuki no Yu (Togari)</span><span class="onsen-note">— Well-known public onsen close to the slopes</span></li>
+      <li class="onsen-item"><span class="onsen-name">Akatsuki no Yu — Private Use</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Private family use by arrangement. Ask locally</span></li>
+      <li class="onsen-item"><span class="onsen-name">Nozomi no Yu (Togari)</span><span class="onsen-note">— Traditional bathhouse with a local feel</span></li>
+    </ul>
+  </div>
+
+  <div class="onsen-area reveal">
+    <div class="onsen-area-h">
+      <span class="onsen-area-name">Nozawa Onsen</span>
+      <span class="onsen-area-dist">~25 min drive</span>
+    </div>
+    <p style="font-size:14px;color:var(--text-2);margin-bottom:14px;">Famous onsen village with historic public bathhouses — free to use — and a lively atmosphere.</p>
+    <ul class="onsen-list">
+      <li class="onsen-item"><span class="onsen-name">Oyu</span><span class="onsen-note">— The main and most iconic bathhouse in the village</span></li>
+      <li class="onsen-item"><span class="onsen-name">Matsuba no Yu</span><span class="onsen-note">— Central and easy to access</span></li>
+      <li class="onsen-item"><span class="onsen-name">Kumanotearai-yu</span><span class="onsen-note">— Scenic public bath by the river</span></li>
+      <li class="onsen-item"><span class="onsen-name">Ryokan Kawahiro — Private Bath</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Bookable private bath, suitable for families</span></li>
+    </ul>
+  </div>
+
+  <div class="onsen-area reveal">
+    <div class="onsen-area-h">
+      <span class="onsen-area-name">Shibu Onsen &amp; Yudanaka</span>
+      <span class="onsen-area-dist">35–40 min drive</span>
+    </div>
+    <p style="font-size:14px;color:var(--text-2);margin-bottom:14px;">Traditional onsen towns known for atmosphere and history — combine with a snow monkey visit.</p>
+    <ul class="onsen-list">
+      <li class="onsen-item"><span class="onsen-name">Shibu Oyu</span><span class="onsen-note">— Central bathhouse on the historic street</span></li>
+      <li class="onsen-item"><span class="onsen-name">Yudanaka Oyu</span><span class="onsen-note">— Easy-access public onsen near the station</span></li>
+      <li class="onsen-item"><span class="onsen-name">Kanaguya</span><span class="onsen-note">— Famous historic ryokan, limited day access</span></li>
+      <li class="onsen-item"><span class="onsen-name">Kaede no Yu</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Modern facility with bookable private baths, family and tattoo-friendly</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- MONKEYS TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-monkeys">
+  <span class="s-eyebrow">Wildlife</span>
+  <h2 class="s-title">Jigokudani <em>Snow Monkey Park</em></h2>
+  <p class="s-intro">The only place in the world where wild monkeys are known to bathe in natural hot springs. Located in the Yokoyu River valley at around 850m above sea level, on the edge of Shiga Kogen in northern Nagano.</p>
+
+  <div class="monkey-info reveal">
+    <div class="info-box">
+      <span class="info-box-label">Distance from house</span>
+      <span class="info-box-val">~35 min</span>
+      <span class="info-box-sub">Drive to car park</span>
+    </div>
+    <div class="info-box">
+      <span class="info-box-label">Walk to monkeys</span>
+      <span class="info-box-val">~30 min</span>
+      <span class="info-box-sub">Forest trail each way</span>
+    </div>
+    <div class="info-box">
+      <span class="info-box-label">Open</span>
+      <span class="info-box-val">Year-round</span>
+      <span class="info-box-sub">Best in winter (Dec–Mar)</span>
+    </div>
+  </div>
+
+  <div class="photo-grid-3 reveal">
+    <img src="https://static.wixstatic.com/media/f05c73_20cef6555efd4968a3c2f5a347703f1f~mv2.jpg/v1/fill/w_700,h_525,al_c,q_85,enc_avif,quality_auto/166941_web.jpg" alt="Snow monkeys bathing" loading="lazy">
+    <img src="https://static.wixstatic.com/media/f05c73_3f0d7cb5d21545deae27f6904f97d4ba~mv2.jpg/v1/fill/w_700,h_525,al_c,q_85,enc_avif,quality_auto/Daniel-at-a-sign-on-the-trail-of-Jigokudani-Monkey-Park-Japan.jpg" alt="Forest trail to Jigokudani" loading="lazy">
+    <img src="https://static.wixstatic.com/media/f05c73_6697efa38be54c7cb74b60214c051043~mv2.jpg/v1/fill/w_700,h_525,al_c,q_85,enc_avif,quality_auto/download%20(1).jpg" alt="Japanese macaques in hot spring" loading="lazy">
+  </div>
+
+  <hr class="div">
+
+  <div class="reveal">
+    <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px;">About the park</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;font-size:15px;color:var(--text-2);line-height:1.9;">
+      <div>
+        <p>The park is just minutes from Shiga Kogen Ski Resort, making it easy to combine a ski day and a monkey visit. The area has long been home to troops of wild Japanese macaques who live here year-round in their natural habitat.</p>
+        <p style="margin-top:16px;">Since opening in 1964, Jigokudani has become internationally recognised for wildlife observation and photography. The short forest walk to reach the monkeys is especially memorable in winter, with snow on the trees and the sound of the river below.</p>
+      </div>
+      <div>
+        <p>The monkeys are most active and most visible in winter, when they cluster around the hot spring pool to keep warm. It's one of those things that looks exactly like the photos — and still manages to exceed expectations.</p>
+        <p style="margin-top:16px;">Combine with a visit to the nearby Shibu Onsen or Yudanaka Onsen for a full day out. The town of Yudanaka at the end of the Nagano Electric Railway line is well worth exploring.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- OUTDOORS TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-outdoors">
+  <span class="s-eyebrow">Spring · Summer · Autumn</span>
+  <h2 class="s-title">Hikes &amp; <em>Cycling</em></h2>
+  <p class="s-intro">Forested trails, mountain routes, and scenic backroads surround Kijimadaira. From gentle valley walks to alpine hikes and cycling through cedar forests, there are options for all levels within 20–40 minutes of the house.</p>
+
+  <div class="hike-cards">
+    <div class="hike-card reveal">
+      <img class="hike-img" src="https://static.wixstatic.com/media/f05c73_04e5eaf6032d491c8de12a09cd43282e~mv2.jpg/v1/fill/w_800,h_400,al_c,q_85,enc_avif,quality_auto/caption.jpg" alt="Mt. Kosha" loading="lazy">
+      <div class="hike-body">
+        <span class="hike-tag">Moderate · Year-round</span>
+        <div class="hike-name">Mt. Kosha</div>
+        <p class="hike-desc">The iconic conical mountain overlooking Kijimadaira. Forested switchbacks lead to a 360° summit with panoramic views of the Northern Alps and Chikuma River. You can see the house from the top.</p>
+        <div class="hike-stats">
+          <span class="hike-stat"><strong>3.5–4.5 hrs</strong> round trip</span>
+          <span class="hike-stat"><strong>1,351m</strong> peak</span>
+          <span class="hike-stat"><strong>Moderate</strong> difficulty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hike-card reveal">
+      <img class="hike-img" src="https://static.wixstatic.com/media/f05c73_08de6ffe1700499a822a34f33450d4c2~mv2.jpg/v1/fill/w_800,h_400,al_c,q_85,enc_avif,quality_auto/19501_ext_01_en_0_L.jpg" alt="Kayanotaira Kogen" loading="lazy">
+      <div class="hike-body">
+        <span class="hike-tag">Easy · Family-friendly</span>
+        <div class="hike-name">Kayanotaira Kogen</div>
+        <p class="hike-desc">The "Most Beautiful Forest in Japan." A high-altitude plateau of 300-year-old beeches at ~1,500m. Flat, well-maintained boardwalks — ideal for photography, forest bathing, and escaping summer heat.</p>
+        <div class="hike-stats">
+          <span class="hike-stat"><strong>1–2 hrs</strong> loop</span>
+          <span class="hike-stat"><strong>~1,500m</strong> elevation</span>
+          <span class="hike-stat"><strong>Easy</strong> difficulty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hike-card hike-full reveal">
+      <img class="hike-img" src="https://static.wixstatic.com/media/f05c73_8a0bc412261442ae8e71025b145774f6~mv2.jpg/v1/fill/w_1200,h_400,al_c,q_85,enc_avif,quality_auto/The%20Samurai%20Pass.jpg" alt="Shin-etsu Trail - The Samurai Pass" loading="lazy" style="height:200px;">
+      <div class="shin-etsu">
+        <h3 class="se-h">Shin-etsu Trail</h3>
+        <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.7;">One of Japan's great long-distance trails, passing directly through the Kijimadaira area. Two sections are accessible as day hikes from the house.</p>
+        <div class="se-section">
+          <div class="se-name">Section 3 — The Samurai Pass</div>
+          <div class="se-stats">
+            <span class="se-stat"><strong>12.7 km</strong></span>
+            <span class="se-stat"><strong>5–6 hours</strong></span>
+          </div>
+          <p class="se-highlight">Historic Tomikura Pass and views from Mt. Kuroiwa.</p>
+        </div>
+        <div class="se-section">
+          <div class="se-name">Section 4 — The Heart of the Trail</div>
+          <div class="se-stats">
+            <span class="se-stat"><strong>8.5 km</strong></span>
+            <span class="se-stat"><strong>5–6 hours</strong></span>
+            <span class="se-stat">Steeper terrain</span>
+          </div>
+          <p class="se-highlight">Mt. Nabekura and the "Valley of Giant Trees." Views of the Sea of Japan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <span class="s-eyebrow">Cycling</span>
+  <h2 class="s-title" style="font-size:32px;margin-bottom:16px;">Bike <em>riding</em></h2>
+  <p style="font-size:15px;color:var(--text-2);line-height:1.85;max-width:660px;margin-bottom:28px;">The area offers relaxed countryside cycling and access to longer gravel and forest rides. Bikes can be hired from the shed at the house. Quiet village roads, open farmland, and mountain views make it an easy way to explore Kijimadaira.</p>
+
+  <div class="cycle-grid reveal">
+    <div class="cycle-block">
+      <h3 class="cycle-h">Nearby Riding Options</h3>
+      <ul class="cycle-list">
+        <li>Village &amp; farm roads — flat to gently rolling, low traffic, family-friendly</li>
+        <li>Madarao Big Ten Trails — gravel, forest roads and single-track for mountain and gravel bikes</li>
+        <li>Scenic loops through rice fields, rivers, forests, and mountain views</li>
+      </ul>
+    </div>
+    <div class="cycle-block">
+      <h3 class="cycle-h">Best Time to Ride</h3>
+      <table class="season-table">
+        <tr><th>Season</th><th>Conditions</th></tr>
+        <tr><td>Late April – June</td><td class="season-good">✓ Ideal — mild, clear roads</td></tr>
+        <tr><td>July – September</td><td>Ride early or late to avoid heat</td></tr>
+        <tr><td>October</td><td class="season-good">✓ Cool, autumn colours</td></tr>
+        <tr><td>November – April</td><td class="season-bad">Snow — generally unsuitable</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="photo-grid-4 reveal">
+    <img src="https://static.wixstatic.com/media/f05c73_5ead37a0cbaa41f5b6312eaabd16bba9~mv2.jpg/v1/fit/w_600,h_400,q_90,enc_avif,quality_auto/f05c73_5ead37a0cbaa41f5b6312eaabd16bba9~mv2.jpg" alt="Cycling near Kijimadaira" loading="lazy">
+    <img src="https://static.wixstatic.com/media/f05c73_2c603e4a7d494e10ae91a2c65f209d66~mv2.jpg/v1/fit/w_600,h_400,q_90,enc_avif,quality_auto/f05c73_2c603e4a7d494e10ae91a2c65f209d66~mv2.jpg" alt="Country roads" loading="lazy">
+    <img src="https://static.wixstatic.com/media/f05c73_b6d50406cb8046bbaf6b9569e664e3ca~mv2.jpg/v1/fit/w_600,h_400,q_90,enc_avif,quality_auto/f05c73_b6d50406cb8046bbaf6b9569e664e3ca~mv2.jpg" alt="Mountain cycling route" loading="lazy">
+    <img src="https://static.wixstatic.com/media/f05c73_f2cc527f32774356b6f46d2731263261~mv2.jpg/v1/fit/w_600,h_400,q_90,enc_avif,quality_auto/f05c73_f2cc527f32774356b6f46d2731263261~mv2.jpg" alt="Scenic valley ride" loading="lazy">
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- IIYAMA LINE TAB -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-train">
+  <div class="train-hero reveal">
+    <div class="train-hero-bg"></div>
+    <h2 class="train-hero-h">The <em>iiyama Line</em></h2>
+    <p class="train-hero-p">One of Japan's great scenic rail journeys — a single-track rural line through the mountains of northern Nagano. Especially spectacular during cherry blossom season in late April, when the tracks pass through a tunnel of pink blossoms along the Chikuma River valley.</p>
+  </div>
+
+  <div class="train-grid">
+    <div class="train-box reveal">
+      <h3 class="train-box-h">Key Stops</h3>
+      <ul class="train-stops">
+        <li>Nagano (Shinkansen connection)</li>
+        <li>Yudanaka (Snow Monkey access)</li>
+        <li>Nakano</li>
+        <li class="highlight">Iiyama ★ (closest to the house)</li>
+        <li class="highlight">Kijimadaira ★</li>
+        <li>Tsunan</li>
+        <li>Tokamachi (Joetsu Line connection)</li>
+      </ul>
+    </div>
+
+    <div class="train-box reveal">
+      <h3 class="train-box-h">Useful Routes</h3>
+      <ul style="list-style:none;">
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);">
+          <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Tokyo → House</strong>
+          Shinkansen to Nagano (~2 hrs), then iiyama Line to Kijimadaira (~1.5 hrs)
+        </li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);">
+          <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Snow Monkeys day trip</strong>
+          Iiyama Line to Yudanaka, then bus to Jigokudani park
+        </li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);">
+          <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Cherry blossom season</strong>
+          Iiyama Line in late April — the line itself is the destination
+        </li>
+        <li style="padding:10px 0;font-size:14px;color:var(--text-2);">
+          <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Joetsu &amp; coast</strong>
+          Continue north from Kijimadaira toward Tokamachi and the Sea of Japan coast
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="pdf-link reveal" href="https://www.kijiyuki.com/_files/ugd/f05c73_52e27689f91e46bc9e08a02d1439a6bd.pdf" target="_blank">
+    <span class="pdf-icon">📄</span>
+    <div>
+      <span class="pdf-label">Download</span>
+      <span class="pdf-name">iiyama Line Guide — Kiji Yuki</span>
+      <span class="pdf-sub">Full PDF guide to the line, stops, and seasonal highlights</span>
+    </div>
+    <span style="margin-left:auto;font-size:18px;color:var(--stone);">↗</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Kiji Yuki</span>
+  <div class="footer-links">
+    <a href="index.html">The House</a>
+    <a href="guide.html">Area Guide</a>
+    <a href="about.html">About</a>
+    <a href="index.html#availability">Availability</a>
+    <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
+  </div>
+  <div class="footer-right">Kijimadaira · Nagano · Japan</div>
+</footer>
+
+<script>
+/* ─── TABS ──────────────────────────────── */
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  // Scroll to just above the tab bar, accounting for fixed nav
+  const tabBar = document.querySelector('.tab-bar-wrap');
+  const offset = tabBar.getBoundingClientRect().top + window.scrollY - 72;
+  window.scrollTo({ top: offset, behavior: 'smooth' });
+  // Ensure tab button is visible (horizontal scroll on mobile)
+  btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  // Trigger reveals for new tab
+  setTimeout(triggerReveal, 100);
+}
+
+/* ─── RESORT ACCORDION ───────────────────── */
+function toggleResort(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.resort-chevron');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.resort-body.open').forEach(b => {
+    b.classList.remove('open');
+    b.previousElementSibling.querySelector('.resort-chevron').classList.remove('open');
+  });
+  if (!isOpen) { body.classList.add('open'); chevron.classList.add('open'); }
+}
+
+/* ─── HAMBURGER ──────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.contains('open');
+  if (open) closeMenu(); else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); }
+});
+
+/* ─── SCROLL REVEAL ──────────────────────── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+function triggerReveal() {
+  document.querySelectorAll('#tab-' + getCurrentTab() + ' .reveal:not(.visible)').forEach(el => obs.observe(el));
+}
+function getCurrentTab() {
+  const active = document.querySelector('.tab-panel.active');
+  return active ? active.id.replace('tab-', '') : 'overview';
+}
+triggerReveal();
+</script>
+</body>
+</html>

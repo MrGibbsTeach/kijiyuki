@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kiji Yuki is a traditional Japanese family home in Kijimadaira, Nagano — sleeping up to 14, minutes from ski resorts, onsens, and the snow monkey park.">
+<meta name="theme-color" content="#253D2F">
+<title>Kiji Yuki — Our Family Home in Nagano, Japan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap&display=swap" rel="stylesheet">
+<style>
+
+/* ─── BASE ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:   #F7F3EE;
+  --paper:   #F0EBE3;
+  --white:   #FFFFFF;
+  --forest:  #253D2F;
+  --forest2: #3A5C49;
+  --rust:    #B05A3E;
+  --stone:   #7A7268;
+  --text:    #1E1A16;
+  --text-2:  #4A4540;
+  --border:  rgba(30,26,22,0.1);
+  --border2: rgba(30,26,22,0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+/* ─── GRAIN TEXTURE ────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ─── NAV ──────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 0 48px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+  background: rgba(247,243,238,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav.hero-mode .nav-logo { color: rgba(255,255,255,0.9); }
+nav.scrolled .nav-logo { color: var(--forest); }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-link {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s, opacity 0.3s;
+}
+nav.hero-mode .nav-link { color: rgba(255,255,255,0.75); }
+nav.scrolled .nav-link { color: var(--text-2); }
+nav.hero-mode .nav-link:hover { color: #fff; }
+nav.scrolled .nav-link:hover { color: var(--forest); }
+.btn-nav {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border: 1px solid;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+nav.hero-mode .btn-nav { color: #fff; border-color: rgba(255,255,255,0.5); background: transparent; }
+nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-color: #fff; }
+nav.scrolled .btn-nav { color: var(--forest); border-color: var(--forest); background: transparent; }
+nav.scrolled .btn-nav:hover { background: var(--forest); color: #fff; }
+
+/* ─── HERO ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  transform: scale(1.08);
+  transition: transform 0.1s linear;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20,15,10,0.1) 0%,
+    rgba(20,15,10,0.25) 50%,
+    rgba(20,15,10,0.72) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 48px 64px;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  margin-bottom: 16px;
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s 0.3s forwards;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s 0.5s forwards;
+}
+.hero-title em { font-style: italic; color: rgba(255,255,255,0.85); }
+.hero-tagline {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  max-width: 460px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s 0.8s forwards;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  right: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.hero-scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.7);
+  animation: scrollDown 2s 1.5s infinite;
+}
+@keyframes scrollDown {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── INTRO STRIP ──────────────────────────────────────── */
+.intro-strip {
+  background: var(--forest);
+  padding: 48px;
+  text-align: center;
+}
+.intro-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  max-width: 720px;
+  margin: 0 auto 14px;
+  line-height: 1.4;
+}
+.intro-sub {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+}
+
+/* ─── GALLERY ──────────────────────────────────────────── */
+.gallery-section { padding: 72px 0 0; }
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--stone);
+  font-weight: 400;
+  padding: 0 48px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 120px;
+}
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 320px 240px;
+  gap: 4px;
+}
+.gp {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--paper);
+}
+.gp img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+  filter: brightness(0.95);
+}
+.gp:hover img { transform: scale(1.06); filter: brightness(1.02); }
+.gp-main { grid-row: 1 / 3; }
+.gp-label {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.35);
+  padding: 4px 10px;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gp:hover .gp-label { opacity: 1; }
+.gp-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.35s;
+}
+.gp:hover .gp-overlay { background: rgba(0,0,0,0.06); }
+
+.gallery-strip-wrap {
+  overflow-x: auto;
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  padding-bottom: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) var(--paper);
+}
+.gallery-strip-wrap::-webkit-scrollbar { height: 2px; }
+.gallery-strip-wrap::-webkit-scrollbar-thumb { background: var(--stone); }
+.gs-img {
+  height: 160px;
+  width: 240px;
+  min-width: 240px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.3s, transform 0.5s;
+  filter: brightness(0.92);
+}
+.gs-img:hover { opacity: 0.88; filter: brightness(1); }
+
+.gallery-footer {
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo-count { font-size: 12px; color: var(--stone); letter-spacing: 0.1em; }
+.btn-gallery {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: rgba(37,61,47,0.35);
+  text-underline-offset: 3px;
+  padding: 0;
+  transition: color 0.2s;
+}
+.btn-gallery:hover { color: var(--rust); }
+
+/* ─── CONTENT WRAPPER ──────────────────────────────────── */
+.content { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+section { padding: 80px 0; }
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ─── SECTION HEADINGS ─────────────────────────────────── */
+.s-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 400;
+  margin-bottom: 14px;
+  display: block;
+}
+.s-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+.s-title em { font-style: italic; color: var(--forest); }
+
+/* ─── STATS BAR ────────────────────────────────────────── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border: 1px solid var(--border2);
+  background: var(--white);
+  margin-bottom: 64px;
+}
+.stat-box {
+  padding: 24px 28px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-box:last-child { border-right: none; }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1;
+}
+.stat-l { font-size: 12px; color: var(--stone); letter-spacing: 0.06em; }
+
+/* ─── ABOUT ────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-body { font-size: 15.5px; color: var(--text-2); line-height: 1.95; }
+.about-body strong { color: var(--text); font-weight: 400; }
+.about-body p + p { margin-top: 18px; }
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1.5;
+  border-left: 2px solid var(--rust);
+  padding-left: 24px;
+  margin: 28px 0;
+}
+.about-img-wrap { position: relative; }
+.about-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.about-img-caption {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  padding: 36px 20px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ─── CTA BAND ─────────────────────────────────────────── */
+.cta-band {
+  background: var(--forest);
+  padding: 56px 64px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  margin: 64px 0;
+}
+.cta-h {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cta-p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 500px; }
+.cta-actions { display: flex; flex-direction: column; gap: 10px; min-width: 220px; }
+.btn-solid {
+  display: block;
+  text-align: center;
+  background: #fff;
+  color: var(--forest);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-solid:hover { background: var(--cream); }
+.btn-border {
+  display: block;
+  text-align: center;
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-border:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
+
+/* ─── BEDROOMS ─────────────────────────────────────────── */
+.bedroom-scroll {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.bedroom-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+.bedroom-card:hover { border-color: var(--forest2); transform: translateY(-3px); }
+.bedroom-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.bedroom-card:hover img { transform: scale(1.05); }
+.bedroom-body { padding: 14px 16px; }
+.bed-eyebrow { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 5px; }
+.bed-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: var(--text); display: block; margin-bottom: 2px; }
+.bed-detail { font-size: 12px; color: var(--stone); }
+
+/* ─── AMENITIES ────────────────────────────────────────── */
+.amenity-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+}
+.amenity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.am-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37,61,47,0.07);
+  color: var(--forest);
+  border-radius: 0;
+}
+.am-icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.am-text { flex: 1; }
+.am-name { font-size: 14px; font-weight: 400; color: var(--text); display: block; }
+.am-sub { font-size: 12px; color: var(--stone); margin-top: 2px; display: block; }
+
+/* ─── SEASONS ──────────────────────────────────────────── */
+.seasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.season-card {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  cursor: default;
+}
+.season-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  filter: brightness(0.7);
+}
+.season-card:hover img { transform: scale(1.05); filter: brightness(0.8); }
+.season-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+}
+.season-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 28px;
+}
+.season-badge {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-bottom: 8px;
+}
+.season-h {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.season-p { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.65; max-width: 340px; }
+
+/* ─── LOCATION ─────────────────────────────────────────── */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.map-frame {
+  grid-row: 1 / 3;
+  height: 360px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--paper);
+}
+.map-frame iframe { width: 100%; height: 100%; border: none; }
+.nearby-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.nearby-card:hover { border-color: var(--forest2); }
+.nearby-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+.nearby-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--text); display: block; margin-bottom: 4px; }
+.nearby-desc { font-size: 13px; color: var(--stone); line-height: 1.6; }
+
+/* ─── GETTING THERE ────────────────────────────────────── */
+.transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.tr-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.tr-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-2);
+}
+.tr-item:last-child { border-bottom: none; }
+.tr-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--rust); flex-shrink: 0; font-weight: 400; }
+
+/* ─── AVAIL ────────────────────────────────────────────── */
+.avail-section {
+  background: var(--white);
+  border: 1px solid var(--border2);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.avail-section::before {
+  content: 'KIJI YUKI';
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 160px;
+  font-weight: 700;
+  color: rgba(37,61,47,0.04);
+  letter-spacing: 0.1em;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.cal-wrap {
+  position: relative;
+  margin: 32px auto 0;
+  max-width: 860px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  overflow: hidden;
+}
+.avail-h {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 12px;
+  position: relative;
+}
+.avail-p {
+  font-size: 16px;
+  color: var(--stone);
+  max-width: 460px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+  position: relative;
+}
+.avail-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+.btn-big {
+  background: var(--forest);
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-big:hover { background: #1a2d22; }
+.btn-outline-dark {
+  background: transparent;
+  color: var(--forest);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  border: 1px solid var(--border2);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline-dark:hover { border-color: var(--forest); }
+
+/* ─── RULES ────────────────────────────────────────────── */
+.rules-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  list-style: none;
+}
+.rule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-2);
+}
+.rule-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
+
+/* ─── FOOTER ───────────────────────────────────────────── */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.5);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; letter-spacing: 0.1em; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-right { text-align: right; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); }
+
+/* ─── LIGHTBOX ─────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,8,6,0.97);
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lb-img-wrap {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-img {
+  max-height: 80vh;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  font-family: sans-serif;
+  user-select: none;
+  flex-shrink: 0;
+}
+.lb-nav:hover { background: rgba(255,255,255,0.18); }
+.lb-prev { left: 0; }
+.lb-next { right: 0; }
+.lb-meta {
+  text-align: center;
+  margin-top: 16px;
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.lb-close:hover { background: rgba(255,255,255,0.18); }
+.lb-counter {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+}
+
+/* ─── SCROLL REVEAL ────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── RESPONSIVE — TABLET 768–1080px ───────────────────── */
+@media (max-width: 1080px) {
+  .bedroom-scroll { grid-template-columns: repeat(3, 1fr); }
+  .seasons-grid { grid-template-columns: 1fr 1fr; }
+  .location-grid { grid-template-columns: 1fr 1fr; }
+  .map-frame { grid-row: 1 / 3; }
+}
+
+/* ─── RESPONSIVE — TABLET 640–900px ────────────────────── */
+@media (max-width: 900px) {
+  /* NAV — hide links, show hamburger */
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  .nav-links .nav-link { display: none; }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    transition: background 0.3s, transform 0.3s, opacity 0.3s;
+  }
+  nav.hero-mode .hamburger span { background: rgba(255,255,255,0.85); }
+  nav.scrolled .hamburger span { background: var(--forest); }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* MOBILE MENU DRAWER */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: rgba(247,243,238,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 20px 24px 28px;
+    gap: 0;
+    z-index: 490;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-2);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--forest); }
+  .mobile-menu a.menu-cta {
+    margin-top: 16px;
+    background: var(--forest);
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    border: none;
+    letter-spacing: 0.14em;
+  }
+
+  /* HERO */
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 0 24px 52px; }
+  .hero-scroll { display: none; }
+
+  /* GALLERY */
+  .section-label { padding: 0 20px; }
+  .gallery-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+  }
+  .gp-main { grid-row: auto; grid-column: 1 / 3; height: 260px; }
+  .gallery-footer { padding: 12px 20px; }
+  .gs-img { height: 130px; min-width: 190px; }
+
+  /* CONTENT */
+  .content { padding: 0 24px; }
+  section { padding: 56px 0; }
+
+  /* STATS */
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .stat-box:nth-child(2) { border-right: none; }
+  .stat-box:nth-child(3) { border-bottom: none; }
+  .stat-box:nth-child(4) { border-bottom: none; }
+
+  /* ABOUT */
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-img { aspect-ratio: 16/9; }
+
+  /* CTA */
+  .cta-band { grid-template-columns: 1fr; padding: 36px 28px; gap: 24px; }
+  .cta-actions { min-width: unset; flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .btn-solid, .btn-border { flex: 1; min-width: 140px; font-size: 11px; padding: 12px 16px; }
+
+  /* BEDROOMS */
+  .bedroom-scroll { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bedroom-card img { height: 120px; }
+
+  /* AMENITIES */
+  .amenity-list { grid-template-columns: 1fr; column-gap: 0; }
+
+  /* SEASONS */
+  .seasons-grid { grid-template-columns: 1fr 1fr; }
+  .season-card { height: 300px; }
+
+  /* LOCATION */
+  .location-grid { grid-template-columns: 1fr 1fr; }
+  .map-frame { grid-column: 1 / 3; grid-row: auto; height: 260px; }
+
+  /* TRANSPORT */
+  .transport-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* RULES */
+  .rules-list { grid-template-columns: 1fr; column-gap: 0; }
+
+  /* AVAIL */
+  .avail-section { padding: 40px 24px; }
+  .avail-section::before { font-size: 80px; }
+  .avail-btns { flex-direction: column; align-items: stretch; gap: 10px; }
+  .btn-big, .btn-outline-dark { width: 100%; text-align: center; }
+
+  /* FOOTER */
+  footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 36px 24px; }
+  .footer-right { text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+
+  /* LIGHTBOX */
+  .lb-img-wrap { padding: 0 52px; }
+  .lb-nav { width: 40px; height: 40px; font-size: 18px; }
+
+  /* INTRO */
+  .intro-strip { padding: 40px 24px; }
+}
+
+/* ─── RESPONSIVE — PHONE < 560px ───────────────────────── */
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(48px, 14vw, 72px); line-height: 0.95; }
+  .hero-tagline { font-size: 15px; }
+
+  /* gallery: single column on small phones */
+  .gallery-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .gp-main { grid-column: auto; height: 240px; }
+  .gp { height: 180px; }
+  .sub4 { display: none; } /* hide sub-grid, show only main + strip */
+
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .stat-box { padding: 16px 16px; }
+  .stat-n { font-size: 28px; }
+
+  .s-title { font-size: 28px; }
+
+  /* bedrooms: 1 col on tiny phones */
+  .bedroom-scroll { grid-template-columns: 1fr 1fr; }
+  .bedroom-card img { height: 100px; }
+
+  /* seasons: 1 col */
+  .seasons-grid { grid-template-columns: 1fr; }
+  .season-card { height: 260px; }
+
+  /* location: 1 col */
+  .location-grid { grid-template-columns: 1fr; }
+  .map-frame { grid-column: auto; }
+  .nearby-card { grid-column: auto; }
+
+  /* calendar: smaller on phones, add open link */
+  .cal-wrap iframe { height: 440px; }
+  .cal-mobile-note { display: block; }
+
+  /* lightbox on mobile: full screen */
+  .lb-img-wrap { padding: 0 40px; }
+  .lb-nav { width: 36px; height: 36px; font-size: 16px; }
+  .lb-img { max-height: 70vh; }
+
+  .cta-actions { flex-direction: column; }
+  .btn-solid, .btn-border { min-width: unset; }
+
+  footer { padding: 28px 20px; }
+  .intro-strip { padding: 32px 20px; }
+  .intro-quote { font-size: 20px; }
+}
+
+/* ─── TABLET PORTRAIT ONLY (600–768) ───────────────────── */
+@media (min-width: 560px) and (max-width: 900px) {
+  .bedroom-scroll { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ─── DESKTOP (hamburger always hidden) ─────────────────── */
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .mobile-menu { display: none !important; }
+  .cal-mobile-note { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────── -->
+<nav class="hero-mode" id="nav">
+  <a href="#" class="nav-logo">Kiji Yuki</a>
+  <div class="nav-links">
+    <a href="#the-house" class="nav-link">The House</a>
+    <a href="guide.html" class="nav-link">Area Guide</a>
+    <a href="#location" class="nav-link">Location</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#availability" class="nav-link">Availability</a>
+    <a href="#availability" class="btn-nav">Check Dates</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#the-house" onclick="closeMenu()">The House</a>
+  <a href="guide.html" onclick="closeMenu()">Area Guide</a>
+  <a href="#location" onclick="closeMenu()">Location</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="#availability" onclick="closeMenu()">Availability</a>
+  <a href="#availability" class="menu-cta" onclick="closeMenu()">Check Dates</a>
+</div>
+
+<!-- ─── HERO ─────────────────────────────────── -->
+<div class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Our family home · Kijimadaira, Nagano, Japan</span>
+    <h1 class="hero-title">Kiji<br><em>Yuki</em></h1>
+    <p class="hero-tagline">A traditional Japanese mountain lodge, big enough for the whole family, in the quiet village of Kijimadaira.</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</div>
+
+<!-- ─── INTRO STRIP ──────────────────────────── -->
+<div class="intro-strip">
+  <p class="intro-quote">"Not a hotel — a home. Set up for families who want to actually <em>live</em> in Japan for a week."</p>
+  <span class="intro-sub">Kijimadaira · Nagano Prefecture · Japan</span>
+</div>
+
+<!-- ─── GALLERY ──────────────────────────────── -->
+<div class="gallery-section">
+  <div class="section-label">The House &amp; Surroundings</div>
+
+  <div class="gallery-mosaic">
+    <div class="gp gp-main" onclick="openLightbox(0)">
+      <img src="https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg" alt="Kiji Yuki in winter snow" loading="eager" fetchpriority="high">
+      <div class="gp-overlay"></div>
+      <span class="gp-label">Exterior · Winter</span>
+    </div>
+    <div class="gp" onclick="openLightbox(2)">
+      <img src="https://static.wixstatic.com/media/f05c73_7398b93510b643c890d73a1a02617dfb~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/IMG20260224084043.jpg" alt="Kotatsu lounge" loading="lazy">
+      <div class="gp-overlay"></div>
+      <span class="gp-label">Living Room</span>
+    </div>
+    <div class="gp" onclick="openLightbox(3)">
+      <img src="https://static.wixstatic.com/media/f05c73_ae4ffe828c2a4322941666f13d6a493d~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/IMG20260224084753.jpg" alt="Bedroom 1" loading="lazy">
+      <div class="gp-overlay"></div>
+      <span class="gp-label">Bedroom 1</span>
+    </div>
+    <div class="gp" onclick="openLightbox(1)">
+      <img src="https://static.wixstatic.com/media/f05c73_7716dd0dc53943b6ba2ed3af4df9a82c~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/internal%20022.jpg" alt="Interior" loading="lazy">
+      <div class="gp-overlay"></div>
+      <span class="gp-label">Interior</span>
+    </div>
+    <div class="gp" onclick="openLightbox(12)">
+      <img src="https://static.wixstatic.com/media/f05c73_522a0ac64a924fce8487a76acff482f3~mv2.jpg/v1/fill/w_800,h_500,al_c,q_85,enc_avif,quality_auto/PXL_20260126_233207676.jpg" alt="Views" loading="lazy">
+      <div class="gp-overlay"></div>
+      <span class="gp-label">The Views</span>
+    </div>
+  </div>
+
+  <!-- ALL PHOTOS STRIP -->
+  <div class="gallery-strip-wrap" id="galleryStrip">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="gallery-footer">
+    <span class="photo-count" id="photoCount"></span>
+    <button class="btn-gallery" onclick="openLightbox(0)">View all photos →</button>
+  </div>
+</div>
+
+<!-- ─── MAIN CONTENT ──────────────────────────── -->
+<div class="content">
+
+  <!-- STATS -->
+  <div class="stats-bar reveal" id="the-house">
+    <div class="stat-box"><span class="stat-n">14</span><span class="stat-l">Guests max</span></div>
+    <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Bedrooms</span></div>
+    <div class="stat-box"><span class="stat-n">10</span><span class="stat-l">Beds + 4 futons</span></div>
+    <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Seasons to visit</span></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="about-grid">
+      <div>
+        <span class="s-eyebrow reveal">The House</span>
+        <h2 class="s-title reveal reveal-delay-1">Comfort meets<br><em>Japanese tradition</em></h2>
+        <div class="about-body reveal reveal-delay-2">
+          <p>Kiji Yuki sits in the mountain village of Kijimadaira in Nagano Prefecture — quietly off the beaten track, while still within easy reach of world-class skiing, onsens, and everything that makes this part of Japan special.</p>
+          <blockquote class="pull-quote">Tatami floors, shoji screens, a deep soaking bath, and a heated kotatsu waiting for you after a day on the slopes.</blockquote>
+          <p>With space for <strong>up to 14 guests</strong> it's made for a big family trip. The brand new drying and mud room is a game-changer — come back to warm, dry kit every morning. Not fancy, but set up for people who want to <strong>actually live in Japan</strong> for a week.</p>
+        </div>
+      </div>
+      <div class="about-img-wrap reveal reveal-delay-3">
+        <img class="about-img" src="https://static.wixstatic.com/media/f05c73_7398b93510b643c890d73a1a02617dfb~mv2.jpg/v1/fill/w_900,h_1200,al_c,q_85,enc_avif,quality_auto/IMG20260224084043.jpg" alt="Japanese lounge with kotatsu" loading="lazy">
+        <span class="about-img-caption">Japanese lounge with heated kotatsu</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CTA BAND -->
+  <div class="cta-band reveal" id="plan-stay">
+    <div>
+      <h2 class="cta-h">Planning a stay?</h2>
+      <p class="cta-p">Check the availability calendar to see when the house is free, then reach out directly. We'd love to have you there.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#availability" class="btn-solid">View Availability Calendar</a>
+      <a href="about.html" class="btn-border">Get in Touch</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BEDROOMS -->
+  <section>
+    <span class="s-eyebrow reveal">Sleeping</span>
+    <h2 class="s-title reveal reveal-delay-1">Where everyone sleeps</h2>
+    <div class="bedroom-scroll">
+      <div class="bedroom-card reveal reveal-delay-1">
+        <img src="https://static.wixstatic.com/media/f05c73_ae4ffe828c2a4322941666f13d6a493d~mv2.jpg/v1/fill/w_500,h_280,al_c,q_85,enc_avif,quality_auto/IMG20260224084753.jpg" alt="Bedroom 1" loading="lazy">
+        <div class="bedroom-body"><span class="bed-eyebrow">Bedroom 1</span><span class="bed-name">Queen Bed</span><span class="bed-detail">Ground floor</span></div>
+      </div>
+      <div class="bedroom-card reveal reveal-delay-2">
+        <img src="https://static.wixstatic.com/media/f05c73_1b02a52e9cc74c90a5d2ff5bc77ee2fa~mv2.jpg/v1/fill/w_500,h_280,al_c,q_85,enc_avif,quality_auto/IMG20260224083814.jpg" alt="Bedroom 2" loading="lazy">
+        <div class="bedroom-body"><span class="bed-eyebrow">Bedroom 2</span><span class="bed-name">2 Singles</span><span class="bed-detail">Ground · opens to living</span></div>
+      </div>
+      <div class="bedroom-card reveal reveal-delay-3">
+        <img src="https://static.wixstatic.com/media/f05c73_e9a5d39e06734d42a88adf206f5d0892~mv2.jpg/v1/fill/w_500,h_280,al_c,q_85,enc_avif,quality_auto/IMG20260224090103.jpg" alt="Bedroom 3" loading="lazy">
+        <div class="bedroom-body"><span class="bed-eyebrow">Bedroom 3</span><span class="bed-name">Queen Bed</span><span class="bed-detail">Top floor</span></div>
+      </div>
+      <div class="bedroom-card reveal reveal-delay-4">
+        <img src="https://static.wixstatic.com/media/f05c73_a594870aead543dbb06644b02897aefa~mv2.jpg/v1/fill/w_500,h_280,al_c,q_85,enc_avif,quality_auto/IMG20260224085730.jpg" alt="Bedroom 4" loading="lazy">
+        <div class="bedroom-body"><span class="bed-eyebrow">Bedroom 4</span><span class="bed-name">2 Bunks</span><span class="bed-detail">Top floor</span></div>
+      </div>
+      <div class="bedroom-card reveal reveal-delay-4">
+        <img src="https://static.wixstatic.com/media/f05c73_f23dc0b9d0cf4b4492f6c3db424290b6~mv2.jpg/v1/fill/w_500,h_280,al_c,q_85,enc_avif,quality_auto/futon.jpg" alt="Futons" loading="lazy">
+        <div class="bedroom-body"><span class="bed-eyebrow">+ Futons</span><span class="bed-name">4 Singles</span><span class="bed-detail">Any tatami room</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- AMENITIES -->
+  <section>
+    <span class="s-eyebrow reveal">At the House</span>
+    <h2 class="s-title reveal reveal-delay-1">What's included</h2>
+    <div class="amenity-list reveal reveal-delay-2">
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M2 12h20M2 6h8a4 4 0 010 8H2M2 6v12"/></svg></div><div class="am-text"><span class="am-name">Auto-fill soaking bath</span><span class="am-sub">Large bath with constant hot water</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></div><div class="am-text"><span class="am-name">Drying &amp; mud room</span><span class="am-sub">Brand new · perfect for ski gear</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="am-text"><span class="am-name">Heated kotatsu lounge</span><span class="am-sub">Traditional Japanese floor heating table</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="am-text"><span class="am-name">Equipped kitchen</span><span class="am-sub">Fridge, stove, all appliances</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><div class="am-text"><span class="am-name">Laundry</span><span class="am-sub">Washing machine on-site</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h5l2 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="am-text"><span class="am-name">Parking for 2 cars</span><span class="am-sub">On driveway · shovel in the shed</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="am-text"><span class="am-name">Storage shed</span><span class="am-sub">Bikes, snow equipment, kerosene tank</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="am-text"><span class="am-name">Bathroom + 2 toilets</span><span class="am-sub">Shower, soaking bath &amp; 2 separate WCs</span></div></div>
+    </div>
+  </section>
+
+</div><!-- /content -->
+
+<!-- ─── SEASONS — FULL BLEED ──────────────────── -->
+<div style="padding: 0 0 80px;">
+  <div class="content" style="padding-bottom:28px;">
+    <span class="s-eyebrow reveal">Year-Round</span>
+    <h2 class="s-title reveal reveal-delay-1">Any season is<br><em>a good season</em></h2>
+  </div>
+  <div class="seasons-grid reveal">
+    <div class="season-card">
+      <img src="https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg" alt="Winter" loading="lazy">
+      <div class="season-overlay"></div>
+      <div class="season-body">
+        <span class="season-badge">Winter · Dec – Mar</span>
+        <h3 class="season-h">Ski &amp; Onsen</h3>
+        <p class="season-p">Multiple resorts minutes away with Japan's famous powder. Warm up at outdoor onsens under falling snow.</p>
+      </div>
+    </div>
+    <div class="season-card">
+      <img src="https://static.wixstatic.com/media/f05c73_522a0ac64a924fce8487a76acff482f3~mv2.jpg/v1/fill/w_1200,h_720,al_c,q_85,enc_avif,quality_auto/PXL_20260126_233207676.jpg" alt="Spring" loading="lazy">
+      <div class="season-overlay"></div>
+      <div class="season-body">
+        <span class="season-badge">Spring · Apr – May</span>
+        <h3 class="season-h">Cherry Blossoms</h3>
+        <p class="season-p">The valley turns pink. The iiyama Line in bloom is one of Japan's great train journeys.</p>
+      </div>
+    </div>
+    <div class="season-card">
+      <img src="https://static.wixstatic.com/media/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg" alt="Summer" loading="lazy">
+      <div class="season-overlay"></div>
+      <div class="season-body">
+        <span class="season-badge">Summer · Jun – Sep</span>
+        <h3 class="season-h">Hikes &amp; Cycling</h3>
+        <p class="season-p">Alpine trails, hire bikes from the shed. Snow monkey park open all year at Jigokudani.</p>
+      </div>
+    </div>
+    <div class="season-card">
+      <img src="https://static.wixstatic.com/media/f05c73_7716dd0dc53943b6ba2ed3af4df9a82c~mv2.jpg/v1/fill/w_1200,h_720,al_c,q_85,enc_avif,quality_auto/internal%20022.jpg" alt="Autumn" loading="lazy">
+      <div class="season-overlay"></div>
+      <div class="season-body">
+        <span class="season-badge">Autumn · Oct – Nov</span>
+        <h3 class="season-h">Foliage</h3>
+        <p class="season-p">Red and gold maples across the hillsides. Cool air, no crowds, excellent local restaurants.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LOCATION ──────────────────────────────── -->
+<div class="content">
+  <section id="location">
+    <span class="s-eyebrow reveal">Where You'll Be</span>
+    <h2 class="s-title reveal reveal-delay-1">Kijimadaira, Nagano</h2>
+    <div class="location-grid reveal reveal-delay-2">
+      <div class="map-frame">
+        <iframe title="Kiji Yuki location" src="https://maps.google.com/maps?q=Kijimadaira,+Shimotakai+District,+Nagano&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="nearby-card">
+        <span class="nearby-icon">⛷</span>
+        <span class="nearby-name">Ski Resorts</span>
+        <p class="nearby-desc">Nozawa Onsen, Shiga Kogen and more — Japan's best powder, far fewer crowds than Hakuba.</p>
+      </div>
+      <div class="nearby-card">
+        <span class="nearby-icon">♨</span>
+        <span class="nearby-name">Onsens</span>
+        <p class="nearby-desc">The Nozawa public baths are free and completely unforgettable. Several options nearby.</p>
+      </div>
+      <div class="nearby-card">
+        <span class="nearby-icon">🐒</span>
+        <span class="nearby-name">Snow Monkeys</span>
+        <p class="nearby-desc">Jigokudani Monkey Park is a short drive — wild macaques in hot springs, open all year.</p>
+      </div>
+      <div class="nearby-card">
+        <span class="nearby-icon">🌸</span>
+        <span class="nearby-name">Cherry Blossoms</span>
+        <p class="nearby-desc">The Chikuma River valley and iiyama Line in late April and early May are spectacular.</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--stone);margin-top:14px;">3107-1 Hotaka, Kijimadaira, Shimotakai District, Nagano 389-2301 · <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open in Google Maps ↗</a></p>
+    <p style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);"><a href="guide.html" style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);text-decoration:underline;text-decoration-color:rgba(37,61,47,0.35);text-underline-offset:3px;">Full Area Guide — ski resorts, onsens, restaurants, hikes &amp; more →</a></p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- GETTING THERE -->
+  <section>
+    <span class="s-eyebrow reveal">Getting Here</span>
+    <h2 class="s-title reveal reveal-delay-1">How to get there</h2>
+    <div class="transport-grid reveal reveal-delay-2">
+      <div>
+        <h3 class="tr-head">By Train</h3>
+        <div class="tr-item"><span class="tr-num">01</span><span>Tokyo → Iiyama: ~1 hr 45 min direct on the Hokuriku Shinkansen</span></div>
+        <div class="tr-item"><span class="tr-num">02</span><span>Iiyama → Kijimadaira: local bus or taxi, ~15 min</span></div>
+        <div class="tr-item"><span class="tr-num">✦</span><span>One of the easier bullet train journeys from Tokyo — no changes needed</span></div>
+      </div>
+      <div>
+        <h3 class="tr-head">By Hire Car</h3>
+        <div class="tr-item"><span class="tr-num">01</span><span>Take the Shinkansen to Nagano city or Iiyama, then pick up a hire car</span></div>
+        <div class="tr-item"><span class="tr-num">02</span><span>Nagano city → Kijimadaira: ~1 hr · Iiyama → Kijimadaira: ~15 min</span></div>
+        <div class="tr-item"><span class="tr-num">03</span><span>Parking for 2 cars at the house</span></div>
+        <div class="tr-item"><span class="tr-num">✦</span><span>The best option for ski trips — carry your own gear and go at your own pace</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RULES -->
+  <section>
+    <span class="s-eyebrow reveal">Good to Know</span>
+    <h2 class="s-title reveal reveal-delay-1">House notes</h2>
+    <ul class="rules-list reveal reveal-delay-2">
+      <li class="rule-item"><span class="rule-dot"></span>Check-in after 3:00 PM, check-out before 10:00 AM</li>
+      <li class="rule-item"><span class="rule-dot"></span>No smoking indoors</li>
+      <li class="rule-item"><span class="rule-dot"></span>Pets are welcome — just let us know in advance</li>
+      <li class="rule-item"><span class="rule-dot"></span>Help clear the driveway when needed — shovel in the shed</li>
+      <li class="rule-item"><span class="rule-dot"></span>Kerosene heaters in the house · tank in the shed</li>
+      <li class="rule-item"><span class="rule-dot"></span>Respect the quiet of this small mountain village</li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- AVAILABILITY -->
+  <section id="availability">
+    <div class="avail-section reveal">
+      <h2 class="avail-h">Check when it's free</h2>
+      <p class="avail-p">The calendar below is kept up to date. Find a window that works, then reach out to us directly.</p>
+      <div class="cal-wrap">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH"
+          style="border:0"
+          width="100%"
+          height="580"
+          frameborder="0"
+          scrolling="no"
+          title="Kiji Yuki availability calendar">
+        </iframe>
+      </div>
+      <div class="avail-btns" style="margin-top:28px;">
+        <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" class="btn-outline-dark" target="_blank">Open in Google Calendar ↗</a>
+        <a href="about.html" class="btn-big">Get in Touch</a>
+      </div>
+      <p class="cal-mobile-note" style="margin-top:16px;font-size:12px;color:var(--stone);text-align:center;">Calendar not displaying? <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open it directly ↗</a></p>
+    </div>
+  </section>
+
+</div><!-- /content -->
+
+<!-- ─── FOOTER ────────────────────────────────── -->
+<footer>
+  <span class="footer-logo">Kiji Yuki</span>
+  <div class="footer-links">
+    <a href="#the-house">The House</a>
+    <a href="guide.html">Area Guide</a>
+    <a href="about.html">About</a>
+    <a href="#availability">Availability</a>
+    <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
+  </div>
+  <div class="footer-right">Kijimadaira · Nagano · Japan</div>
+</footer>
+
+<!-- ─── LIGHTBOX ──────────────────────────────── -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <span class="lb-counter" id="lbCounter"></span>
+  <div class="lb-img-wrap">
+    <button class="lb-nav lb-prev" onclick="lbStep(-1)">‹</button>
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbStep(1)">›</button>
+  </div>
+  <div class="lb-meta" id="lbMeta"></div>
+</div>
+
+<script>
+/* ─── IMAGE DATA ─────────────────────────────────── */
+const IMAGES = [
+  { src: 'https://static.wixstatic.com/media/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_af7a67952a7b4f27a23ceeae657ddf57~mv2.jpg', cap: 'Exterior · Winter' },
+  { src: 'https://static.wixstatic.com/media/f05c73_7716dd0dc53943b6ba2ed3af4df9a82c~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/internal%20022.jpg', cap: 'Interior' },
+  { src: 'https://static.wixstatic.com/media/f05c73_7398b93510b643c890d73a1a02617dfb~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224084043.jpg', cap: 'Japanese lounge with kotatsu' },
+  { src: 'https://static.wixstatic.com/media/f05c73_ae4ffe828c2a4322941666f13d6a493d~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224084753.jpg', cap: 'Bedroom 1 · Queen bed · Ground floor' },
+  { src: 'https://static.wixstatic.com/media/f05c73_1b02a52e9cc74c90a5d2ff5bc77ee2fa~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224083814.jpg', cap: 'Bedroom 2 · 2 singles · Ground floor' },
+  { src: 'https://static.wixstatic.com/media/f05c73_e9a5d39e06734d42a88adf206f5d0892~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224090103.jpg', cap: 'Bedroom 3 · Queen bed · Top floor' },
+  { src: 'https://static.wixstatic.com/media/f05c73_a594870aead543dbb06644b02897aefa~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224085730.jpg', cap: 'Bedroom 4 · Bunk beds · Top floor' },
+  { src: 'https://static.wixstatic.com/media/f05c73_f23dc0b9d0cf4b4492f6c3db424290b6~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/futon.jpg', cap: 'Futons · Any tatami room' },
+  { src: 'https://static.wixstatic.com/media/f05c73_97c3f511fdda4a9fb9023ff9b3307e1f~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224091605.jpg', cap: 'Kitchen' },
+  { src: 'https://static.wixstatic.com/media/f05c73_a8701c4ccce24ad9b1bbb2ca319da24b~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/IMG20260224091822.jpg', cap: 'Bathroom · Auto-fill soaking bath' },
+  { src: 'https://static.wixstatic.com/media/f05c73_bc28b451244345a786eaa9ad527f6f6f~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_bc28b451244345a786eaa9ad527f6f6f~mv2.jpg', cap: 'New drying room · Ski gear' },
+  { src: 'https://static.wixstatic.com/media/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_ed3818a5ef1c4b8daa18fa9be90ec155~mv2.jpg', cap: 'Storage shed' },
+  { src: 'https://static.wixstatic.com/media/f05c73_522a0ac64a924fce8487a76acff482f3~mv2.jpg/v1/fill/w_1440,h_900,al_c,q_90,enc_avif,quality_auto/PXL_20260126_233207676.jpg', cap: 'The Views' },
+  { src: 'https://static.wixstatic.com/media/f05c73_0936883d78a74124895466437c80982c~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_0936883d78a74124895466437c80982c~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_3c82b3aceeed46f28905ac32967e10d8~mv2.jpg/v1/fit/w_724,h_565,q_90,enc_avif,quality_auto/f05c73_3c82b3aceeed46f28905ac32967e10d8~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_06624cc64c724fbd98bd52a7a420ef93~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_06624cc64c724fbd98bd52a7a420ef93~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_d6ad7aad1d9d47919a28de3e25a787cd~mv2.jpeg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_d6ad7aad1d9d47919a28de3e25a787cd~mv2.jpeg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_805b522b6f01419d94b26120bc2256d3~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_805b522b6f01419d94b26120bc2256d3~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_3c676803edef49189da5fc552cdfee2c~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_3c676803edef49189da5fc552cdfee2c~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_b56cd23f1ac84d8bb711c857d9f601b4~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_b56cd23f1ac84d8bb711c857d9f601b4~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_0d5d42a79c554377a9ef8f84d988d5db~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_0d5d42a79c554377a9ef8f84d988d5db~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_2c39fa8f8cc3460cb650e55e573b87a8~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_2c39fa8f8cc3460cb650e55e573b87a8~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_332ddcf1b4a44bf0b617e14ec4ac3255~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_332ddcf1b4a44bf0b617e14ec4ac3255~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_fcb61145ad1f4539903d16e289e58909~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_fcb61145ad1f4539903d16e289e58909~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_62c86766765746d5871ca6ac43212e11~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_62c86766765746d5871ca6ac43212e11~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_0d15d35a95644a9180de0bff4be81e1d~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_0d15d35a95644a9180de0bff4be81e1d~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_bd8e367ca80b468493032cdebdd8305b~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_bd8e367ca80b468493032cdebdd8305b~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_feef9cce2827415fb6149643cc04aaa0~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_feef9cce2827415fb6149643cc04aaa0~mv2.jpg', cap: '' },
+  { src: 'https://static.wixstatic.com/media/f05c73_dfd5720fcd9040c087b444aef2a0d7e6~mv2.jpg/v1/fit/w_1440,h_623,q_90,enc_avif,quality_auto/f05c73_dfd5720fcd9040c087b444aef2a0d7e6~mv2.jpg', cap: '' },
+];
+
+/* ─── POPULATE STRIP ─────────────────────────────── */
+const strip = document.getElementById('galleryStrip');
+document.getElementById('photoCount').textContent = IMAGES.length + ' photos';
+IMAGES.forEach((img, i) => {
+  const el = document.createElement('img');
+  el.className = 'gs-img';
+  el.src = img.src;
+  el.alt = img.cap || '';
+  el.loading = 'lazy';
+  el.onclick = () => openLightbox(i);
+  strip.appendChild(el);
+});
+
+/* ─── LIGHTBOX ───────────────────────────────────── */
+let lbIdx = 0;
+function openLightbox(idx) {
+  lbIdx = ((idx % IMAGES.length) + IMAGES.length) % IMAGES.length;
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  updateLb();
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbStep(dir) {
+  lbIdx = ((lbIdx + dir) + IMAGES.length) % IMAGES.length;
+  updateLb();
+}
+function updateLb() {
+  document.getElementById('lbImg').src = IMAGES[lbIdx].src;
+  document.getElementById('lbMeta').textContent = IMAGES[lbIdx].cap;
+  document.getElementById('lbCounter').textContent = (lbIdx + 1) + ' / ' + IMAGES.length;
+}
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e){
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') lbStep(1);
+  if (e.key === 'ArrowLeft') lbStep(-1);
+});
+
+/* ─── NAV SCROLL BEHAVIOUR ───────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  const scrolled = window.scrollY > 60;
+  nav.classList.toggle('scrolled', scrolled);
+  nav.classList.toggle('hero-mode', !scrolled);
+});
+
+/* ─── HAMBURGER ──────────────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', function(){
+  const isOpen = mobileMenu.classList.contains('open');
+  if (isOpen) { closeMenu(); }
+  else {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+  }
+});
+
+/* ─── HERO PARALLAX (desktop only) ──────────────── */
+const heroBg = document.getElementById('heroBg');
+if (window.matchMedia('(min-width: 901px)').matches) {
+  window.addEventListener('scroll', function(){
+    heroBg.style.transform = 'scale(1.08) translateY(' + (window.scrollY * 0.25) + 'px)';
+  }, { passive: true });
+}
+
+/* ─── TOUCH SWIPE FOR LIGHTBOX ───────────────────── */
+let touchStartX = 0;
+const lb = document.getElementById('lightbox');
+lb.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 40) lbStep(dx < 0 ? 1 : -1);
+}, { passive: true });
+
+/* ─── SCROLL REVEAL ──────────────────────────────── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
