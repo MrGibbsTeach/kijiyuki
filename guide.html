@@ -1198,6 +1198,13 @@ function getCurrentTab() {
   return active ? active.id.replace('tab-', '') : 'overview';
 }
 triggerReveal();
+
+/* ─── HASH-BASED TAB ACTIVATION ─────────── */
+if (window.location.hash) {
+  const id = window.location.hash.slice(1);
+  const btn = document.getElementById('tab-btn-' + id);
+  if (btn) switchTab(id, btn);
+}
 </script>
 </body>
 </html>
