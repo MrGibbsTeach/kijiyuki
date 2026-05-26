@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#253D2F">
 <title>Kiji Yuki — Our Family Home in Nagano, Japan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
 
@@ -83,7 +83,7 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   animation: fadeUp 0.9s 0.3s forwards;
 }
 .hero-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: clamp(56px, 9vw, 120px);
   font-weight: 400;
   color: #fff;
@@ -152,7 +152,7 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   text-align: center;
 }
 .intro-quote {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: clamp(22px, 3.5vw, 34px);
   font-weight: 400;
   font-style: italic;
@@ -300,7 +300,7 @@ section { padding: 80px 0; }
   display: block;
 }
 .s-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: clamp(30px, 4vw, 46px);
   font-weight: 400;
   color: var(--text);
@@ -326,7 +326,7 @@ section { padding: 80px 0; }
 }
 .stat-box:last-child { border-right: none; }
 .stat-n {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 38px;
   font-weight: 400;
   color: var(--forest);
@@ -345,7 +345,7 @@ section { padding: 80px 0; }
 .about-body strong { color: var(--text); font-weight: 400; }
 .about-body p + p { margin-top: 18px; }
 .pull-quote {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 22px;
   font-style: italic;
   font-weight: 400;
@@ -386,7 +386,7 @@ section { padding: 80px 0; }
   margin: 64px 0;
 }
 .cta-h {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 34px;
   font-weight: 400;
   color: #fff;
@@ -453,7 +453,7 @@ section { padding: 80px 0; }
 .bedroom-card:hover img { transform: scale(1.05); }
 .bedroom-body { padding: 14px 16px; }
 .bed-eyebrow { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 5px; }
-.bed-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: var(--text); display: block; margin-bottom: 2px; }
+.bed-name { font-family: 'Shippori Mincho B1', serif; font-size: 16px; font-weight: 400; color: var(--text); display: block; margin-bottom: 2px; }
 .bed-detail { font-size: 12px; color: var(--stone); }
 
 /* ─── AMENITIES ────────────────────────────────────────── */
@@ -527,13 +527,22 @@ section { padding: 80px 0; }
   margin-bottom: 8px;
 }
 .season-h {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 24px;
   font-weight: 400;
   color: #fff;
   margin-bottom: 8px;
 }
 .season-p { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.65; max-width: 340px; }
+.season-card--winter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ice);
+  opacity: 0.08;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
 
 /* ─── LOCATION ─────────────────────────────────────────── */
 .location-grid {
@@ -558,13 +567,13 @@ section { padding: 80px 0; }
 }
 .nearby-card:hover { border-color: var(--forest2); }
 .nearby-icon { font-size: 22px; margin-bottom: 8px; display: block; }
-.nearby-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--text); display: block; margin-bottom: 4px; }
+.nearby-name { font-family: 'Shippori Mincho B1', serif; font-size: 17px; font-weight: 400; color: var(--text); display: block; margin-bottom: 4px; }
 .nearby-desc { font-size: 13px; color: var(--stone); line-height: 1.6; }
 
 /* ─── GETTING THERE ────────────────────────────────────── */
 .transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .tr-head {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 22px;
   font-weight: 400;
   color: var(--text);
@@ -582,7 +591,7 @@ section { padding: 80px 0; }
   color: var(--text-2);
 }
 .tr-item:last-child { border-bottom: none; }
-.tr-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--rust); flex-shrink: 0; font-weight: 400; }
+.tr-num { font-family: 'Shippori Mincho B1', serif; font-size: 13px; color: var(--rust); flex-shrink: 0; font-weight: 400; }
 
 /* ─── AVAIL ────────────────────────────────────────────── */
 .avail-section {
@@ -596,7 +605,7 @@ section { padding: 80px 0; }
 .avail-section::before {
   content: 'KIJI YUKI';
   position: absolute;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 160px;
   font-weight: 700;
   color: rgba(37,61,47,0.04);
@@ -617,7 +626,7 @@ section { padding: 80px 0; }
   overflow: hidden;
 }
 .avail-h {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 42px;
   font-weight: 400;
   color: var(--text);
@@ -1098,7 +1107,7 @@ section { padding: 80px 0; }
     <h2 class="s-title reveal reveal-delay-1">Any season is<br><em>a good season</em></h2>
   </div>
   <div class="seasons-grid reveal">
-    <a class="season-card" href="guide.html#resorts" style="display:block;text-decoration:none;cursor:pointer;">
+    <a class="season-card season-card--winter" href="guide.html#resorts" style="display:block;text-decoration:none;cursor:pointer;">
       <img src="assets/img/exterior-winter.jpg" alt="Winter" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
