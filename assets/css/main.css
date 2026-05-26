@@ -1,0 +1,213 @@
+/* ─── RESET ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── VARIABLES ─────────────────────────────────────────── */
+:root {
+  --cream:   #F7F3EE;
+  --paper:   #F0EBE3;
+  --white:   #FFFFFF;
+  --forest:  #253D2F;
+  --forest2: #3A5C49;
+  --rust:    #B05A3E;
+  --stone:   #7A7268;
+  --text:    #1E1A16;
+  --text-2:  #4A4540;
+  --border:  rgba(30,26,22,0.1);
+  --border2: rgba(30,26,22,0.18);
+}
+
+/* ─── HTML + BODY ────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+/* ─── GRAIN TEXTURE ──────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ─── NAV ────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 0 48px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(247,243,238,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--forest);
+  transition: opacity 0.2s;
+}
+.nav-logo:hover { opacity: 0.7; }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-link {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--text-2);
+  transition: color 0.2s, opacity 0.3s;
+}
+.nav-link:hover, .nav-link.active { color: var(--forest); }
+.btn-nav {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border: 1px solid var(--forest);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--forest);
+  background: transparent;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.btn-nav:hover { background: var(--forest); color: #fff; }
+
+/* ─── HAMBURGER ──────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--forest);
+  transition: background 0.3s, transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ─── MOBILE MENU ────────────────────────────────────────── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; left: 0; right: 0;
+  background: rgba(247,243,238,0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px 24px 28px;
+  gap: 0;
+  z-index: 490;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-2);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 300;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--forest); }
+.mobile-menu a.menu-cta {
+  margin-top: 16px;
+  background: var(--forest);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  border: none;
+  letter-spacing: 0.14em;
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollDown {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.5);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; letter-spacing: 0.1em; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-right { text-align: right; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); }
+
+/* ─── RESPONSIVE — NAV + FOOTER ──────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links .nav-link { display: none; }
+  .hamburger { display: flex; }
+  footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 36px 24px; }
+  .footer-right { text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .mobile-menu { display: none !important; }
+}
