@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Kiji Yuki house guide — arrival and check-in, the genkan, drying room, bath, heating, rubbish sorting, and seasonal packing lists for guests.">
+<meta name="theme-color" content="#253D2F">
+<title>House Guide — Kiji Yuki, Kijimadaira, Nagano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+
+/* ─── PAGE HEADER ─────────────────────────────────────── */
+.page-header { padding: 100px 48px 0; max-width: 1080px; margin: 0 auto; }
+.page-eyebrow {
+  font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust);
+  font-weight:400; margin-bottom:16px; display:flex; align-items:center; gap:14px;
+  opacity:0; transform:translateY(16px); animation:fadeUp 0.8s 0.2s forwards;
+}
+.page-eyebrow::after { content:''; flex:0 0 60px; height:1px; background:var(--rust); opacity:0.4; }
+.page-title {
+  font-family:'Shippori Mincho B1',serif; font-size:clamp(36px,5.5vw,66px); font-weight:400;
+  line-height:1.08; color:var(--text); margin-bottom:16px;
+  opacity:0; transform:translateY(20px); animation:fadeUp 0.9s 0.35s forwards;
+}
+.page-title em { font-style:italic; color:var(--forest); }
+.page-intro {
+  font-size:16px; color:var(--text-2); max-width:640px; line-height:1.8;
+  opacity:0; animation:fadeUp 0.8s 0.5s forwards;
+}
+
+/* ─── WRAP & HEADINGS ─────────────────────────────────── */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+.s-eyebrow { font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust); font-weight:400; margin-bottom:12px; display:block; }
+.s-title { font-family:'Shippori Mincho B1',serif; font-size:clamp(24px,3vw,34px); font-weight:400; color:var(--text); line-height:1.2; margin-bottom:18px; }
+.s-title em { font-style:italic; color:var(--forest); }
+.s-body { font-size:15px; color:var(--text-2); line-height:1.85; max-width:680px; }
+.s-body p + p { margin-top: 14px; }
+.s-body strong { color:var(--text); font-weight:400; }
+
+/* ─── QUICK NAV ───────────────────────────────────────── */
+.quick-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 40px 0 0;
+  opacity:0; animation:fadeUp 0.8s 0.65s forwards;
+}
+.qn-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 18px 18px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.qn-card:hover { border-color: var(--forest2); transform: translateY(-2px); }
+.qn-icon { font-size: 20px; display: block; margin-bottom: 8px; }
+.qn-name { font-family:'Shippori Mincho B1',serif; font-size:15px; font-weight:400; color:var(--text); display:block; margin-bottom:3px; }
+.qn-sub { font-size:11.5px; color:var(--stone); line-height:1.5; }
+
+/* ─── GUIDE SECTIONS ──────────────────────────────────── */
+.guide-section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 90px;
+}
+.guide-section:last-of-type { border-bottom: none; }
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.guide-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── STEP / POINT LISTS ──────────────────────────────── */
+.step-list { list-style: none; margin-top: 20px; }
+.step-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.step-list li:last-child { border-bottom: none; }
+.step-num {
+  font-family:'Shippori Mincho B1',serif;
+  font-size: 13px;
+  color: var(--rust);
+  flex-shrink: 0;
+  width: 22px;
+}
+.step-list strong { color: var(--text); font-weight: 400; }
+
+/* ─── NOTE CARD ───────────────────────────────────────── */
+.note-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--rust);
+  padding: 18px 22px;
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 680px;
+}
+.note-card strong { color: var(--text); font-weight: 400; }
+
+/* ─── RUBBISH GRID ────────────────────────────────────── */
+.bin-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+.bin-card { background: var(--white); border: 1px solid var(--border); padding: 18px; }
+.bin-icon { font-size: 20px; display: block; margin-bottom: 8px; }
+.bin-name { font-family:'Shippori Mincho B1',serif; font-size:15px; font-weight:400; color:var(--text); display:block; margin-bottom:5px; }
+.bin-desc { font-size: 12px; color: var(--stone); line-height: 1.6; }
+
+/* ─── PACKING FILTER ──────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0 20px;
+}
+.filter-btn {
+  font-family:'Jost',sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.filter-btn:hover { border-color: var(--forest); color: var(--forest); }
+.filter-btn[aria-pressed="true"] {
+  background: var(--forest);
+  color: #fff;
+  border-color: var(--forest);
+  font-weight: 400;
+}
+.pack-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+}
+.pack-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.pack-list li[hidden] { display: none; }
+.pack-list strong { color: var(--text); font-weight: 400; }
+.pack-tag {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  position: relative;
+  top: -2px;
+}
+.pack-tag--winter { background: rgba(36,52,71,0.08); color: var(--indigo); }
+.pack-tag--green { background: rgba(37,61,47,0.08); color: var(--forest); }
+.pack-tag--always { background: rgba(176,90,62,0.08); color: var(--rust); }
+.pack-count { font-size: 12px; color: var(--stone); letter-spacing: 0.08em; margin-bottom: 6px; display: block; }
+
+/* ─── CLOSING ─────────────────────────────────────────── */
+.closing {
+  background: var(--forest);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  margin-top: 24px;
+}
+.closing-h { font-family:'Shippori Mincho B1',serif; font-size:28px; font-weight:400; color:#fff; margin-bottom:10px; line-height:1.25; }
+.closing-h em { font-style: italic; }
+.closing-p { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.7; max-width:460px; }
+.btn-white {
+  display:block; text-align:center; background:#fff; color:var(--forest);
+  font-family:'Jost',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.16em;
+  text-transform:uppercase; padding:14px 28px; border:none; cursor:pointer;
+  text-decoration:none; transition:background 0.2s;
+}
+.btn-white:hover { background: var(--cream); }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .btn-nav { display: none; }
+  .page-header { padding: 92px 24px 0; }
+  .wrap { padding: 0 24px; }
+  .quick-nav { grid-template-columns: 1fr 1fr; }
+  .guide-grid { grid-template-columns: 1fr; gap: 28px; }
+  .bin-grid { grid-template-columns: 1fr 1fr; }
+  .pack-list { grid-template-columns: 1fr; column-gap: 0; }
+  .guide-section { padding: 44px 0; }
+  .closing { grid-template-columns: 1fr; padding: 36px 24px; gap: 24px; }
+}
+@media (max-width: 560px) {
+  .quick-nav { grid-template-columns: 1fr 1fr; }
+  .bin-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<nav aria-label="Main">
+  <a href="index.html" class="nav-logo">Kiji Yuki</a>
+  <div class="nav-links">
+    <a href="index.html#the-house" class="nav-link">The House</a>
+    <a href="guide.html" class="nav-link">Area Guide</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="index.html#availability" class="nav-link">Availability</a>
+    <a href="#" class="btn-nav" aria-current="page">House Guide</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#the-house" onclick="closeMenu()">The House</a>
+  <a href="guide.html" onclick="closeMenu()">Area Guide</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="index.html#availability" onclick="closeMenu()">Availability</a>
+  <a href="#" class="menu-cta" onclick="closeMenu()">House Guide</a>
+</div>
+
+<main id="main">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="page-eyebrow">For our guests</span>
+  <h1 class="page-title">House<br><em>Guide</em></h1>
+  <p class="page-intro">Everything you need for a comfortable stay — arriving and settling in, how the Japanese parts of the house work, and what to pack for the season you're visiting.</p>
+
+  <!-- QUICK NAV -->
+  <div class="quick-nav">
+    <a class="qn-card" href="#arrival">
+      <span class="qn-icon" aria-hidden="true">🔑</span>
+      <span class="qn-name">Arrival</span>
+      <span class="qn-sub">Getting in, parking, settling in</span>
+    </a>
+    <a class="qn-card" href="#genkan">
+      <span class="qn-icon" aria-hidden="true">🥾</span>
+      <span class="qn-name">Genkan &amp; Drying Room</span>
+      <span class="qn-sub">Shoes, gear, and wet kit</span>
+    </a>
+    <a class="qn-card" href="#living">
+      <span class="qn-icon" aria-hidden="true">🛁</span>
+      <span class="qn-name">Living in the House</span>
+      <span class="qn-sub">Bath, kotatsu, kitchen, futons</span>
+    </a>
+    <a class="qn-card" href="#packing">
+      <span class="qn-icon" aria-hidden="true">🎒</span>
+      <span class="qn-name">Packing Lists</span>
+      <span class="qn-sub">Winter &amp; green season</span>
+    </a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ─── ARRIVAL ─────────────────────────── -->
+  <section class="guide-section" id="arrival">
+    <div class="guide-grid">
+      <div>
+        <span class="s-eyebrow">Step One</span>
+        <h2 class="s-title">Arrival &amp; <em>check-in</em></h2>
+        <div class="s-body">
+          <p>The house is at <strong>3107-1 Hotaka, Kijimadaira</strong> — the Lawson convenience store is directly opposite, which makes it easy to spot. We'll send you entry details and anything stay-specific before you arrive.</p>
+        </div>
+        <ul class="step-list">
+          <li><span class="step-num">01</span><span><strong>Parking</strong> — the driveway fits two cars. In winter, a snow shovel lives in the shed; clearing the driveway after overnight snow is part of village life.</span></li>
+          <li><span class="step-num">02</span><span><strong>First stop, the genkan</strong> — shoes off at the entry, always. There's space for everyone's footwear (see below).</span></li>
+          <li><span class="step-num">03</span><span><strong>Supplies</strong> — Lawson opposite covers the first night; the local supermarket (イーストア滝沢商店) handles a proper shop.</span></li>
+          <li><span class="step-num">04</span><span><strong>Connectivity</strong> — house WiFi is coming soon, so pick up an eSIM before you travel. Mobile coverage in the village is good.</span></li>
+        </ul>
+        <div class="note-card">
+          <strong>Arriving by train?</strong> Shinkansen to Iiyama (~1 hr 45 min from Tokyo), then a local bus or taxi for the last 15 minutes — or ride the iiyama Line one more stop to Kijimadaira station. See the <a href="guide.html#train" style="color:var(--forest);text-underline-offset:3px;">iiyama Line guide</a>.
+        </div>
+      </div>
+      <img class="guide-img" src="assets/img/exterior-winter.jpg" alt="The front of Kiji Yuki with snow-covered driveway" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ─── GENKAN & DRYING ROOM ───────────── -->
+  <section class="guide-section" id="genkan">
+    <div class="guide-grid">
+      <img class="guide-img" src="assets/img/drying-room.jpg" alt="The drying and mud room with hanging space for ski gear" loading="lazy">
+      <div>
+        <span class="s-eyebrow">Entry &amp; Gear</span>
+        <h2 class="s-title">The genkan &amp; <em>drying room</em></h2>
+        <div class="s-body">
+          <p>Like every Japanese home, the genkan (entryway) marks the line between outside and inside. Outdoor shoes stay on the lower level; step up into the house in socks or the house slippers.</p>
+          <p>The <strong>drying and mud room is brand new</strong> and is honestly the best thing about coming back from the snow — hang wet jackets, pants and gloves in the evening and everything is warm and dry by morning.</p>
+        </div>
+        <ul class="step-list">
+          <li><span class="step-num">一</span><span><strong>Ski boots, wet boots and snow gear</strong> go straight to the drying room — not the genkan, and never onto tatami</span></li>
+          <li><span class="step-num">二</span><span><strong>Hang gear with space between items</strong> so air can circulate; gloves and liners dry fastest opened up</span></li>
+          <li><span class="step-num">三</span><span><strong>Skis, boards, bikes and toboggans</strong> live in the storage shed, alongside the snow shovel</span></li>
+          <li><span class="step-num">四</span><span><strong>Slippers stay off the tatami</strong> — tatami rooms are socks or bare feet only</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LIVING IN THE HOUSE ─────────────── -->
+  <section class="guide-section" id="living">
+    <span class="s-eyebrow">Day to Day</span>
+    <h2 class="s-title">Living in <em>the house</em></h2>
+
+    <div class="guide-grid" style="margin-top:28px;">
+      <div>
+        <h3 style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:12px;">The bath</h3>
+        <div class="s-body">
+          <p>The deep soaking bath fills automatically and keeps the water hot. It works like an onsen at home: <strong>shower and wash first</strong> at the shower station, then soak. The bathwater stays clean and is shared by everyone over the evening, so it isn't drained between people — this is the normal Japanese way and one of the great pleasures of the house after a day outside.</p>
+        </div>
+        <h3 style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:var(--text);margin:28px 0 12px;">Heating &amp; the kotatsu</h3>
+        <div class="s-body">
+          <p>Winter heating runs on kerosene — the tank lives in the shed and we keep it topped up. The heated kotatsu table in the lounge is where everyone ends up; legs under the blanket, hands around something warm. Please switch heaters off when you head out for the day.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:12px;">Kitchen &amp; laundry</h3>
+        <div class="s-body">
+          <p>The kitchen is fully equipped — fridge, stove, and all the appliances you need to cook for a full house. The washing machine means you can pack lighter than you think, especially with the drying room next door.</p>
+        </div>
+        <h3 style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:var(--text);margin:28px 0 12px;">Futons &amp; sleeping</h3>
+        <div class="s-body">
+          <p>Beyond the four bedrooms there are four single futons that can be laid out in any tatami room. Lay them directly on the tatami with the provided bedding; fold and air them in the morning rather than leaving them down all day — it keeps both the futons and the tatami fresh.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RUBBISH -->
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:var(--text);margin:44px 0 8px;">Rubbish &amp; recycling</h3>
+    <p class="s-body">Sorting rubbish properly matters a lot in a small village — it's the single most visible way guests can do right by the neighbours. The bins in the house are labelled; the main categories are:</p>
+    <div class="bin-grid">
+      <div class="bin-card">
+        <span class="bin-icon" aria-hidden="true">🔥</span>
+        <span class="bin-name">Burnable</span>
+        <span class="bin-desc">Food scraps, soiled paper, and most general waste</span>
+      </div>
+      <div class="bin-card">
+        <span class="bin-icon" aria-hidden="true">♻️</span>
+        <span class="bin-name">Plastics</span>
+        <span class="bin-desc">Rinsed plastic packaging and wrappers with the プラ mark</span>
+      </div>
+      <div class="bin-card">
+        <span class="bin-icon" aria-hidden="true">🥫</span>
+        <span class="bin-name">Cans &amp; Glass</span>
+        <span class="bin-desc">Rinsed cans and bottles, sorted separately</span>
+      </div>
+      <div class="bin-card">
+        <span class="bin-icon" aria-hidden="true">🧴</span>
+        <span class="bin-name">PET Bottles</span>
+        <span class="bin-desc">Caps and labels off, bottle rinsed and crushed</span>
+      </div>
+    </div>
+    <div class="note-card">
+      When in doubt, rinse it and ask us — a quick message beats a wrong bin. Collection days and any house-specific notes are in your arrival details.
+    </div>
+  </section>
+
+  <!-- ─── PACKING LISTS ───────────────────── -->
+  <section class="guide-section" id="packing">
+    <span class="s-eyebrow">Before You Travel</span>
+    <h2 class="s-title">What to <em>pack</em></h2>
+    <p class="s-body">The house covers more than you'd expect — bedding, kitchen, laundry, drying room, bikes and toboggans in the shed. Filter the list for the season you're visiting.</p>
+
+    <div class="filter-bar" role="group" aria-label="Filter packing list by season">
+      <button type="button" class="filter-btn" aria-pressed="true" data-filter="all" onclick="filterPack('all', this)">All Seasons</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="winter" onclick="filterPack('winter', this)">❄ Winter</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="green" onclick="filterPack('green', this)">🌿 Green Season</button>
+    </div>
+    <span class="pack-count" id="packCount" aria-live="polite"></span>
+
+    <ul class="pack-list" id="packList">
+      <li data-season="winter"><span class="pack-tag pack-tag--winter">Winter</span><span><strong>Your own ski boots</strong> if you have them — rentals are fine, your own are better. Everything else hires easily at the resorts</span></li>
+      <li data-season="winter"><span class="pack-tag pack-tag--winter">Winter</span><span><strong>Snow-rated footwear</strong> for the village — pavements and the driveway are properly snowy</span></li>
+      <li data-season="winter"><span class="pack-tag pack-tag--winter">Winter</span><span><strong>Warm layers</strong> — thermals, fleece, beanie and gloves; the drying room means one good set goes a long way</span></li>
+      <li data-season="winter"><span class="pack-tag pack-tag--winter">Winter</span><span><strong>Goggles &amp; sunscreen</strong> — bluebird days on snow are bright</span></li>
+      <li data-season="green"><span class="pack-tag pack-tag--green">Green</span><span><strong>Walking or hiking shoes</strong> — trails range from boardwalks at Kayanotaira to proper hikes on the Shin-etsu Trail</span></li>
+      <li data-season="green"><span class="pack-tag pack-tag--green">Green</span><span><strong>A light rain shell</strong> — mountain weather turns quickly, especially in June and July</span></li>
+      <li data-season="green"><span class="pack-tag pack-tag--green">Green</span><span><strong>Insect repellent</strong> for forest walks and summer evenings</span></li>
+      <li data-season="green"><span class="pack-tag pack-tag--green">Green</span><span><strong>Sun protection</strong> — hat and sunscreen for cycling and open trail sections</span></li>
+      <li data-season="green"><span class="pack-tag pack-tag--green">Green</span><span><strong>A day pack</strong> for hikes, bike rides, and trips on the iiyama Line</span></li>
+      <li data-season="always"><span class="pack-tag pack-tag--always">Always</span><span><strong>An eSIM or pocket WiFi</strong> — house WiFi is coming soon, so sort data before you fly</span></li>
+      <li data-season="always"><span class="pack-tag pack-tag--always">Always</span><span><strong>Cash (yen)</strong> — rural Japan still loves cash; smaller restaurants and onsens often don't take cards</span></li>
+      <li data-season="always"><span class="pack-tag pack-tag--always">Always</span><span><strong>A small onsen towel</strong> — handy for the public baths at Nozawa; you can also buy one there as a souvenir</span></li>
+      <li data-season="always"><span class="pack-tag pack-tag--always">Always</span><span><strong>A translation app</strong> downloaded for offline use — you'll get by comfortably, this just makes menus more fun</span></li>
+      <li data-season="always"><span class="pack-tag pack-tag--always">Always</span><span><strong>Slippers or warm socks</strong> if you like your own — the house is socks-and-slippers territory</span></li>
+    </ul>
+  </section>
+
+</div><!-- /wrap -->
+
+<!-- ─── CLOSING ─────────────────────────── -->
+<div class="closing">
+  <div>
+    <h2 class="closing-h">Anything we've<br><em>missed?</em></h2>
+    <p class="closing-p">If something isn't covered here, just ask — and Daiso-san at Tsudoy, the bar opposite, is a goldmine of local advice in excellent English.</p>
+  </div>
+  <a href="guide.html" class="btn-white">Explore the Area Guide</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Kiji Yuki</span>
+  <div class="footer-links">
+    <a href="index.html">The House</a>
+    <a href="guide.html">Area Guide</a>
+    <a href="house.html">House Guide</a>
+    <a href="about.html">About</a>
+    <a href="index.html#availability">Availability</a>
+    <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
+  </div>
+  <div class="footer-right">Kijimadaira · Nagano · Japan</div>
+</footer>
+
+<script>
+/* ─── HAMBURGER ──────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.contains('open');
+  if (open) closeMenu();
+  else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
+});
+
+/* ─── PACKING FILTER ─────────────────────── */
+function filterPack(season, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  btn.setAttribute('aria-pressed', 'true');
+  let shown = 0;
+  document.querySelectorAll('#packList li').forEach(li => {
+    const match = season === 'all' || li.dataset.season === season || li.dataset.season === 'always';
+    li.hidden = !match;
+    if (match) shown++;
+  });
+  const label = season === 'all' ? 'all seasons' : (season === 'winter' ? 'winter' : 'the green season');
+  document.getElementById('packCount').textContent = shown + ' items for ' + label;
+}
+filterPack('all', document.querySelector('.filter-btn[data-filter="all"]'));
+</script>
+</body>
+</html>

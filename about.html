@@ -341,16 +341,18 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- ─── NAV ──────────────────────────────── -->
-<nav>
+<nav aria-label="Main">
   <a href="index.html" class="nav-logo">Kiji Yuki</a>
   <div class="nav-links">
     <a href="index.html#the-house" class="nav-link">The House</a>
     <a href="guide.html" class="nav-link">Area Guide</a>
-    <a href="#" class="nav-link active">About</a>
+    <a href="#" class="nav-link active" aria-current="page">About</a>
     <a href="index.html#availability" class="nav-link">Availability</a>
-    <a href="index.html#availability" class="btn-nav">Check Dates</a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <a href="house.html" class="btn-nav">House Guide</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -362,8 +364,10 @@
   <a href="guide.html" onclick="closeMenu()">Area Guide</a>
   <a href="#" onclick="closeMenu()">About</a>
   <a href="index.html#availability" onclick="closeMenu()">Availability</a>
-  <a href="index.html#availability" class="menu-cta" onclick="closeMenu()">Check Dates</a>
+  <a href="house.html" class="menu-cta" onclick="closeMenu()">House Guide</a>
 </div>
+
+<main id="main">
 
 <!-- ─── PAGE HEADER ──────────────────────── -->
 <div class="page-header">
@@ -403,7 +407,7 @@
     </aside>
 
     <!-- MAIN TEXT -->
-    <main class="essay-main">
+    <div class="essay-main">
 
       <!-- OUR HOME -->
       <div class="essay-section" id="our-home">
@@ -543,7 +547,7 @@
         </ul>
       </div>
 
-    </main>
+    </div><!-- /essay-main -->
   </div><!-- /essay-body -->
 </div><!-- /essay-wrap -->
 
@@ -562,9 +566,11 @@
   </div>
   <div class="closing-btns">
     <a href="index.html#availability" class="btn-white">View Availability</a>
-    <a href="guide.html" class="btn-ghost">Area Guide</a>
+    <a href="house.html" class="btn-ghost">House Guide</a>
   </div>
 </div>
+
+</main>
 
 <!-- ─── FOOTER ────────────────────────────── -->
 <footer>
@@ -572,6 +578,7 @@
   <div class="footer-links">
     <a href="index.html">The House</a>
     <a href="guide.html">Area Guide</a>
+    <a href="house.html">House Guide</a>
     <a href="about.html">About</a>
     <a href="index.html#availability">Availability</a>
     <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
@@ -586,11 +593,12 @@ const mobileMenu = document.getElementById('mobileMenu');
 function closeMenu() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
 }
 hamburger.addEventListener('click', function(){
   const isOpen = mobileMenu.classList.contains('open');
   if (isOpen) closeMenu();
-  else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); }
+  else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
 });
 
 /* ─── SCROLL REVEAL ─────────────────────── */

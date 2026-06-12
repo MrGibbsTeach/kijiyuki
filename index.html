@@ -165,7 +165,7 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.62);
   font-weight: 300;
 }
 
@@ -201,6 +201,11 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   overflow: hidden;
   cursor: pointer;
   background: var(--paper);
+  border: none;
+  padding: 0;
+  font: inherit;
+  display: block;
+  text-align: left;
 }
 .gp img {
   width: 100%;
@@ -246,18 +251,24 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
 }
 .gallery-strip-wrap::-webkit-scrollbar { height: 2px; }
 .gallery-strip-wrap::-webkit-scrollbar-thumb { background: var(--stone); }
+.gs-btn {
+  border: none;
+  padding: 0;
+  background: var(--paper);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: block;
+}
 .gs-img {
   height: 160px;
   width: 240px;
   min-width: 240px;
   object-fit: cover;
   display: block;
-  cursor: pointer;
-  flex-shrink: 0;
   transition: opacity 0.3s, transform 0.5s;
   filter: brightness(0.92);
 }
-.gs-img:hover { opacity: 0.88; filter: brightness(1); }
+.gs-btn:hover .gs-img { opacity: 0.88; filter: brightness(1); }
 
 .gallery-footer {
   padding: 16px 48px;
@@ -495,7 +506,9 @@ section { padding: 80px 0; }
   position: relative;
   height: 360px;
   overflow: hidden;
-  cursor: default;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
 }
 .season-card img {
   width: 100%;
@@ -542,6 +555,52 @@ section { padding: 80px 0; }
   opacity: 0.08;
   pointer-events: none;
   mix-blend-mode: screen;
+}
+
+/* ─── GREEN SEASON FEATURE ─────────────────────────────── */
+.green-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.green-points { list-style: none; margin-top: 24px; }
+.green-points li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.green-points li strong { color: var(--text); font-weight: 400; }
+.green-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--forest2); flex-shrink: 0; position: relative; top: -3px; }
+.green-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  text-decoration: underline;
+  text-decoration-color: rgba(37,61,47,0.35);
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+.green-link:hover { color: var(--rust); }
+.green-img-stack { display: grid; gap: 4px; }
+.green-img-stack img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.green-img-main { aspect-ratio: 4/3; }
+.green-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.green-img-pair img { aspect-ratio: 4/3; }
+@media (max-width: 900px) {
+  .green-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
 /* ─── LOCATION ─────────────────────────────────────────── */
@@ -746,7 +805,7 @@ section { padding: 80px 0; }
 .lb-meta {
   text-align: center;
   margin-top: 16px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -774,7 +833,7 @@ section { padding: 80px 0; }
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   letter-spacing: 0.1em;
 }
 
@@ -916,8 +975,10 @@ section { padding: 80px 0; }
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- ─── NAV ─────────────────────────────────── -->
-<nav class="hero-mode" id="nav">
+<nav class="hero-mode" id="nav" aria-label="Main">
   <a href="#" class="nav-logo">Kiji Yuki</a>
   <div class="nav-links">
     <a href="#the-house" class="nav-link">The House</a>
@@ -925,8 +986,8 @@ section { padding: 80px 0; }
     <a href="#location" class="nav-link">Location</a>
     <a href="about.html" class="nav-link">About</a>
     <a href="#availability" class="nav-link">Availability</a>
-    <a href="#availability" class="btn-nav">Check Dates</a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <a href="house.html" class="btn-nav">House Guide</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -939,8 +1000,10 @@ section { padding: 80px 0; }
   <a href="#location" onclick="closeMenu()">Location</a>
   <a href="about.html" onclick="closeMenu()">About</a>
   <a href="#availability" onclick="closeMenu()">Availability</a>
-  <a href="#availability" class="menu-cta" onclick="closeMenu()">Check Dates</a>
+  <a href="house.html" class="menu-cta" onclick="closeMenu()">House Guide</a>
 </div>
+
+<main id="main">
 
 <!-- ─── HERO ─────────────────────────────────── -->
 <div class="hero" id="hero">
@@ -968,31 +1031,31 @@ section { padding: 80px 0; }
   <div class="section-label">The House &amp; Surroundings</div>
 
   <div class="gallery-mosaic">
-    <div class="gp gp-main" onclick="openLightbox(0)">
+    <button type="button" class="gp gp-main" onclick="openLightbox(0)" aria-label="Open photo gallery — exterior in winter">
       <img src="assets/img/exterior-winter.jpg" alt="Kiji Yuki in winter snow" loading="eager" fetchpriority="high">
-      <div class="gp-overlay"></div>
+      <span class="gp-overlay"></span>
       <span class="gp-label">Exterior · Winter</span>
-    </div>
-    <div class="gp" onclick="openLightbox(2)">
+    </button>
+    <button type="button" class="gp sub4" onclick="openLightbox(2)" aria-label="Open photo gallery — living room">
       <img src="assets/img/lounge-kotatsu.jpg" alt="Kotatsu lounge" loading="lazy">
-      <div class="gp-overlay"></div>
+      <span class="gp-overlay"></span>
       <span class="gp-label">Living Room</span>
-    </div>
-    <div class="gp" onclick="openLightbox(3)">
+    </button>
+    <button type="button" class="gp sub4" onclick="openLightbox(3)" aria-label="Open photo gallery — bedroom 1">
       <img src="assets/img/bedroom-1.jpg" alt="Bedroom 1" loading="lazy">
-      <div class="gp-overlay"></div>
+      <span class="gp-overlay"></span>
       <span class="gp-label">Bedroom 1</span>
-    </div>
-    <div class="gp" onclick="openLightbox(1)">
+    </button>
+    <button type="button" class="gp sub4" onclick="openLightbox(1)" aria-label="Open photo gallery — interior">
       <img src="assets/img/interior.jpg" alt="Interior" loading="lazy">
-      <div class="gp-overlay"></div>
+      <span class="gp-overlay"></span>
       <span class="gp-label">Interior</span>
-    </div>
-    <div class="gp" onclick="openLightbox(12)">
+    </button>
+    <button type="button" class="gp sub4" onclick="openLightbox(12)" aria-label="Open photo gallery — the views">
       <img src="assets/img/views.jpg" alt="Views" loading="lazy">
-      <div class="gp-overlay"></div>
+      <span class="gp-overlay"></span>
       <span class="gp-label">The Views</span>
-    </div>
+    </button>
   </div>
 
   <!-- ALL PHOTOS STRIP -->
@@ -1046,7 +1109,7 @@ section { padding: 80px 0; }
     </div>
     <div class="cta-actions">
       <a href="#availability" class="btn-solid">View Availability Calendar</a>
-      <a href="about.html" class="btn-border">Get in Touch</a>
+      <a href="house.html" class="btn-border">Read the House Guide</a>
     </div>
   </div>
 
@@ -1107,8 +1170,8 @@ section { padding: 80px 0; }
     <h2 class="s-title reveal reveal-delay-1">Any season is<br><em>a good season</em></h2>
   </div>
   <div class="seasons-grid reveal">
-    <a class="season-card season-card--winter" href="guide.html#resorts" style="display:block;text-decoration:none;cursor:pointer;">
-      <img src="assets/img/exterior-winter.jpg" alt="Winter" loading="lazy">
+    <a class="season-card season-card--winter" href="guide.html#resorts">
+      <img src="assets/img/exterior-winter.jpg" alt="Kiji Yuki under deep snow in winter" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
         <span class="season-badge">Winter · Dec – Mar</span>
@@ -1116,7 +1179,7 @@ section { padding: 80px 0; }
         <p class="season-p">Multiple resorts minutes away with Japan's famous powder. Warm up at outdoor onsens under falling snow.</p>
       </div>
     </a>
-    <a class="season-card" href="guide.html#blossoms" style="display:block;text-decoration:none;cursor:pointer;">
+    <a class="season-card" href="guide.html#blossoms">
       <img src="assets/img/cherry-blossoms-takada.jpg" alt="Cherry blossoms at Takada Castle Park" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
@@ -1125,17 +1188,17 @@ section { padding: 80px 0; }
         <p class="season-p">The valley turns pink. The iiyama Line in bloom is one of Japan's great train journeys.</p>
       </div>
     </a>
-    <a class="season-card" href="guide.html#outdoors" style="display:block;text-decoration:none;cursor:pointer;">
-      <img src="assets/img/shed-storage.jpg" alt="Summer" loading="lazy">
+    <a class="season-card" href="guide.html#outdoors">
+      <img src="assets/img/hike-trail.jpg" alt="Beech forest trail at Kayanotaira Kogen in summer" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
         <span class="season-badge">Summer · Jun – Sep</span>
         <h3 class="season-h">Hikes &amp; Cycling</h3>
-        <p class="season-p">Alpine trails, hire bikes from the shed. Snow monkey park open all year at Jigokudani.</p>
+        <p class="season-p">Alpine trails through ancient beech forest, bikes from the shed, and long cool evenings in the village.</p>
       </div>
     </a>
-    <a class="season-card" href="guide.html#outdoors" style="display:block;text-decoration:none;cursor:pointer;">
-      <img src="assets/img/interior.jpg" alt="Autumn" loading="lazy">
+    <a class="season-card" href="guide.html#outdoors">
+      <img src="assets/img/views.jpg" alt="Autumn views over the valley from Kijimadaira" loading="lazy">
       <div class="season-overlay"></div>
       <div class="season-body">
         <span class="season-badge">Autumn · Oct – Nov</span>
@@ -1144,6 +1207,36 @@ section { padding: 80px 0; }
       </div>
     </a>
   </div>
+</div>
+
+<!-- ─── GREEN SEASON FEATURE ──────────────────── -->
+<div class="content">
+  <section id="green-season">
+    <div class="green-grid">
+      <div>
+        <span class="s-eyebrow reveal">The Green Season</span>
+        <h2 class="s-title reveal reveal-delay-1">When the snow melts,<br><em>the valley opens up</em></h2>
+        <div class="about-body reveal reveal-delay-2">
+          <p>Most people know this corner of Nagano for its powder. The quieter secret is what happens from May to November — beech forests, empty mountain trails, rice fields turning gold, and a village that moves at an unhurried summer pace.</p>
+        </div>
+        <ul class="green-points reveal reveal-delay-2">
+          <li><span class="green-dot"></span><span><strong>Kayanotaira Kogen</strong> — 300-year-old beech forest on flat boardwalks, called the most beautiful forest in Japan</span></li>
+          <li><span class="green-dot"></span><span><strong>Mt. Kosha</strong> — half-day summit hike with 360° views; you can see the house from the top</span></li>
+          <li><span class="green-dot"></span><span><strong>The Shin-etsu Trail</strong> — two sections of one of Japan's great long-distance trails, walkable as day hikes from the house</span></li>
+          <li><span class="green-dot"></span><span><strong>Cycling from the door</strong> — bikes live in the shed; quiet farm roads and river loops start right outside</span></li>
+          <li><span class="green-dot"></span><span><strong>Snow monkeys, year-round</strong> — Jigokudani is open every season, and the forest walk is lovely in the green months</span></li>
+        </ul>
+        <a class="green-link reveal reveal-delay-3" href="guide.html#outdoors">Green season guide — hikes, cycling &amp; more →</a>
+      </div>
+      <div class="green-img-stack reveal reveal-delay-3">
+        <img class="green-img-main" src="assets/img/hike-kosha.jpg" alt="Hiking trail on Mt. Kosha above Kijimadaira" loading="lazy">
+        <div class="green-img-pair">
+          <img src="assets/img/samurai-trail.jpg" alt="The Samurai Pass section of the Shin-etsu Trail" loading="lazy">
+          <img src="assets/img/monkey-park-trail.jpg" alt="Forest trail to the Jigokudani monkey park" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- ─── LOCATION ──────────────────────────────── -->
@@ -1156,27 +1249,27 @@ section { padding: 80px 0; }
         <iframe title="Kiji Yuki location" src="https://maps.google.com/maps?q=3107-1+Hotaka,+Kijimadaira,+Shimotakai+District,+Nagano+389-2301,+Japan&output=embed" allowfullscreen loading="lazy"></iframe>
       </div>
       <a class="nearby-card" href="guide.html#resorts" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon">⛷</span>
+        <span class="nearby-icon" aria-hidden="true">⛷</span>
         <span class="nearby-name">Ski Resorts</span>
         <p class="nearby-desc">Nozawa Onsen, Shiga Kogen and more — Japan's best powder, far fewer crowds than Hakuba.</p>
       </a>
       <a class="nearby-card" href="guide.html#onsens" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon">♨</span>
+        <span class="nearby-icon" aria-hidden="true">♨</span>
         <span class="nearby-name">Onsens</span>
         <p class="nearby-desc">The Nozawa public baths are free and completely unforgettable. Several options nearby.</p>
       </a>
       <a class="nearby-card" href="guide.html#monkeys" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon">🐒</span>
+        <span class="nearby-icon" aria-hidden="true">🐒</span>
         <span class="nearby-name">Snow Monkeys</span>
         <p class="nearby-desc">Jigokudani Monkey Park is a short drive — wild macaques in hot springs, open all year.</p>
       </a>
       <a class="nearby-card" href="guide.html#blossoms" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon">🌸</span>
+        <span class="nearby-icon" aria-hidden="true">🌸</span>
         <span class="nearby-name">Cherry Blossoms</span>
         <p class="nearby-desc">The Chikuma River valley and iiyama Line in late April and early May are spectacular.</p>
       </a>
       <a class="nearby-card" href="guide.html#food" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon">🍜</span>
+        <span class="nearby-icon" aria-hidden="true">🍜</span>
         <span class="nearby-name">Eating &amp; Drinking</span>
         <p class="nearby-desc">Lawson convenience store directly opposite. Local restaurants, ramen, and izakaya all within easy reach.</p>
       </a>
@@ -1228,7 +1321,7 @@ section { padding: 80px 0; }
       </div>
       <div class="avail-btns" style="margin-top:28px;">
         <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" class="btn-outline-dark" target="_blank">Open in Google Calendar ↗</a>
-        <a href="about.html" class="btn-big">Get in Touch</a>
+        <a href="about.html" class="btn-big">About Our Home</a>
       </div>
       <p class="cal-mobile-note" style="margin-top:16px;font-size:12px;color:var(--stone);text-align:center;">Calendar not displaying? <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open it directly ↗</a></p>
     </div>
@@ -1236,12 +1329,15 @@ section { padding: 80px 0; }
 
 </div><!-- /content -->
 
+</main>
+
 <!-- ─── FOOTER ────────────────────────────────── -->
 <footer>
   <span class="footer-logo">Kiji Yuki</span>
   <div class="footer-links">
     <a href="#the-house">The House</a>
     <a href="guide.html">Area Guide</a>
+    <a href="house.html">House Guide</a>
     <a href="about.html">About</a>
     <a href="#availability">Availability</a>
     <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
@@ -1250,13 +1346,13 @@ section { padding: 80px 0; }
 </footer>
 
 <!-- ─── LIGHTBOX ──────────────────────────────── -->
-<div class="lightbox" id="lightbox">
-  <button class="lb-close" onclick="closeLightbox()">✕</button>
-  <span class="lb-counter" id="lbCounter"></span>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <button type="button" class="lb-close" onclick="closeLightbox()" aria-label="Close gallery">✕</button>
+  <span class="lb-counter" id="lbCounter" aria-live="polite"></span>
   <div class="lb-img-wrap">
-    <button class="lb-nav lb-prev" onclick="lbStep(-1)">‹</button>
+    <button type="button" class="lb-nav lb-prev" onclick="lbStep(-1)" aria-label="Previous photo">‹</button>
     <img class="lb-img" id="lbImg" src="" alt="">
-    <button class="lb-nav lb-next" onclick="lbStep(1)">›</button>
+    <button type="button" class="lb-nav lb-next" onclick="lbStep(1)" aria-label="Next photo">›</button>
   </div>
   <div class="lb-meta" id="lbMeta"></div>
 </div>
@@ -1299,34 +1395,45 @@ const IMAGES = [
 const strip = document.getElementById('galleryStrip');
 document.getElementById('photoCount').textContent = IMAGES.length + ' photos';
 IMAGES.forEach((img, i) => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'gs-btn';
+  btn.setAttribute('aria-label', 'Open photo ' + (i + 1) + ' of ' + IMAGES.length + (img.cap ? ' — ' + img.cap : ''));
   const el = document.createElement('img');
   el.className = 'gs-img';
   el.src = img.src;
-  el.alt = img.cap || '';
+  el.alt = img.cap || 'Kiji Yuki photo ' + (i + 1);
   el.loading = 'lazy';
-  el.onclick = () => openLightbox(i);
-  strip.appendChild(el);
+  btn.onclick = () => openLightbox(i);
+  btn.appendChild(el);
+  strip.appendChild(btn);
 });
 
 /* ─── LIGHTBOX ───────────────────────────────────── */
 let lbIdx = 0;
+let lbLastFocus = null;
 function openLightbox(idx) {
   lbIdx = ((idx % IMAGES.length) + IMAGES.length) % IMAGES.length;
   const lb = document.getElementById('lightbox');
+  lbLastFocus = document.activeElement;
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
   updateLb();
+  lb.querySelector('.lb-close').focus();
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  if (lbLastFocus && typeof lbLastFocus.focus === 'function') lbLastFocus.focus();
 }
 function lbStep(dir) {
   lbIdx = ((lbIdx + dir) + IMAGES.length) % IMAGES.length;
   updateLb();
 }
 function updateLb() {
-  document.getElementById('lbImg').src = IMAGES[lbIdx].src;
+  const img = document.getElementById('lbImg');
+  img.src = IMAGES[lbIdx].src;
+  img.alt = IMAGES[lbIdx].cap || 'Kiji Yuki photo ' + (lbIdx + 1) + ' of ' + IMAGES.length;
   document.getElementById('lbMeta').textContent = IMAGES[lbIdx].cap;
   document.getElementById('lbCounter').textContent = (lbIdx + 1) + ' / ' + IMAGES.length;
 }
@@ -1339,6 +1446,14 @@ document.addEventListener('keydown', function(e){
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') lbStep(1);
   if (e.key === 'ArrowLeft') lbStep(-1);
+  if (e.key === 'Tab') {
+    // keep focus inside the dialog while it's open
+    const focusables = lb.querySelectorAll('button');
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
 /* ─── NAV SCROLL BEHAVIOUR ───────────────────────── */
@@ -1355,6 +1470,7 @@ const mobileMenu = document.getElementById('mobileMenu');
 function closeMenu() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 hamburger.addEventListener('click', function(){
@@ -1363,12 +1479,14 @@ hamburger.addEventListener('click', function(){
   else {
     hamburger.classList.add('open');
     mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
   }
 });
 
-/* ─── HERO PARALLAX (desktop only) ──────────────── */
+/* ─── HERO PARALLAX (desktop only, respects reduced motion) ── */
 const heroBg = document.getElementById('heroBg');
-if (window.matchMedia('(min-width: 901px)').matches) {
+if (window.matchMedia('(min-width: 901px)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', function(){
     heroBg.style.transform = 'scale(1.08) translateY(' + (window.scrollY * 0.25) + 'px)';
   }, { passive: true });

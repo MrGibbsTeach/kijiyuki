@@ -339,16 +339,18 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- NAV -->
-<nav>
+<nav aria-label="Main">
   <a href="index.html" class="nav-logo">Kiji Yuki</a>
   <div class="nav-links">
     <a href="index.html#the-house" class="nav-link">The House</a>
-    <a href="#" class="nav-link active">Area Guide</a>
+    <a href="#" class="nav-link active" aria-current="page">Area Guide</a>
     <a href="about.html" class="nav-link">About</a>
     <a href="index.html#availability" class="nav-link">Availability</a>
-    <a href="index.html#availability" class="btn-nav">Check Dates</a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="house.html" class="btn-nav">House Guide</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -356,8 +358,10 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   <a href="#" onclick="closeMenu()">Area Guide</a>
   <a href="about.html" onclick="closeMenu()">About</a>
   <a href="index.html#availability" onclick="closeMenu()">Availability</a>
-  <a href="index.html#availability" class="menu-cta" onclick="closeMenu()">Check Dates</a>
+  <a href="house.html" class="menu-cta" onclick="closeMenu()">House Guide</a>
 </div>
+
+<main id="main">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -368,22 +372,22 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
 <!-- TAB BAR -->
 <div class="tab-bar-wrap">
-  <div class="tab-bar">
-    <button class="tab-btn active" id="tab-btn-overview" onclick="switchTab('overview', this)">Overview</button>
-    <button class="tab-btn" id="tab-btn-resorts" onclick="switchTab('resorts', this)">⛷ Ski Resorts</button>
-    <button class="tab-btn" id="tab-btn-food" onclick="switchTab('food', this)">🍜 Eating &amp; Drinking</button>
-    <button class="tab-btn" id="tab-btn-onsens" onclick="switchTab('onsens', this)">♨ Onsens</button>
-    <button class="tab-btn" id="tab-btn-monkeys" onclick="switchTab('monkeys', this)">🐒 Snow Monkeys</button>
-    <button class="tab-btn" id="tab-btn-outdoors" onclick="switchTab('outdoors', this)">🥾 Hikes &amp; Cycling</button>
-    <button class="tab-btn" id="tab-btn-train" onclick="switchTab('train', this)">🚃 iiyama Line</button>
-    <button class="tab-btn" id="tab-btn-blossoms" onclick="switchTab('blossoms', this)">🌸 Cherry Blossoms</button>
+  <div class="tab-bar" role="tablist" aria-label="Area guide sections">
+    <button class="tab-btn active" id="tab-btn-overview" role="tab" aria-selected="true" aria-controls="tab-overview" onclick="switchTab('overview', this)">Overview</button>
+    <button class="tab-btn" id="tab-btn-resorts" role="tab" aria-selected="false" aria-controls="tab-resorts" tabindex="-1" onclick="switchTab('resorts', this)"><span aria-hidden="true">⛷ </span>Ski Resorts</button>
+    <button class="tab-btn" id="tab-btn-food" role="tab" aria-selected="false" aria-controls="tab-food" tabindex="-1" onclick="switchTab('food', this)"><span aria-hidden="true">🍜 </span>Eating &amp; Drinking</button>
+    <button class="tab-btn" id="tab-btn-onsens" role="tab" aria-selected="false" aria-controls="tab-onsens" tabindex="-1" onclick="switchTab('onsens', this)"><span aria-hidden="true">♨ </span>Onsens</button>
+    <button class="tab-btn" id="tab-btn-monkeys" role="tab" aria-selected="false" aria-controls="tab-monkeys" tabindex="-1" onclick="switchTab('monkeys', this)"><span aria-hidden="true">🐒 </span>Snow Monkeys</button>
+    <button class="tab-btn" id="tab-btn-outdoors" role="tab" aria-selected="false" aria-controls="tab-outdoors" tabindex="-1" onclick="switchTab('outdoors', this)"><span aria-hidden="true">🥾 </span>Green Season</button>
+    <button class="tab-btn" id="tab-btn-train" role="tab" aria-selected="false" aria-controls="tab-train" tabindex="-1" onclick="switchTab('train', this)"><span aria-hidden="true">🚃 </span>iiyama Line</button>
+    <button class="tab-btn" id="tab-btn-blossoms" role="tab" aria-selected="false" aria-controls="tab-blossoms" tabindex="-1" onclick="switchTab('blossoms', this)"><span aria-hidden="true">🌸 </span>Cherry Blossoms</button>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- OVERVIEW TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel active" id="tab-overview">
+<div class="tab-panel active" id="tab-overview" role="tabpanel" aria-labelledby="tab-btn-overview" tabindex="0">
   <span class="s-eyebrow">Where you are</span>
   <h2 class="s-title">Kijimadaira, <em>northern Nagano</em></h2>
   <p class="s-intro">A small rural village in the mountains of northern Nagano. Quiet, authentic, and remarkably well-placed — multiple ski resorts within 20 minutes, onsens in every direction, snow monkeys 30 minutes away, and the historic iiyama Line running right through the valley.</p>
@@ -397,41 +401,47 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   </div>
 
   <div class="overview-grid reveal">
-    <a class="overview-card" onclick="switchTab('resorts', document.getElementById('tab-btn-resorts'))">
-      <span class="ov-icon">⛷</span>
+    <a class="overview-card" href="#resorts">
+      <span class="ov-icon" aria-hidden="true">⛷</span>
       <span class="ov-title">Ski Resorts</span>
       <p class="ov-desc">11+ resorts within 60 minutes. Kijimadaira Snow Resort is 8 min away. Nozawa, Madarao, Shiga Kogen all close by.</p>
       <span class="ov-tag">8 min – 60 min drive →</span>
     </a>
-    <a class="overview-card" onclick="switchTab('food', document.getElementById('tab-btn-food'))">
-      <span class="ov-icon">🍜</span>
+    <a class="overview-card" href="#food">
+      <span class="ov-icon" aria-hidden="true">🍜</span>
       <span class="ov-title">Eating &amp; Drinking</span>
       <p class="ov-desc">Lawson convenience store directly opposite. Local restaurants, izakaya, bakeries and cafés all in easy walking distance.</p>
       <span class="ov-tag">Walking distance →</span>
     </a>
-    <a class="overview-card" onclick="switchTab('onsens', document.getElementById('tab-btn-onsens'))">
-      <span class="ov-icon">♨</span>
+    <a class="overview-card" href="#onsens">
+      <span class="ov-icon" aria-hidden="true">♨</span>
       <span class="ov-title">Onsens</span>
       <p class="ov-desc">From quiet local baths in Iiyama to the famous public baths of Nozawa Onsen village. Some private family options too.</p>
       <span class="ov-tag">5 min – 40 min drive →</span>
     </a>
-    <a class="overview-card" onclick="switchTab('monkeys', document.getElementById('tab-btn-monkeys'))">
-      <span class="ov-icon">🐒</span>
+    <a class="overview-card" href="#monkeys">
+      <span class="ov-icon" aria-hidden="true">🐒</span>
       <span class="ov-title">Snow Monkeys</span>
       <p class="ov-desc">Jigokudani — the only place in the world where wild macaques bathe in natural hot springs. A short forest walk to reach them.</p>
       <span class="ov-tag">~35 min drive →</span>
     </a>
-    <a class="overview-card" onclick="switchTab('outdoors', document.getElementById('tab-btn-outdoors'))">
-      <span class="ov-icon">🥾</span>
-      <span class="ov-title">Hikes &amp; Cycling</span>
+    <a class="overview-card" href="#outdoors">
+      <span class="ov-icon" aria-hidden="true">🥾</span>
+      <span class="ov-title">The Green Season</span>
       <p class="ov-desc">Mt. Kosha, Kayanotaira Kogen forest, the Shin-etsu Trail. Plus quiet country roads and Madarao mountain trails for bikes.</p>
-      <span class="ov-tag">From the house →</span>
+      <span class="ov-tag">May – November →</span>
     </a>
-    <a class="overview-card" onclick="switchTab('train', document.getElementById('tab-btn-train'))">
-      <span class="ov-icon">🚃</span>
+    <a class="overview-card" href="#train">
+      <span class="ov-icon" aria-hidden="true">🚃</span>
       <span class="ov-title">The iiyama Line</span>
       <p class="ov-desc">One of Japan's great scenic train journeys — especially stunning during cherry blossom season. Connects to Nagano and the Shinkansen.</p>
       <span class="ov-tag">Local line guide →</span>
+    </a>
+    <a class="overview-card" href="#blossoms">
+      <span class="ov-icon" aria-hidden="true">🌸</span>
+      <span class="ov-title">Cherry Blossoms</span>
+      <p class="ov-desc">Late April turns the Chikuma River valley pink. Takada Castle Park — one of Japan's top three blossom spots — is an hour away.</p>
+      <span class="ov-tag">Late April – early May →</span>
     </a>
   </div>
 
@@ -444,7 +454,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- SKI RESORTS TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-resorts">
+<div class="tab-panel" id="tab-resorts" role="tabpanel" aria-labelledby="tab-btn-resorts" tabindex="0">
   <span class="s-eyebrow">Winter</span>
   <h2 class="s-title">Ski <em>Resorts</em></h2>
   <p class="s-intro">The house is well positioned for a wide range of ski resorts within a short drive — from small local hills perfect for beginners to large internationally recognised resorts with deep powder and long vertical. Options for every level and style.</p>
@@ -453,7 +463,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-kijimadaira.jpg" alt="Kijimadaira Snow Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Kijimadaira Snow Resort</div>
           <div class="resort-meta">
@@ -482,7 +492,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-kijimadaira-2.jpg" alt="Kijima Snow Park" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Kijima Snow Park</div>
           <div class="resort-meta">
@@ -510,7 +520,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-xjam.jpg" alt="X-Jam & Yomase" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">X-Jam &amp; Yomase</div>
           <div class="resort-meta">
@@ -537,7 +547,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-togari.jpg" alt="Togari Onsen Ski Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Togari Onsen Ski Resort</div>
           <div class="resort-meta">
@@ -566,7 +576,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-nozawa.jpg" alt="Nozawa Onsen Ski Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Nozawa Onsen Ski Resort</div>
           <div class="resort-meta">
@@ -594,7 +604,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-ryuoo.jpg" alt="Ryuoo Ski Park" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Ryuoo Ski Park</div>
           <div class="resort-meta">
@@ -622,7 +632,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-madarao.jpg" alt="Madarao Mountain Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Madarao Mountain Resort</div>
           <div class="resort-meta">
@@ -650,7 +660,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-shiga.jpg" alt="Shiga Kogen Ski Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Shiga Kogen Ski Resort</div>
           <div class="resort-meta">
@@ -677,7 +687,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-lotte-arai.jpg" alt="Lotte Arai Resort" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Lotte Arai Resort (Myoko)</div>
           <div class="resort-meta">
@@ -704,7 +714,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
     <div class="resort-card">
       <img class="resort-img" src="assets/img/resort-akakura.jpg" alt="Akakura Onsen - Myoko" loading="lazy">
-      <div class="resort-header" onclick="toggleResort(this)">
+      <div class="resort-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleResort(this)" onkeydown="resortKey(event, this)">
         <div>
           <div class="resort-name">Akakura Onsen / Suginohara / Seki Onsen (Myoko)</div>
           <div class="resort-meta">
@@ -738,7 +748,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- FOOD TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-food">
+<div class="tab-panel" id="tab-food" role="tabpanel" aria-labelledby="tab-btn-food" tabindex="0">
   <span class="s-eyebrow">Eating &amp; Drinking</span>
   <h2 class="s-title">Food &amp; drink <em>nearby</em></h2>
   <img class="food-hero-img" src="assets/img/exterior-winter.jpg" alt="Kijimadaira village in winter" loading="lazy">
@@ -746,7 +756,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
   <div class="food-grid">
     <div class="food-card">
-      <span class="food-icon">🍴</span>
+      <span class="food-icon" aria-hidden="true">🍴</span>
       <span class="food-cat">Restaurants</span>
       <h3 class="food-h">Local Dining</h3>
       <ul class="food-list">
@@ -761,7 +771,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
     </div>
 
     <div class="food-card">
-      <span class="food-icon">☕</span>
+      <span class="food-icon" aria-hidden="true">☕</span>
       <span class="food-cat">Cafés &amp; Bakeries</span>
       <h3 class="food-h">Morning &amp; Light Bites</h3>
       <ul class="food-list">
@@ -769,7 +779,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
         <li><strong>パティスリー レーヴ (Pâtisserie Rêve)</strong> — Cakes, desserts, and sweets</li>
         <li><strong>ラスベリー (Raspberry)</strong> — Small local café</li>
       </ul>
-      <span class="food-icon" style="margin-top:16px;">🛍</span>
+      <span class="food-icon" aria-hidden="true" style="margin-top:16px;">🛍</span>
       <span class="food-cat" style="margin-top:0;">Convenience &amp; Groceries</span>
       <h3 class="food-h" style="font-size:17px;">Everyday Essentials</h3>
       <ul class="food-list">
@@ -797,7 +807,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- ONSENS TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-onsens">
+<div class="tab-panel" id="tab-onsens" role="tabpanel" aria-labelledby="tab-btn-onsens" tabindex="0">
   <span class="s-eyebrow">Hot Springs</span>
   <h2 class="s-title">Onsens <em>of the area</em></h2>
   <p class="s-intro">Onsens are a normal part of daily life in rural Japan, especially in mountain regions like northern Nagano. They're used for relaxation and recovery after skiing or time outdoors. Options range from quiet local baths to the famous public bathhouses of Nozawa Onsen.</p>
@@ -805,7 +815,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   <img class="section-hero-img" src="assets/img/onsen-banner.webp" alt="Japanese outdoor onsen in snow" loading="lazy">
 
   <div class="onsen-etiquette reveal">
-    <div class="etiq-icon">♨</div>
+    <div class="etiq-icon" aria-hidden="true">♨</div>
     <div>
       <h3 class="etiq-h">What to expect</h3>
       <ul class="etiq-list">
@@ -881,7 +891,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- MONKEYS TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-monkeys">
+<div class="tab-panel" id="tab-monkeys" role="tabpanel" aria-labelledby="tab-btn-monkeys" tabindex="0">
   <span class="s-eyebrow">Wildlife</span>
   <h2 class="s-title">Jigokudani <em>Snow Monkey Park</em></h2>
   <p class="s-intro">The only place in the world where wild monkeys are known to bathe in natural hot springs. Located in the Yokoyu River valley at around 850m above sea level, on the edge of Shiga Kogen in northern Nagano.</p>
@@ -907,7 +917,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   <div class="photo-grid-3 reveal">
     <img src="assets/img/snow-monkeys-park.jpg" alt="Snow monkeys bathing" loading="lazy">
     <img src="assets/img/monkey-park-trail.jpg" alt="Forest trail to Jigokudani" loading="lazy">
-    <img src="assets/img/snow-monkeys-2.jpg).jpg" alt="Japanese macaques in hot spring" loading="lazy">
+    <img src="assets/img/snow-monkeys-2.jpg" alt="Japanese macaques in hot spring" loading="lazy">
   </div>
 
   <hr class="div">
@@ -930,10 +940,10 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- OUTDOORS TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-outdoors">
+<div class="tab-panel" id="tab-outdoors" role="tabpanel" aria-labelledby="tab-btn-outdoors" tabindex="0">
   <span class="s-eyebrow">Spring · Summer · Autumn</span>
-  <h2 class="s-title">Hikes &amp; <em>Cycling</em></h2>
-  <p class="s-intro">Forested trails, mountain routes, and scenic backroads surround Kijimadaira. From gentle valley walks to alpine hikes and cycling through cedar forests, there are options for all levels within 20–40 minutes of the house.</p>
+  <h2 class="s-title">The Green <em>Season</em></h2>
+  <p class="s-intro">From snowmelt in May to the last autumn colour in November, the valley is at its quietest and greenest. Forested trails, mountain routes, and scenic backroads surround Kijimadaira — gentle valley walks, alpine hikes, and cycling through cedar forests, with options for all levels within 20–40 minutes of the house.</p>
 
   <div class="hike-cards">
     <div class="hike-card reveal">
@@ -1028,7 +1038,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- IIYAMA LINE TAB -->
 <!-- ══════════════════════════════════════════════════════ -->
-<div class="tab-panel" id="tab-train">
+<div class="tab-panel" id="tab-train" role="tabpanel" aria-labelledby="tab-btn-train" tabindex="0">
   <div class="train-hero reveal">
     <div class="train-hero-bg"></div>
     <h2 class="train-hero-h">The <em>iiyama Line</em></h2>
@@ -1073,7 +1083,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   </div>
 
   <a class="pdf-link reveal" href="https://www.kijiyuki.com/_files/ugd/f05c73_52e27689f91e46bc9e08a02d1439a6bd.pdf" target="_blank">
-    <span class="pdf-icon">📄</span>
+    <span class="pdf-icon" aria-hidden="true">📄</span>
     <div>
       <span class="pdf-label">Download</span>
       <span class="pdf-name">iiyama Line Guide — Kiji Yuki</span>
@@ -1084,7 +1094,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 </div>
 
 <!-- CHERRY BLOSSOMS TAB -->
-<div class="tab-panel" id="tab-blossoms">
+<div class="tab-panel" id="tab-blossoms" role="tabpanel" aria-labelledby="tab-btn-blossoms" tabindex="0">
   <span class="s-eyebrow">Spring · Late April – Early May</span>
   <h2 class="s-title">Cherry <em>Blossoms</em></h2>
   <p class="s-intro">Northern Nagano has some of Japan's finest cherry blossom viewing — without the crowds of Tokyo or Kyoto. The Chikuma River valley turns pink in late April, the iiyama Line passes through tunnels of blossoms, and Takada Castle Park in nearby Joetsu is one of Japan's top three blossom spots.</p>
@@ -1150,12 +1160,15 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   </div>
 </div>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Kiji Yuki</span>
   <div class="footer-links">
     <a href="index.html">The House</a>
     <a href="guide.html">Area Guide</a>
+    <a href="house.html">House Guide</a>
     <a href="about.html">About</a>
     <a href="index.html#availability">Availability</a>
     <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
@@ -1165,20 +1178,43 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
 <script>
 /* ─── TABS ──────────────────────────────── */
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
+  });
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.removeAttribute('tabindex');
   // Scroll to just above the tab bar, accounting for fixed nav
   const tabBar = document.querySelector('.tab-bar-wrap');
   const offset = tabBar.getBoundingClientRect().top + window.scrollY - 72;
-  window.scrollTo({ top: offset, behavior: 'smooth' });
+  window.scrollTo({ top: offset, behavior: REDUCED_MOTION ? 'auto' : 'smooth' });
   // Ensure tab button is visible (horizontal scroll on mobile)
-  btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  btn.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
   // Trigger reveals for new tab
   setTimeout(triggerReveal, 100);
 }
+
+/* Arrow-key navigation within the tablist */
+document.querySelector('.tab-bar').addEventListener('keydown', function(e){
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'Home' && e.key !== 'End') return;
+  const tabs = Array.from(this.querySelectorAll('.tab-btn'));
+  const idx = tabs.indexOf(document.activeElement);
+  if (idx === -1) return;
+  e.preventDefault();
+  let next = idx;
+  if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+  if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+  if (e.key === 'Home') next = 0;
+  if (e.key === 'End') next = tabs.length - 1;
+  tabs[next].focus();
+  tabs[next].click();
+});
 
 /* ─── RESORT ACCORDION ───────────────────── */
 function toggleResort(header) {
@@ -1187,18 +1223,35 @@ function toggleResort(header) {
   const isOpen = body.classList.contains('open');
   document.querySelectorAll('.resort-body.open').forEach(b => {
     b.classList.remove('open');
-    b.previousElementSibling.querySelector('.resort-chevron').classList.remove('open');
+    const h = b.previousElementSibling;
+    h.setAttribute('aria-expanded', 'false');
+    h.querySelector('.resort-chevron').classList.remove('open');
   });
-  if (!isOpen) { body.classList.add('open'); chevron.classList.add('open'); }
+  if (!isOpen) {
+    body.classList.add('open');
+    chevron.classList.add('open');
+    header.setAttribute('aria-expanded', 'true');
+  }
+}
+function resortKey(e, header) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleResort(header);
+  }
 }
 
 /* ─── HAMBURGER ──────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-function closeMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
 hamburger.addEventListener('click', () => {
   const open = mobileMenu.classList.contains('open');
-  if (open) closeMenu(); else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); }
+  if (open) closeMenu();
+  else { hamburger.classList.add('open'); mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
 });
 
 /* ─── SCROLL REVEAL ──────────────────────── */
@@ -1215,11 +1268,13 @@ function getCurrentTab() {
 triggerReveal();
 
 /* ─── HASH-BASED TAB ACTIVATION ─────────── */
-if (window.location.hash) {
+function activateFromHash() {
   const id = window.location.hash.slice(1);
   const btn = document.getElementById('tab-btn-' + id);
   if (btn) switchTab(id, btn);
 }
+window.addEventListener('hashchange', activateFromHash);
+if (window.location.hash) activateFromHash();
 </script>
 </body>
 </html>
