@@ -6,6 +6,14 @@
 <meta name="description" content="Kiji Yuki is a traditional Japanese family home in Kijimadaira, Nagano — sleeping up to 14, minutes from ski resorts, onsens, and the snow monkey park.">
 <meta name="theme-color" content="#253D2F">
 <title>Kiji Yuki — Our Family Home in Nagano, Japan</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://kijiyuki.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kiji Yuki — Our Family Home in Nagano, Japan">
+<meta property="og:description" content="Kiji Yuki is a traditional Japanese family home in Kijimadaira, Nagano — sleeping up to 14, minutes from ski resorts, onsens, and the snow monkey park.">
+<meta property="og:image" content="https://kijiyuki.com/assets/img/exterior-winter.jpg">
+<meta property="og:url" content="https://kijiyuki.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
@@ -496,6 +504,32 @@ section { padding: 80px 0; }
 .am-name { font-size: 14px; font-weight: 400; color: var(--text); display: block; }
 .am-sub { font-size: 12px; color: var(--stone); margin-top: 2px; display: block; }
 
+/* ─── VEHICLE ──────────────────────────────────────────── */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.vehicle-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+}
+.note-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--rust);
+  padding: 18px 22px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 680px;
+}
+.note-card strong { color: var(--text); font-weight: 400; }
+
 /* ─── SEASONS ──────────────────────────────────────────── */
 .seasons-grid {
   display: grid;
@@ -876,6 +910,9 @@ section { padding: 80px 0; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-img { aspect-ratio: 16/9; }
 
+  /* VEHICLE */
+  .vehicle-grid { grid-template-columns: 1fr; gap: 32px; }
+
   /* CTA */
   .cta-band { grid-template-columns: 1fr; padding: 36px 28px; gap: 24px; }
   .cta-actions { min-width: unset; flex-direction: row; flex-wrap: wrap; gap: 8px; }
@@ -1156,6 +1193,7 @@ section { padding: 80px 0; }
       <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="am-text"><span class="am-name">Equipped kitchen</span><span class="am-sub">Fridge, stove, all appliances</span></div></div>
       <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><div class="am-text"><span class="am-name">Laundry</span><span class="am-sub">Washing machine on-site</span></div></div>
       <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h5l2 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="am-text"><span class="am-name">Parking for 2 cars</span><span class="am-sub">On driveway · shovel in the shed</span></div></div>
+      <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><path d="M9 12h6v-2.5"/></svg></div><div class="am-text"><span class="am-name">Delica D:5 vehicle</span><span class="am-sub">White minivan with ski racks</span></div></div>
       <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="am-text"><span class="am-name">Storage shed</span><span class="am-sub">Bikes, snow equipment, kerosene tank</span></div></div>
       <div class="amenity-item"><div class="am-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="am-text"><span class="am-name">Bathroom + 2 toilets</span><span class="am-sub">Shower, soaking bath &amp; 2 separate WCs</span></div></div>
     </div>
@@ -1239,6 +1277,34 @@ section { padding: 80px 0; }
   </section>
 </div>
 
+<!-- ─── VEHICLE ──────────────────────────────── -->
+<div class="content">
+  <section>
+    <span class="s-eyebrow reveal">Getting Around</span>
+    <h2 class="s-title reveal reveal-delay-1">Delica D:5<br><em>Vehicle included</em></h2>
+    <div class="vehicle-grid reveal reveal-delay-2">
+      <img class="vehicle-img" src="assets/img/delica-d5.jpg" alt="White Mitsubishi Delica D:5 minivan with ski racks" loading="lazy">
+      <div>
+        <div class="s-body">
+          <p>A white Mitsubishi Delica D:5 minivan is available with the house. Spacious enough for a full group with ski racks mounted for winter, it's perfect for heading to the resorts, exploring the valley, or driving up to trailheads across Nagano.</p>
+          <p>The Delica is a Japanese favourite for mountain trips — designed for exactly the kind of driving you'll be doing here. It seats 7 comfortably with plenty of boot space, and handles the mountain roads and snowy conditions with ease.</p>
+        </div>
+        <div class="vehicle-points">
+          <ul style="list-style:none;margin-top:20px;">
+            <li style="display:flex;gap:12px;padding:10px 0;"><span style="flex-shrink:0;color:var(--forest);">✓</span><span><strong>Seats 7 passengers</strong> comfortably</span></li>
+            <li style="display:flex;gap:12px;padding:10px 0;"><span style="flex-shrink:0;color:var(--forest);">✓</span><span><strong>Ski racks</strong> mounted and ready</span></li>
+            <li style="display:flex;gap:12px;padding:10px 0;"><span style="flex-shrink:0;color:var(--forest);">✓</span><span><strong>All-weather capable</strong> for winter and mountain roads</span></li>
+            <li style="display:flex;gap:12px;padding:10px 0;"><span style="flex-shrink:0;color:var(--forest);">✓</span><span><strong>Ample boot space</strong> for gear and shopping</span></li>
+          </ul>
+        </div>
+        <div class="note-card" style="margin-top:28px;">
+          <strong>Fuel &amp; insurance:</strong> Fuel costs are the guest's responsibility; insurance is included. Full details and a quick walk-through come with your arrival information.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- ─── LOCATION ──────────────────────────────── -->
 <div class="content">
   <section id="location">
@@ -1274,7 +1340,7 @@ section { padding: 80px 0; }
         <p class="nearby-desc">Lawson convenience store directly opposite. Local restaurants, ramen, and izakaya all within easy reach.</p>
       </a>
     </div>
-    <p style="font-size:13px;color:var(--stone);margin-top:14px;">3107-1 Hotaka, Kijimadaira, Shimotakai District, Nagano 389-2301 · <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open in Google Maps ↗</a></p>
+    <p style="font-size:13px;color:var(--stone);margin-top:14px;">3107-1 Hotaka, Kijimadaira, Shimotakai District, Nagano 389-2301 · <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px;">Open in Google Maps ↗</a></p>
     <p style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);"><a href="guide.html" style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);text-decoration:underline;text-decoration-color:rgba(37,61,47,0.35);text-underline-offset:3px;">Full Area Guide — ski resorts, onsens, restaurants, hikes &amp; more →</a></p>
   </section>
 
@@ -1320,10 +1386,10 @@ section { padding: 80px 0; }
         </iframe>
       </div>
       <div class="avail-btns" style="margin-top:28px;">
-        <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" class="btn-outline-dark" target="_blank">Open in Google Calendar ↗</a>
+        <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" class="btn-outline-dark" target="_blank" rel="noopener">Open in Google Calendar ↗</a>
         <a href="about.html" class="btn-big">About Our Home</a>
       </div>
-      <p class="cal-mobile-note" style="margin-top:16px;font-size:12px;color:var(--stone);text-align:center;">Calendar not displaying? <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" target="_blank" style="color:var(--forest);text-underline-offset:3px;">Open it directly ↗</a></p>
+      <p class="cal-mobile-note" style="margin-top:16px;font-size:12px;color:var(--stone);text-align:center;">Calendar not displaying? <a href="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth" target="_blank" rel="noopener" style="color:var(--forest);text-underline-offset:3px;">Open it directly ↗</a></p>
     </div>
   </section>
 
@@ -1340,7 +1406,7 @@ section { padding: 80px 0; }
     <a href="house.html">House Guide</a>
     <a href="about.html">About</a>
     <a href="#availability">Availability</a>
-    <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank">Maps ↗</a>
+    <a href="https://maps.app.goo.gl/MF5nLHpJL848s6Le8" target="_blank" rel="noopener">Maps ↗</a>
   </div>
   <div class="footer-right">Kijimadaira · Nagano · Japan</div>
 </footer>
