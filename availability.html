@@ -199,8 +199,8 @@
     <button class="logout-button" onclick="logout()">Exit</button>
   </div>
   <iframe
+    id="calendar-iframe"
     class="calendar-embed"
-    src="https://calendar.google.com/calendar/embed?src=de6c610c4aea81c517b30af77ace0284a05087720385ef239e02a796987d2620%40group.calendar.google.com&ctz=Australia%2FPerth"
     style="border: 0"
     frameborder="0"
     scrolling="no"
@@ -210,32 +210,66 @@
 </main>
 
 <script>
-  // Correct answers (case-insensitive)
-  const CORRECT_ANSWERS = ['gibbs', 'davis', 'harvey'];
+  const TOKEN_KEY = 'kiji-yuki-availability-token';
 
-  // Check if already authenticated this session
-  window.addEventListener('load', () => {
-    if (localStorage.getItem('calendar-auth')) {
-      showCalendar();
+  window.addEventListener('load', async () => {
+    const token = localStorage.getItem(TOKEN_KEY);
+    if (token) {
+      const ok = await loadCalendar(token);
+      if (!ok) localStorage.removeItem(TOKEN_KEY);
     }
   });
 
-  document.getElementById('security-form').addEventListener('submit', (e) => {
+  document.getElementById('security-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const answer = document.getElementById('answer').value.toLowerCase().trim();
+    const answer = document.getElementById('answer').value;
     const errorEl = document.getElementById('auth-error');
+    const submitBtn = e.target.querySelector('button');
 
-    if (CORRECT_ANSWERS.includes(answer)) {
-      errorEl.classList.remove('show');
-      localStorage.setItem('calendar-auth', 'true');
-      showCalendar();
-    } else {
-      errorEl.textContent = 'Incorrect. Try again.';
+    submitBtn.disabled = true;
+    errorEl.classList.remove('show');
+
+    try {
+      const res = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answer })
+      });
+
+      if (!res.ok) {
+        errorEl.textContent = 'Incorrect. Try again.';
+        errorEl.classList.add('show');
+        document.getElementById('answer').value = '';
+        document.getElementById('answer').focus();
+        return;
+      }
+
+      const { token } = await res.json();
+      localStorage.setItem(TOKEN_KEY, token);
+      await loadCalendar(token);
+    } catch (err) {
+      errorEl.textContent = 'Something went wrong. Try again.';
       errorEl.classList.add('show');
-      document.getElementById('answer').value = '';
-      document.getElementById('answer').focus();
+    } finally {
+      submitBtn.disabled = false;
     }
   });
+
+  async function loadCalendar(token) {
+    try {
+      const res = await fetch('/api/calendar-url', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (!res.ok) return false;
+
+      const { url } = await res.json();
+      document.getElementById('calendar-iframe').src = url;
+      showCalendar();
+      return true;
+    } catch {
+      return false;
+    }
+  }
 
   function showCalendar() {
     document.getElementById('auth-section').classList.add('hidden');
@@ -243,7 +277,8 @@
   }
 
   function logout() {
-    localStorage.removeItem('calendar-auth');
+    localStorage.removeItem(TOKEN_KEY);
+    document.getElementById('calendar-iframe').src = '';
     document.getElementById('auth-section').classList.remove('hidden');
     document.getElementById('calendar-section').classList.remove('show');
     document.getElementById('answer').value = '';
