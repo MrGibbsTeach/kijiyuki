@@ -8,7 +8,7 @@
   --white:   #FFFFFF;
   --forest:  #253D2F;
   --forest2: #3A5C49;
-  --rust:    #B05A3E;
+  --rust:    #A7563B; /* darkened from #B05A3E — AA contrast (≥4.5:1) on cream for small text */
   --stone:   #6E675D; /* AA contrast (≥4.5:1) on cream for small text */
   --indigo:  #243447;
   --ice:     #C8D6E0;
