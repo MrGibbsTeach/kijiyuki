@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Check Kiji Yuki availability — security-verified access to the live calendar.">
+<meta name="theme-color" content="#253D2F">
+<title>Availability — Kiji Yuki, Kijimadaira, Nagano</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+
+/* ─── PAGE HEADER ─────────────────────────────────────── */
+.page-header { padding: 100px 48px 0; max-width: 1080px; margin: 0 auto; }
+.page-eyebrow {
+  font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust);
+  font-weight:400; margin-bottom:16px; display:flex; align-items:center; gap:14px;
+  opacity:0; transform:translateY(16px); animation:fadeUp 0.8s 0.2s forwards;
+}
+.page-eyebrow::after { content:''; flex:0 0 60px; height:1px; background:var(--rust); opacity:0.4; }
+.page-title {
+  font-family:'Shippori Mincho B1',serif;
+  font-size:clamp(48px,6vw,72px); font-weight:400; color:var(--forest); line-height:1.1;
+  margin-bottom:16px; opacity:0; transform:translateY(20px); animation:fadeUp 0.9s 0.4s forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* ─── AUTH SECTION ────────────────────────────────────── */
+.auth-section {
+  padding: 60px 48px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+.auth-section.hidden { display: none; }
+
+.auth-question {
+  font-size: 16px;
+  color: var(--forest);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+#answer {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: var(--forest);
+  background: #fff;
+}
+
+#answer:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 2px rgba(37, 61, 47, 0.1);
+}
+
+.auth-button {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  background: var(--forest);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.auth-button:hover { background: #1a2a20; }
+.auth-button:active { transform: scale(0.98); }
+
+.auth-error {
+  color: #c00;
+  font-size: 14px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.auth-error.show { display: block; }
+
+/* ─── CALENDAR SECTION ────────────────────────────────── */
+.calendar-section {
+  padding: 60px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: none;
+}
+
+.calendar-section.show { display: block; }
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.calendar-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  color: var(--forest);
+}
+
+.logout-button {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  background: none;
+  color: var(--stone);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  color: var(--forest);
+  border-color: var(--forest);
+}
+
+.calendar-embed {
+  width: 100%;
+  height: 720px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Kiji Yuki</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="house.html" class="nav-link">House</a>
+      <a href="guide.html" class="nav-link">Guide</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+    <button class="btn-nav" onclick="document.querySelector('.nav-overlay').classList.toggle('active')">Menu</button>
+  </div>
+  <div class="nav-overlay">
+    <a href="/">Home</a>
+    <a href="house.html">House Guide</a>
+    <a href="guide.html">Area Guide</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="page-header">
+  <span class="page-eyebrow">Booking</span>
+  <h1 class="page-title">Availability</h1>
+</div>
+
+<div id="auth-section" class="auth-section">
+  <p class="auth-question">What is the surname of one of the owners?</p>
+  <form id="security-form">
+    <input
+      type="text"
+      id="answer"
+      placeholder="Type answer"
+      autocomplete="off"
+      required
+    >
+    <div id="auth-error" class="auth-error"></div>
+    <button type="submit" class="auth-button">View Calendar</button>
+  </form>
+</div>
+
+<div id="calendar-section" class="calendar-section">
+  <div class="calendar-controls">
+    <h2 class="calendar-title">Live Availability</h2>
+    <button class="logout-button" onclick="logout()">Exit</button>
+  </div>
+  <iframe
+    class="calendar-embed"
+    src="https://calendar.google.com/calendar/u/0/r"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</div>
+
+</main>
+
+<script>
+  // Correct answers (case-insensitive)
+  const CORRECT_ANSWERS = ['gibbs', 'davis', 'harvey'];
+
+  // Check if already authenticated this session
+  window.addEventListener('load', () => {
+    if (sessionStorage.getItem('calendar-auth')) {
+      showCalendar();
+    }
+  });
+
+  document.getElementById('security-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const answer = document.getElementById('answer').value.toLowerCase().trim();
+    const errorEl = document.getElementById('auth-error');
+
+    if (CORRECT_ANSWERS.includes(answer)) {
+      errorEl.classList.remove('show');
+      sessionStorage.setItem('calendar-auth', 'true');
+      showCalendar();
+    } else {
+      errorEl.textContent = 'Incorrect. Try again.';
+      errorEl.classList.add('show');
+      document.getElementById('answer').value = '';
+      document.getElementById('answer').focus();
+    }
+  });
+
+  function showCalendar() {
+    document.getElementById('auth-section').classList.add('hidden');
+    document.getElementById('calendar-section').classList.add('show');
+  }
+
+  function logout() {
+    sessionStorage.removeItem('calendar-auth');
+    document.getElementById('auth-section').classList.remove('hidden');
+    document.getElementById('calendar-section').classList.remove('show');
+    document.getElementById('answer').value = '';
+    document.getElementById('answer').focus();
+  }
+</script>
+
+</body>
+</html>
