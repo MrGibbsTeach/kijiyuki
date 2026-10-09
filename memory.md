@@ -166,6 +166,41 @@ The `.git` directory is ~130 MB because the large media is in history.
 - **Apostrophes are straight** (`'`) throughout every page — no `&rsquo;`,
   no curly quotes.
 
+### The Iiyama Line — verified 2026-10-09
+
+The train tab on `guide.html` was wrong and has been corrected. The facts:
+
+- The JR Iiyama Line (飯山線) runs **Toyono → Echigo-Kawaguchi**, 31 stations,
+  96.7 km. Most trains run through to/from **Nagano**.
+- **There is no station in Kijimadaira.** The nearest is **Iiyama**
+  (Hokuriku Shinkansen + Iiyama Line), ~15 min by taxi or bus to the house.
+- **Only the Hakutaka** Hokuriku Shinkansen service stops at Iiyama
+  (not Kagayaki, not Asama). Tokyo → Iiyama is about 1 hr 45 min, direct —
+  **not** via Nagano.
+- **Yudanaka and Shinshu-Nakano are on the Nagano Electric Railway**
+  (Nagaden), not the Iiyama Line. Snow monkeys by train = Iiyama Line to
+  Nagano, Nagaden to Yudanaka, short bus. Driving is quicker (~35 min).
+- **Tokamachi** connects to the **Hokuhoku Line**, not the Joetsu Line.
+  **Echigo-Kawaguchi** is the Joetsu Line connection.
+
+### Area guide (`guide.html`)
+
+- **Overview tiles run non-winter first** (2026-10-09): Green Season,
+  Cherry Blossoms, Onsens, Snow Monkeys, Eating & Drinking, Iiyama Line,
+  Ski Resorts. Ski resorts deliberately last. **Note the tab bar still runs
+  in a different order** (Onsens, Snow Monkeys, Green Season, Ski Resorts,
+  Eating, Iiyama Line, Blossoms) — not yet aligned.
+- **Bike hire** options listed in the Green Season tab: Shinetsu Shizenkyo
+  Activity Center at Iiyama station (widest range), Michi-no-Eki FARMUS
+  Kijimadaira (e-bikes, closest), Compass House (high-end Specialized,
+  e-bikes Apr–Nov / MTB Jul–Oct).
+- **Tsudoy sits above the food cards**, not inside the grid — Clayton wants
+  the bar next door given top billing.
+- **Bakery Hoshino** (3005-1 Hotaka) is the first entry under cafes and
+  bakeries. No web presence found; details beyond the address are unverified.
+- Onsens are described as ranging from quiet local baths to the bathhouses of
+  **Nozawa Onsen and Shibu Onsen**.
+
 ## Related
 
 - Property is tracked financially in Gibbs Dashboard (Japan property tab,
