@@ -123,6 +123,46 @@ them; compressing does not shrink history.
 ## ⚠ Known outstanding work
 
 **1. Photos — weight is fixed; the photos themselves still need work.**
+
+Reviewed image by image 2026-10-10. The weight problem is solved; these
+are content problems that only a reshoot fixes.
+
+**Replace first — these actively mislead:**
+- `views` — captioned "The Views", is actually power lines, poles, a car
+  bonnet and the neighbour's aircon. The mountain is buried.
+- `shed-storage` — captioned "Storage shed", shows a snow shovel and two
+  vans. The shed interior is not visible.
+- `bathroom` — the copy sells the soaking bath hard; the photo is mostly
+  toilet roll and blank wall with the bath cropped at the edge.
+- `futons` — studio-lit and styled, with an ornate alcove matching no
+  other room. **Almost certainly not this house.** Verify before reuse.
+- `bedroom-4` — gallery caption says "Bunk beds", photo shows two single
+  mattresses on a wooden floor. Caption or photo is wrong.
+- `gallery-16` — **is a floor plan, not a photo.** It sits uncaptioned in
+  the gallery at 724 px, too small to read. Belongs on `house.html` as a
+  proper feature, or out.
+
+**Too small to ever look right (native width), all area/resort shots:**
+iiyama-line-1 228px, iiyama-line-2/4 275, resort-ryuoo 275, samurai-trail
+275, snow-monkeys-2 301, iiyama-line-3 309, resort-xjam 500, resort-
+kijimadaira 600, resort-togari 660, resort-shiga 800, resort-lotte-arai
+900, monkey-park-trail 960. Dimensions suggest they were taken from other
+sites — worth sourcing properly.
+
+**The systemic fault:** most interiors were shot in **phone panorama
+mode** (4000x1816, 2.2:1) — warped ceilings and walls. Rooms are unstyled,
+lights off, flat daylight, clutter in frame (charger cable, crumpled
+kotatsu cover). Affects lounge-kotatsu, kitchen, interior, bedroom-1/2/3
+and most gallery-19..30.
+
+**Genuinely good, keep:** `gallery-18`, the engawa corridor with the
+lantern — warm light, depth, greenery outside. The best photo in the set
+and a better hero candidate than the current one. `gallery-24` and
+`drying-room`/`gallery-23` are honest and useful.
+
+**For the reshoot:** no panorama mode indoors, lights on, shoot at dusk,
+beds made, a futon laid out, something on the kotatsu, the bath actually
+full, and find a view without wires.
 - `assets/img/` is **90 MB**. Individual house photos are 2.5–6.5 MB at
   4000–4624 px wide.
 - The homepage alone references **76.8 MB** of images; **6.1 MB loads before
