@@ -149,6 +149,22 @@ The `.git` directory is ~130 MB because the large media is in history.
 - Tone: no AI speech patterns, no em-dash tics, no corporate language. This
   has been cleaned up repeatedly (commits `2646d99`, `b7361e8`) — keep it
   plain and human.
+- **`house.html` arrival section is "Arrival & settling in"**, not
+  "check-in" (changed 2026-10-09, including both meta descriptions).
+  Check-in language reads transactional.
+- **"A day at the house"** narrative was **removed** from `house.html` on
+  2026-10-09 (it was added in `d639d16`). Do not reintroduce it.
+- **No claims about village mobile coverage.** The "Mobile coverage in the
+  village is fine" line was removed 2026-10-09 — it could not be stood behind.
+- **Trains:** do not say you can take the Iiyama Line one more stop to
+  Kijimadaira station. That was incorrect and was removed from `house.html`
+  on 2026-10-09. Shinkansen to Iiyama, then bus or taxi.
+- **Big shop is TSURUYA Iiyama**, next to the shinkansen station — not the
+  local <span lang="ja">イーストア滝沢商店</span>.
+- **Heating:** reverse cycle aircon is being installed **end of 2026**;
+  kerosene is described as *additional* winter heating.
+- **Apostrophes are straight** (`'`) throughout every page — no `&rsquo;`,
+  no curly quotes.
 
 ## Related
 
