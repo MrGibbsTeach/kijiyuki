@@ -37,3 +37,6 @@ npm-debug.log*
 
 # Image sources (originals); built WebP variants in assets/img/w* are committed
 assets/img/_src/
+
+# Build artefact from tools/build-images.py
+.img-manifest.json
