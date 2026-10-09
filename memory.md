@@ -109,6 +109,18 @@ Every photo is served as **responsive WebP**, built by
   back to building paths from the width number, `wmax` cannot be expressed
   that way
 - gallery strip loads 400 px thumbs (389 KB for all 29, was ~70 MB)
+- **`main.css` has a global `img { height: auto; }` — do not remove it.**
+  The `width`/`height` attributes are also CSS presentational hints, so
+  without it every image gets pinned to its intrinsic pixel height and any
+  rule that sets only `aspect-ratio` is ignored. Ten rules across four
+  pages depend on this (`.vehicle-img`, `.about-img`, `.green-img-main`,
+  `.guide-img`, `.photo-grid-4 img`, `.lb-img` and others). Broke the
+  Delica image on 2026-10-10 before it was spotted.
+- `assets/img/_src/` holds originals and is **gitignored**; only the built
+  WebP under `assets/img/w*` is committed.
+- The Delica photo is a **placeholder, not the actual van**, captioned as
+  such on the page with an HTML comment above it. Swap when a real photo
+  exists and delete the caption.
 
 Measured, phone at 390 px/2x: index **125 KB eager / 650 KB** total
 (was 6.1 MB / 106.6 MB), guide 228 KB / 733 KB, about 68 KB / 177 KB,
