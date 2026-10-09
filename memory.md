@@ -196,8 +196,10 @@ The train tab on `guide.html` was wrong and has been corrected. The facts:
   e-bikes Apr–Nov / MTB Jul–Oct).
 - **Tsudoy sits above the food cards**, not inside the grid — Clayton wants
   the bar next door given top billing.
-- **Bakery Hoshino** (3005-1 Hotaka) is the first entry under cafes and
-  bakeries. No web presence found; details beyond the address are unverified.
+- **Bakery Hoshino** (ベーカリーホシノ, 3005-1 Hotaka,
+  https://www.bakery-hoshino.com/) is the first entry under cafes and
+  bakeries. **100 m from the house** and, per Clayton, the best thing in the
+  village. Open 9:00–16:30, closed Mondays, sells out.
 - Onsens are described as ranging from quiet local baths to the bathhouses of
   **Nozawa Onsen and Shibu Onsen**.
 
