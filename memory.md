@@ -93,9 +93,36 @@ work. Keep it that way.
 Most of the remaining ~52 KB of inline CSS is genuinely page-specific, not
 duplication. Checked 2026-10-09: only the heading patterns actually repeated.
 
+## Images — how they are served (done 2026-10-10)
+
+Every photo is served as **responsive WebP**, built by
+`tools/build-images.py` (needs Pillow). Variants live in
+`assets/img/w400`, `w800`, `w1400`, `w2000` and **`wmax`**.
+
+- quality 80, Lanczos, **never upscaled**
+- `wmax` holds the source's own width (capped 2000) when that is not
+  already a step — without it, a 724 px source was being served at 400 px
+- every `<img>` carries `src`, `srcset`, `sizes`, `width`, `height`,
+  `decoding="async"`; the two CSS background heroes use the largest variant
+- the homepage gallery is a JS array in `index.html` where each entry
+  carries **explicit paths** (`t` thumb, `f` full, `s` srcset) — do not go
+  back to building paths from the width number, `wmax` cannot be expressed
+  that way
+- gallery strip loads 400 px thumbs (389 KB for all 29, was ~70 MB)
+
+Measured, phone at 390 px/2x: index **125 KB eager / 650 KB** total
+(was 6.1 MB / 106.6 MB), guide 228 KB / 733 KB, about 68 KB / 177 KB,
+house 0 / 94 KB.
+
+**Still to do: the original JPEGs are unreferenced but still in the tree.**
+Deleting them was blocked by a permission prompt on 2026-10-10 and needs
+Clayton to approve. They are recoverable from git history either way
+(`git show <commit>:assets/img/NAME.jpg`). `.git` is ~130 MB because of
+them; compressing does not shrink history.
+
 ## ⚠ Known outstanding work
 
-**1. Photos — the big one, deliberately deferred ("pinned") 2026-10-09.**
+**1. Photos — weight is fixed; the photos themselves still need work.**
 - `assets/img/` is **90 MB**. Individual house photos are 2.5–6.5 MB at
   4000–4624 px wide.
 - The homepage alone references **76.8 MB** of images; **6.1 MB loads before
