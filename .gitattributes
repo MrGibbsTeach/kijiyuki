@@ -1,0 +1,12 @@
+# Normalise line endings so the repo always stores LF, regardless of which
+# machine or editor touched the file. Without this, editing from different
+# tools in a synced folder can produce whole-file diffs.
+* text=auto eol=lf
+
+# Binary assets — never touch these.
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.pdf  binary
+*.svg  text eol=lf
