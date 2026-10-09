@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,8 +19,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
+/* page-specific overrides on the shared heading base in main.css */
+.s-eyebrow { margin-bottom: 14px; }
+.s-title { font-size: clamp(30px, 4vw, 46px); }
 
-/* ─── NAV — HERO MODE (index only: starts transparent, fades to solid on scroll) ── */
 nav {
   transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
 }
@@ -34,8 +36,6 @@ nav.hero-mode .nav-link { color: rgba(255,255,255,0.75); }
 nav.hero-mode .nav-link:hover { color: #fff; }
 nav.hero-mode .btn-nav { color: #fff; border-color: rgba(255,255,255,0.5); }
 nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-color: #fff; }
-
-/* ─── NAV responsive (index keeps btn-nav visible on mobile) ── */
 @media (max-width: 900px) {
   .nav-links { gap: 16px; }
   nav.hero-mode .hamburger span { background: rgba(255,255,255,0.85); }
@@ -44,8 +44,6 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
 @media (min-width: 901px) {
   .cal-mobile-note { display: none; }
 }
-
-/* ─── HERO ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   height: 100vh;
@@ -146,15 +144,6 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   background: rgba(255,255,255,0.7);
   animation: scrollDown 2s 1.5s infinite;
 }
-@keyframes scrollDown {
-  0%   { top: -100%; }
-  100% { top: 100%; }
-}
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── INTRO STRIP ──────────────────────────────────────── */
 .intro-strip {
   background: var(--forest);
   padding: 48px;
@@ -177,8 +166,6 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   color: rgba(255,255,255,0.62);
   font-weight: 300;
 }
-
-/* ─── GALLERY ──────────────────────────────────────────── */
 .gallery-section { padding: 72px 0 0; }
 .section-label {
   font-size: 10px;
@@ -248,7 +235,6 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   transition: background 0.35s;
 }
 .gp:hover .gp-overlay { background: rgba(0,0,0,0.06); }
-
 .gallery-strip-wrap {
   overflow-x: auto;
   display: flex;
@@ -278,7 +264,6 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   filter: brightness(0.92);
 }
 .gs-btn:hover .gs-img { opacity: 0.88; filter: brightness(1); }
-
 .gallery-footer {
   padding: 16px 48px;
   display: flex;
@@ -303,33 +288,9 @@ nav.hero-mode .btn-nav:hover { background: #fff; color: var(--forest); border-co
   transition: color 0.2s;
 }
 .btn-gallery:hover { color: var(--rust); }
-
-/* ─── CONTENT WRAPPER ──────────────────────────────────── */
 .content { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
 section { padding: 80px 0; }
 .divider { border: none; border-top: 1px solid var(--border); }
-
-/* ─── SECTION HEADINGS ─────────────────────────────────── */
-.s-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 400;
-  margin-bottom: 14px;
-  display: block;
-}
-.s-title {
-  font-family: 'Shippori Mincho B1', serif;
-  font-size: clamp(30px, 4vw, 46px);
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.15;
-  margin-bottom: 32px;
-}
-.s-title em { font-style: italic; color: var(--forest); }
-
-/* ─── STATS BAR ────────────────────────────────────────── */
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -353,8 +314,6 @@ section { padding: 80px 0; }
   line-height: 1;
 }
 .stat-l { font-size: 12px; color: var(--stone); letter-spacing: 0.06em; }
-
-/* ─── ABOUT ────────────────────────────────────────────── */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -394,8 +353,6 @@ section { padding: 80px 0; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.75);
 }
-
-/* ─── CTA BAND ─────────────────────────────────────────── */
 .cta-band {
   background: var(--forest);
   padding: 56px 64px;
@@ -448,8 +405,6 @@ section { padding: 80px 0; }
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-border:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
-
-/* ─── BEDROOMS ─────────────────────────────────────────── */
 .bedroom-scroll {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -475,8 +430,7 @@ section { padding: 80px 0; }
 .bed-eyebrow { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 5px; }
 .bed-name { font-family: 'Shippori Mincho B1', serif; font-size: 16px; font-weight: 400; color: var(--text); display: block; margin-bottom: 2px; }
 .bed-detail { font-size: 12px; color: var(--stone); }
-
-/* ─── AMENITIES ────────────────────────────────────────── */
+.bed-summary { margin-top: 20px; font-size: 13.5px; color: var(--text-2); line-height: 1.7; max-width: 620px; }
 .amenity-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -504,8 +458,6 @@ section { padding: 80px 0; }
 .am-text { flex: 1; }
 .am-name { font-size: 14px; font-weight: 400; color: var(--text); display: block; }
 .am-sub { font-size: 12px; color: var(--stone); margin-top: 2px; display: block; }
-
-/* ─── VEHICLE ──────────────────────────────────────────── */
 .vehicle-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -530,8 +482,6 @@ section { padding: 80px 0; }
   max-width: 680px;
 }
 .note-card strong { color: var(--text); font-weight: 400; }
-
-/* ─── SEASONS ──────────────────────────────────────────── */
 .seasons-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -591,8 +541,6 @@ section { padding: 80px 0; }
   pointer-events: none;
   mix-blend-mode: screen;
 }
-
-/* ─── GREEN SEASON FEATURE ─────────────────────────────── */
 .green-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -637,8 +585,6 @@ section { padding: 80px 0; }
 @media (max-width: 900px) {
   .green-grid { grid-template-columns: 1fr; gap: 32px; }
 }
-
-/* ─── LOCATION ─────────────────────────────────────────── */
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -663,8 +609,6 @@ section { padding: 80px 0; }
 .nearby-icon { font-size: 22px; margin-bottom: 8px; display: block; }
 .nearby-name { font-family: 'Shippori Mincho B1', serif; font-size: 17px; font-weight: 400; color: var(--text); display: block; margin-bottom: 4px; }
 .nearby-desc { font-size: 13px; color: var(--stone); line-height: 1.6; }
-
-/* ─── GETTING THERE ────────────────────────────────────── */
 .transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .tr-head {
   font-family: 'Shippori Mincho B1', serif;
@@ -686,8 +630,6 @@ section { padding: 80px 0; }
 }
 .tr-item:last-child { border-bottom: none; }
 .tr-num { font-family: 'Shippori Mincho B1', serif; font-size: 13px; color: var(--rust); flex-shrink: 0; font-weight: 400; }
-
-/* ─── AVAIL ────────────────────────────────────────────── */
 .avail-section {
   background: var(--white);
   border: 1px solid var(--border2);
@@ -768,8 +710,6 @@ section { padding: 80px 0; }
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-outline-dark:hover { border-color: var(--forest); }
-
-/* ─── RULES ────────────────────────────────────────────── */
 .rules-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -786,8 +726,6 @@ section { padding: 80px 0; }
   color: var(--text-2);
 }
 .rule-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
-
-/* ─── LIGHTBOX ─────────────────────────────────────────── */
 .lightbox {
   display: none;
   position: fixed;
@@ -871,23 +809,19 @@ section { padding: 80px 0; }
   color: rgba(255,255,255,0.65);
   letter-spacing: 0.1em;
 }
-
-/* ─── RESPONSIVE — TABLET 768–1080px ───────────────────── */
 @media (max-width: 1080px) {
   .bedroom-scroll { grid-template-columns: repeat(3, 1fr); }
   .seasons-grid { grid-template-columns: 1fr 1fr; }
   .location-grid { grid-template-columns: 1fr 1fr; }
   .map-frame { grid-row: 1 / 3; }
 }
-
-/* ─── RESPONSIVE — TABLET 640–900px ────────────────────── */
 @media (max-width: 900px) {
-  /* HERO */
+  
   .hero { min-height: 100svh; }
   .hero-content { padding: 0 24px 52px; }
   .hero-scroll { display: none; }
 
-  /* GALLERY */
+  
   .section-label { padding: 0 20px; }
   .gallery-mosaic {
     grid-template-columns: 1fr 1fr;
@@ -897,76 +831,74 @@ section { padding: 80px 0; }
   .gallery-footer { padding: 12px 20px; }
   .gs-img { height: 130px; min-width: 190px; }
 
-  /* CONTENT */
+  
   .content { padding: 0 24px; }
   section { padding: 56px 0; }
 
-  /* STATS */
+  
   .stats-bar { grid-template-columns: 1fr 1fr; }
   .stat-box:nth-child(2) { border-right: none; }
   .stat-box:nth-child(3) { border-bottom: none; }
   .stat-box:nth-child(4) { border-bottom: none; }
 
-  /* ABOUT */
+  
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-img { aspect-ratio: 16/9; }
 
-  /* VEHICLE */
+  
   .vehicle-grid { grid-template-columns: 1fr; gap: 32px; }
 
-  /* CTA */
+  
   .cta-band { grid-template-columns: 1fr; padding: 36px 28px; gap: 24px; }
   .cta-actions { min-width: unset; flex-direction: row; flex-wrap: wrap; gap: 8px; }
   .btn-solid, .btn-border { flex: 1; min-width: 140px; font-size: 11px; padding: 12px 16px; }
 
-  /* BEDROOMS */
+  
   .bedroom-scroll { grid-template-columns: 1fr 1fr; gap: 8px; }
   .bedroom-card img { height: 120px; }
 
-  /* AMENITIES */
+  
   .amenity-list { grid-template-columns: 1fr; column-gap: 0; }
 
-  /* SEASONS */
+  
   .seasons-grid { grid-template-columns: 1fr 1fr; }
   .season-card { height: 300px; }
 
-  /* LOCATION */
+  
   .location-grid { grid-template-columns: 1fr 1fr; }
   .map-frame { grid-column: 1 / 3; grid-row: auto; height: 260px; }
 
-  /* TRANSPORT */
+  
   .transport-grid { grid-template-columns: 1fr; gap: 32px; }
 
-  /* RULES */
+  
   .rules-list { grid-template-columns: 1fr; column-gap: 0; }
 
-  /* AVAIL */
+  
   .avail-section { padding: 40px 24px; }
   .avail-section::before { font-size: 80px; }
   .avail-btns { flex-direction: column; align-items: stretch; gap: 10px; }
   .btn-big, .btn-outline-dark { width: 100%; text-align: center; }
 
-  /* LIGHTBOX */
+  
   .lb-img-wrap { padding: 0 52px; }
   .lb-nav { width: 40px; height: 40px; font-size: 18px; }
 
-  /* INTRO */
+  
   .intro-strip { padding: 40px 24px; }
 }
-
-/* ─── RESPONSIVE — PHONE < 560px ───────────────────────── */
 @media (max-width: 560px) {
   .hero-title { font-size: clamp(48px, 14vw, 72px); line-height: 0.95; }
   .hero-tagline { font-size: 15px; }
 
-  /* gallery: single column on small phones */
+  
   .gallery-mosaic {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
   .gp-main { grid-column: auto; height: 240px; }
   .gp { height: 180px; }
-  .sub4 { display: none; } /* hide sub-grid, show only main + strip */
+  .sub4 { display: none; } 
 
   .stats-bar { grid-template-columns: 1fr 1fr; }
   .stat-box { padding: 16px 16px; }
@@ -974,24 +906,24 @@ section { padding: 80px 0; }
 
   .s-title { font-size: 28px; }
 
-  /* bedrooms: 1 col on tiny phones */
+  
   .bedroom-scroll { grid-template-columns: 1fr 1fr; }
   .bedroom-card img { height: 100px; }
 
-  /* seasons: 1 col */
+  
   .seasons-grid { grid-template-columns: 1fr; }
   .season-card { height: 260px; }
 
-  /* location: 1 col */
+  
   .location-grid { grid-template-columns: 1fr; }
   .map-frame { grid-column: auto; }
   .nearby-card { grid-column: auto; }
 
-  /* calendar: smaller on phones, add open link */
+  
   .cal-wrap iframe { height: 440px; }
   .cal-mobile-note { display: block; }
 
-  /* lightbox on mobile: full screen */
+  
   .lb-img-wrap { padding: 0 40px; }
   .lb-nav { width: 36px; height: 36px; font-size: 16px; }
   .lb-img { max-height: 70vh; }
@@ -1003,12 +935,9 @@ section { padding: 80px 0; }
   .intro-strip { padding: 32px 20px; }
   .intro-quote { font-size: 20px; }
 }
-
-/* ─── TABLET PORTRAIT ONLY (600–768) ───────────────────── */
 @media (min-width: 560px) and (max-width: 900px) {
   .bedroom-scroll { grid-template-columns: repeat(3, 1fr); }
 }
-
 </style>
 </head>
 <body>
@@ -1112,9 +1041,9 @@ section { padding: 80px 0; }
 
   <!-- STATS -->
   <div class="stats-bar reveal" id="the-house">
-    <div class="stat-box"><span class="stat-n">14</span><span class="stat-l">Guests max</span></div>
+    <div class="stat-box"><span class="stat-n">14</span><span class="stat-l">Sleeps</span></div>
     <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Bedrooms</span></div>
-    <div class="stat-box"><span class="stat-n">10</span><span class="stat-l">Beds + 4 futons</span></div>
+    <div class="stat-box"><span class="stat-n">4</span><span class="stat-l">Futons as well</span></div>
     <div class="stat-box"><span class="stat-n">8 min</span><span class="stat-l">To ski resort</span></div>
   </div>
 
@@ -1179,6 +1108,7 @@ section { padding: 80px 0; }
         <div class="bedroom-body"><span class="bed-eyebrow">+ Futons</span><span class="bed-name">4 Singles</span><span class="bed-detail">Any tatami room</span></div>
       </div>
     </div>
+    <p class="bed-summary reveal">Two queens, two singles and two bunks across the four bedrooms, plus four futons for any tatami room. Fourteen in total.</p>
   </section>
 
   <hr class="divider">
@@ -1223,7 +1153,7 @@ section { padding: 80px 0; }
       <div class="season-body">
         <span class="season-badge">Spring · Apr – May</span>
         <h3 class="season-h">Cherry Blossoms</h3>
-        <p class="season-p">The valley turns pink. The iiyama Line in bloom is one of Japan's great train journeys.</p>
+        <p class="season-p">The valley turns pink. The Iiyama Line in bloom is one of Japan's great train journeys.</p>
       </div>
     </a>
     <a class="season-card" href="guide.html#outdoors">
@@ -1287,27 +1217,27 @@ section { padding: 80px 0; }
         <iframe title="Kiji Yuki location" src="https://maps.google.com/maps?q=3107-1+Hotaka,+Kijimadaira,+Shimotakai+District,+Nagano+389-2301,+Japan&output=embed" allowfullscreen loading="lazy"></iframe>
       </div>
       <a class="nearby-card" href="guide.html#resorts" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon" aria-hidden="true">⛷</span>
+        <span class="nearby-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 20h20"/><path d="M4 20l6-11 3.5 6 2-3L21 20"/><path d="M10 9l1.6 2.9"/></svg></span>
         <span class="nearby-name">Ski Resorts</span>
         <p class="nearby-desc">Nozawa Onsen, Shiga Kogen and more — Japan's best powder, far fewer crowds than Hakuba.</p>
       </a>
       <a class="nearby-card" href="guide.html#onsens" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon" aria-hidden="true">♨</span>
+        <span class="nearby-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 19c2 0 2.2-1 4-1s2.2 1 4 1 2.2-1 4-1 2.2 1 4 1"/><path d="M8 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M12 14.5c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M16 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/></svg></span>
         <span class="nearby-name">Onsens</span>
         <p class="nearby-desc">The Nozawa public baths are free and completely unforgettable. Several options nearby.</p>
       </a>
       <a class="nearby-card" href="guide.html#monkeys" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon" aria-hidden="true">🐒</span>
+        <span class="nearby-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="6"/><circle cx="4.8" cy="10.5" r="2.3"/><circle cx="19.2" cy="10.5" r="2.3"/><ellipse cx="12" cy="15" rx="3.4" ry="2.6"/><path d="M10.4 10.6h.01M13.6 10.6h.01"/></svg></span>
         <span class="nearby-name">Snow Monkeys</span>
         <p class="nearby-desc">Jigokudani Monkey Park is a short drive — wild macaques in hot springs, open all year.</p>
       </a>
       <a class="nearby-card" href="guide.html#blossoms" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon" aria-hidden="true">🌸</span>
+        <span class="nearby-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6.2" r="2.9"/><circle cx="17.5" cy="10.2" r="2.9"/><circle cx="15.4" cy="16.7" r="2.9"/><circle cx="8.6" cy="16.7" r="2.9"/><circle cx="6.5" cy="10.2" r="2.9"/><circle cx="12" cy="12" r="1.5"/></svg></span>
         <span class="nearby-name">Cherry Blossoms</span>
-        <p class="nearby-desc">The Chikuma River valley and iiyama Line in late April and early May are spectacular.</p>
+        <p class="nearby-desc">The Chikuma River valley and Iiyama Line in late April and early May are spectacular.</p>
       </a>
       <a class="nearby-card" href="guide.html#food" style="text-decoration:none;color:inherit;display:block;">
-        <span class="nearby-icon" aria-hidden="true">🍜</span>
+        <span class="nearby-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11h17a8.5 8.5 0 0 1-17 0z"/><path d="M5.5 20h13"/><path d="M13.5 4.2l5.4 4.9"/><path d="M9 7.4c0-1 .9-1.2.9-2.2"/><path d="M12.4 6.6c0-1 .9-1.2.9-2.2"/></svg></span>
         <span class="nearby-name">Eating &amp; Drinking</span>
         <p class="nearby-desc">Lawson convenience store directly opposite. Local restaurants, ramen, and izakaya all within easy reach.</p>
       </a>
@@ -1350,7 +1280,7 @@ section { padding: 80px 0; }
       <div>
         <div class="s-body">
           <p>We have a white Mitsubishi Delica D:5 (7-seater) with ski racks and winter tyres. If our schedule allows, you can borrow it during your stay. It's good for getting to the resorts, exploring the valley, or driving up to trailheads around Nagano.</p>
-          <p>It's a Japanese van built for mountain driving. Handles winter roads well, has space for everyone and all the gear. Ask at booking time if you'd like to use it, and we'll let you know if it's free.</p>
+          <p>It's a Japanese van built for mountain driving. Handles winter roads well, has space for everyone and all the gear. Just let us know when you're sorting out dates and we'll tell you if it's free.</p>
         </div>
         <div class="vehicle-points">
           <ul style="list-style:none;margin-top:20px;">
@@ -1361,7 +1291,7 @@ section { padding: 80px 0; }
           </ul>
         </div>
         <div class="note-card" style="margin-top:28px;">
-          <strong>Not guaranteed.</strong> This is our personal van. We use it sometimes, so availability varies. Ask at booking time if you'd like to borrow it. If it's free, you pay for fuel. Insurance is covered.
+          <strong>Not guaranteed.</strong> This is our personal van. We use it sometimes, so availability varies. Mention it when you're working out dates. If it's free, just cover the fuel — insurance is sorted.
         </div>
       </div>
     </div>

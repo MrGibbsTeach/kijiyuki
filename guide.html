@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Area guide for Kiji Yuki guests — ski resorts, onsens, restaurants, snow monkeys, hikes, cycling and the iiyama Line in northern Nagano.">
+<meta name="description" content="Area guide for Kiji Yuki guests — ski resorts, onsens, restaurants, snow monkeys, hikes, cycling and the Iiyama Line in northern Nagano.">
 <meta name="theme-color" content="#253D2F">
 <title>Area Guide — Kiji Yuki, Kijimadaira, Nagano</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://kijiyuki.com/guide.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Area Guide — Kiji Yuki, Kijimadaira, Nagano">
-<meta property="og:description" content="Area guide for Kiji Yuki guests — ski resorts, onsens, restaurants, snow monkeys, hikes, cycling and the iiyama Line in northern Nagano.">
+<meta property="og:description" content="Area guide for Kiji Yuki guests — ski resorts, onsens, restaurants, snow monkeys, hikes, cycling and the Iiyama Line in northern Nagano.">
 <meta property="og:image" content="https://kijiyuki.com/assets/img/exterior-winter.jpg">
 <meta property="og:url" content="https://kijiyuki.com/guide.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,29 +19,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
+/* page-specific overrides on the shared heading base in main.css */
+.page-title { font-size: clamp(36px, 5.5vw, 66px); }
+.s-title { font-size: clamp(26px, 3.5vw, 40px); }
 
-/* guide uses a taller scroll offset to clear the sticky tab bar */
 html { scroll-padding-top: 140px; }
-
-/* ─── PAGE HEADER ─────────────────────────────────────── */
-.page-header { padding: 100px 48px 0; max-width: 1080px; margin: 0 auto; }
-.page-eyebrow {
-  font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust);
-  font-weight:400; margin-bottom:16px; display:flex; align-items:center; gap:14px;
-  opacity:0; transform:translateY(16px); animation:fadeUp 0.8s 0.2s forwards;
-}
-.page-eyebrow::after { content:''; flex:0 0 60px; height:1px; background:var(--rust); opacity:0.4; }
-.page-title {
-  font-family:'Shippori Mincho B1',serif; font-size:clamp(36px,5.5vw,66px); font-weight:400;
-  line-height:1.08; color:var(--text); margin-bottom:16px;
-  opacity:0; transform:translateY(20px); animation:fadeUp 0.9s 0.35s forwards;
-}
-.page-title em { font-style:italic; color:var(--forest); }
 .page-intro {
   font-size:16px; color:var(--text-2); max-width:640px; line-height:1.8;
   opacity:0; animation:fadeUp 0.8s 0.5s forwards;
 }
-/* ─── TAB NAV ─────────────────────────────────────────── */
 .tab-bar-wrap {
   position: sticky; top: 70px; z-index: 400;
   background: rgba(243,243,239,0.97); backdrop-filter:blur(12px);
@@ -64,20 +50,11 @@ html { scroll-padding-top: 140px; }
 }
 .tab-btn:hover { color:var(--text); }
 .tab-btn.active { color:var(--forest); border-bottom-color:var(--forest); font-weight:400; }
-
-/* ─── TAB PANELS ──────────────────────────────────────── */
 .tab-panel { display:none; max-width:1080px; margin:0 auto; padding:56px 48px 80px; }
 .tab-panel.active { display:block; }
-
-/* ─── SECTION HEADINGS ────────────────────────────────── */
-.s-eyebrow { font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust); font-weight:400; margin-bottom:12px; display:block; }
-.s-title { font-family:'Shippori Mincho B1',serif; font-size:clamp(26px,3.5vw,40px); font-weight:400; color:var(--text); line-height:1.15; margin-bottom:20px; }
-.s-title em { font-style:italic; color:var(--forest); }
 .s-intro { font-size:15.5px; color:var(--text-2); line-height:1.85; max-width:680px; margin-bottom:40px; }
 .s-intro strong { color:var(--text); font-weight:400; }
 hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
-
-/* ─── OVERVIEW TAB ────────────────────────────────────── */
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -100,16 +77,12 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .ov-tag { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--rust); margin-top:10px; display:block; }
 .map-frame { width:100%; height:280px; overflow:hidden; border:1px solid var(--border); background:var(--paper); margin-top:32px; }
 .map-frame iframe { width:100%; height:100%; border:none; }
-
-/* ─── RESORT IMAGES ────────────────────────────────────── */
 .resort-img {
   width: 100%; height: 160px; object-fit: cover; display: block;
   transition: transform 0.6s ease, filter 0.4s;
   filter: brightness(0.9);
 }
 .resort-card:hover .resort-img { transform: scale(1.03); filter: brightness(1); }
-
-/* ─── PHOTO GRIDS ──────────────────────────────────────── */
 .photo-grid-3 {
   display: grid; grid-template-columns: repeat(3,1fr); gap: 4px;
   margin: 28px 0;
@@ -117,7 +90,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .photo-grid-3 img {
   width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
 }
-
 .photo-grid-4 {
   display: grid; grid-template-columns: repeat(4,1fr); gap: 4px;
   margin: 24px 0 0;
@@ -127,8 +99,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   transition: transform 0.5s ease;
 }
 .photo-grid-4 img:hover { transform: scale(1.03); }
-
-/* ─── SECTION HERO IMAGES ──────────────────────────────── */
 .section-hero-img {
   width: 100%; height: 300px; object-fit: cover; display: block;
   margin-bottom: 32px;
@@ -137,8 +107,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   width: 100%; height: 220px; object-fit: cover; display: block;
   margin-bottom: 28px; object-position: center 30%;
 }
-
-/* ─── TRAIN HERO WITH IMAGE ────────────────────────────── */
 .train-hero {
   position: relative; overflow: hidden;
   color: #fff; padding: 56px 48px; margin-bottom: 32px;
@@ -151,14 +119,10 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   filter: brightness(0.45);
 }
 .train-hero > * { position: relative; z-index: 1; }
-
-/* ─── FOOD HERO ─────────────────────────────────────────── */
 .food-hero-img {
   width: 100%; height: 200px; object-fit: cover; display: block;
   margin-bottom: 28px; object-position: center 60%;
 }
-
-/* ─── RESPONSIVE IMAGES ─────────────────────────────────── */
 @media (max-width: 900px) {
   .photo-grid-4 { grid-template-columns: repeat(2,1fr); }
   .photo-grid-3 { grid-template-columns: repeat(2,1fr); }
@@ -170,8 +134,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   .photo-grid-3 { grid-template-columns: 1fr 1fr; }
   .photo-grid-4 { grid-template-columns: 1fr 1fr; }
 }
-
-/* ─── RESORT CARDS ────────────────────────────────────── */
 .resort-intro { font-size:15.5px; color:var(--text-2); line-height:1.85; max-width:680px; margin-bottom:40px; }
 .resort-grid { display:flex; flex-direction:column; gap:0; }
 .resort-card {
@@ -204,8 +166,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .resort-points li:last-child { border-bottom:none; }
 .rp-dot { width:4px; height:4px; border-radius:50%; background:var(--forest2); flex-shrink:0; margin-top:8px; }
 .resort-link { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(37,61,47,0.35); }
-
-/* ─── FOOD GRID ───────────────────────────────────────── */
 .food-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:32px; }
 .food-card { background:var(--white); border:1px solid var(--border); padding:24px; }
 .food-icon { font-size:22px; margin-bottom:10px; display:block; }
@@ -223,8 +183,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .food-highlight-h { font-family:'Shippori Mincho B1',serif; font-size:22px; font-weight:400; margin-bottom:12px; }
 .food-highlight-p { font-size:14px; color:rgba(255,255,255,0.75); line-height:1.8; }
 .food-highlight-p strong { color:#fff; font-weight:400; }
-
-/* ─── ONSEN SECTIONS ──────────────────────────────────── */
 .onsen-etiquette {
   background:var(--white); border:1px solid var(--border);
   padding:28px; margin-bottom:32px;
@@ -247,16 +205,12 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .onsen-name { color:var(--text); font-weight:400; }
 .onsen-star { color:var(--rust); font-size:12px; }
 .onsen-note { font-size:12px; color:var(--stone); margin-left:4px; }
-
-/* ─── MONKEYS ─────────────────────────────────────────── */
 .monkey-hero { width:100%; height:280px; object-fit:cover; display:block; margin-bottom:32px; }
 .monkey-info { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:28px 0; }
 .info-box { background:var(--white); border:1px solid var(--border); padding:20px; }
 .info-box-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone); display:block; margin-bottom:6px; }
 .info-box-val { font-family:'Shippori Mincho B1',serif; font-size:20px; font-weight:400; color:var(--forest); display:block; }
 .info-box-sub { font-size:12px; color:var(--text-2); margin-top:4px; display:block; }
-
-/* ─── HIKES ───────────────────────────────────────────── */
 .hike-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:32px; }
 .hike-card { background:var(--white); border:1px solid var(--border); overflow:hidden; transition:border-color 0.2s; }
 .hike-card:hover { border-color:var(--forest2); }
@@ -278,8 +232,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .se-stat { font-size:12px; color:var(--stone); }
 .se-stat strong { color:var(--text); font-weight:400; }
 .se-highlight { font-size:13px; color:var(--text-2); font-style:italic; }
-
-/* ─── CYCLING ─────────────────────────────────────────── */
 .cycle-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:28px; }
 .cycle-block { background:var(--white); border:1px solid var(--border); padding:22px; }
 .cycle-h { font-family:'Shippori Mincho B1',serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:12px; }
@@ -293,8 +245,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .season-table tr:last-child td { border-bottom:none; }
 .season-good { color:var(--forest); font-weight:400; }
 .season-bad { color:var(--stone); }
-
-/* ─── IIYAMA LINE ─────────────────────────────────────── */
 .train-hero { background:var(--forest); color:#fff; padding:40px 40px; margin-bottom:32px; }
 .train-hero-h { font-family:'Shippori Mincho B1',serif; font-size:32px; font-weight:400; margin-bottom:10px; }
 .train-hero-h em { font-style:italic; }
@@ -319,8 +269,6 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 .pdf-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone); display:block; margin-bottom:4px; }
 .pdf-name { font-size:15px; font-weight:400; color:var(--text); display:block; margin-bottom:3px; }
 .pdf-sub { font-size:12px; color:var(--stone); }
-
-/* ─── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width:900px) {
   .btn-nav { display:none; }
   .page-header { padding:92px 24px 0; }
@@ -376,20 +324,20 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <div class="page-header">
   <span class="page-eyebrow">Kijimadaira &amp; surroundings</span>
   <h1 class="page-title">Area<br><em>Guide</em></h1>
-  <p class="page-intro">What to know about the area around Kiji Yuki. Ski resorts, hot springs, restaurants, snow monkeys, hikes, cycling. How to get around on the iiyama Line.</p>
+  <p class="page-intro">What to know about the area around Kiji Yuki. Ski resorts, hot springs, restaurants, snow monkeys, hikes, cycling. How to get around on the Iiyama Line.</p>
 </div>
 
 <!-- TAB BAR -->
 <div class="tab-bar-wrap">
   <div class="tab-bar" role="tablist" aria-label="Area guide sections">
     <button class="tab-btn active" id="tab-btn-overview" role="tab" aria-selected="true" aria-controls="tab-overview" onclick="switchTab('overview', this)">Overview</button>
-    <button class="tab-btn" id="tab-btn-onsens" role="tab" aria-selected="false" aria-controls="tab-onsens" tabindex="-1" onclick="switchTab('onsens', this)"><span aria-hidden="true">♨ </span>Onsens</button>
-    <button class="tab-btn" id="tab-btn-monkeys" role="tab" aria-selected="false" aria-controls="tab-monkeys" tabindex="-1" onclick="switchTab('monkeys', this)"><span aria-hidden="true">🐒 </span>Snow Monkeys</button>
-    <button class="tab-btn" id="tab-btn-outdoors" role="tab" aria-selected="false" aria-controls="tab-outdoors" tabindex="-1" onclick="switchTab('outdoors', this)"><span aria-hidden="true">🥾 </span>Green Season</button>
-    <button class="tab-btn" id="tab-btn-resorts" role="tab" aria-selected="false" aria-controls="tab-resorts" tabindex="-1" onclick="switchTab('resorts', this)"><span aria-hidden="true">⛷ </span>Ski Resorts</button>
-    <button class="tab-btn" id="tab-btn-food" role="tab" aria-selected="false" aria-controls="tab-food" tabindex="-1" onclick="switchTab('food', this)"><span aria-hidden="true">🍜 </span>Eating &amp; Drinking</button>
-    <button class="tab-btn" id="tab-btn-train" role="tab" aria-selected="false" aria-controls="tab-train" tabindex="-1" onclick="switchTab('train', this)"><span aria-hidden="true">🚃 </span>iiyama Line</button>
-    <button class="tab-btn" id="tab-btn-blossoms" role="tab" aria-selected="false" aria-controls="tab-blossoms" tabindex="-1" onclick="switchTab('blossoms', this)"><span aria-hidden="true">🌸 </span>Cherry Blossoms</button>
+    <button class="tab-btn" id="tab-btn-onsens" role="tab" aria-selected="false" aria-controls="tab-onsens" tabindex="-1" onclick="switchTab('onsens', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 19c2 0 2.2-1 4-1s2.2 1 4 1 2.2-1 4-1 2.2 1 4 1"/><path d="M8 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M12 14.5c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M16 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/></svg></span>Onsens</button>
+    <button class="tab-btn" id="tab-btn-monkeys" role="tab" aria-selected="false" aria-controls="tab-monkeys" tabindex="-1" onclick="switchTab('monkeys', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="6"/><circle cx="4.8" cy="10.5" r="2.3"/><circle cx="19.2" cy="10.5" r="2.3"/><ellipse cx="12" cy="15" rx="3.4" ry="2.6"/><path d="M10.4 10.6h.01M13.6 10.6h.01"/></svg></span>Snow Monkeys</button>
+    <button class="tab-btn" id="tab-btn-outdoors" role="tab" aria-selected="false" aria-controls="tab-outdoors" tabindex="-1" onclick="switchTab('outdoors', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l3.6 5.4H8.4z"/><path d="M12 7.6l4.8 6.4H7.2z"/><path d="M12 12.4l6 7H6z"/><path d="M12 19.4V22"/></svg></span>Green Season</button>
+    <button class="tab-btn" id="tab-btn-resorts" role="tab" aria-selected="false" aria-controls="tab-resorts" tabindex="-1" onclick="switchTab('resorts', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 20h20"/><path d="M4 20l6-11 3.5 6 2-3L21 20"/><path d="M10 9l1.6 2.9"/></svg></span>Ski Resorts</button>
+    <button class="tab-btn" id="tab-btn-food" role="tab" aria-selected="false" aria-controls="tab-food" tabindex="-1" onclick="switchTab('food', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11h17a8.5 8.5 0 0 1-17 0z"/><path d="M5.5 20h13"/><path d="M13.5 4.2l5.4 4.9"/><path d="M9 7.4c0-1 .9-1.2.9-2.2"/><path d="M12.4 6.6c0-1 .9-1.2.9-2.2"/></svg></span>Eating &amp; Drinking</button>
+    <button class="tab-btn" id="tab-btn-train" role="tab" aria-selected="false" aria-controls="tab-train" tabindex="-1" onclick="switchTab('train', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="14" rx="2.5"/><path d="M5 10.5h14"/><circle cx="9" cy="13.8" r="1"/><circle cx="15" cy="13.8" r="1"/><path d="M9 21l1.8-4M15 21l-1.8-4"/></svg></span>Iiyama Line</button>
+    <button class="tab-btn" id="tab-btn-blossoms" role="tab" aria-selected="false" aria-controls="tab-blossoms" tabindex="-1" onclick="switchTab('blossoms', this)"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6.2" r="2.9"/><circle cx="17.5" cy="10.2" r="2.9"/><circle cx="15.4" cy="16.7" r="2.9"/><circle cx="8.6" cy="16.7" r="2.9"/><circle cx="6.5" cy="10.2" r="2.9"/><circle cx="12" cy="12" r="1.5"/></svg></span>Cherry Blossoms</button>
   </div>
 </div>
 
@@ -399,7 +347,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <div class="tab-panel active" id="tab-overview" role="tabpanel" aria-labelledby="tab-btn-overview" tabindex="0">
   <span class="s-eyebrow">Where you are</span>
   <h2 class="s-title">Kijimadaira, <em>northern Nagano</em></h2>
-  <p class="s-intro">A small rural village in the mountains of northern Nagano. Quiet and real. Close to multiple ski resorts, hot springs in every direction, snow monkeys 30 minutes away. The iiyama Line runs through the valley.</p>
+  <p class="s-intro">A small rural village in the mountains of northern Nagano. Quiet and real. Close to multiple ski resorts, hot springs in every direction, snow monkeys 30 minutes away. The Iiyama Line runs through the valley.</p>
 
   <!-- Seasonal photo strip -->
   <div class="photo-grid-4 reveal" style="margin-bottom:32px;">
@@ -411,43 +359,43 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
   <div class="overview-grid reveal">
     <a class="overview-card" href="#resorts">
-      <span class="ov-icon" aria-hidden="true">⛷</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 20h20"/><path d="M4 20l6-11 3.5 6 2-3L21 20"/><path d="M10 9l1.6 2.9"/></svg></span>
       <span class="ov-title">Ski Resorts</span>
       <p class="ov-desc">11+ resorts within 60 minutes. Kijimadaira Snow Resort is 8 min away. Nozawa, Madarao, Shiga Kogen all close by.</p>
       <span class="ov-tag">8 min – 60 min drive →</span>
     </a>
     <a class="overview-card" href="#food">
-      <span class="ov-icon" aria-hidden="true">🍜</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11h17a8.5 8.5 0 0 1-17 0z"/><path d="M5.5 20h13"/><path d="M13.5 4.2l5.4 4.9"/><path d="M9 7.4c0-1 .9-1.2.9-2.2"/><path d="M12.4 6.6c0-1 .9-1.2.9-2.2"/></svg></span>
       <span class="ov-title">Eating &amp; Drinking</span>
       <p class="ov-desc">Lawson convenience store directly opposite. Local restaurants, izakaya, bakeries and cafés all in easy walking distance.</p>
       <span class="ov-tag">Walking distance →</span>
     </a>
     <a class="overview-card" href="#onsens">
-      <span class="ov-icon" aria-hidden="true">♨</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 19c2 0 2.2-1 4-1s2.2 1 4 1 2.2-1 4-1 2.2 1 4 1"/><path d="M8 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M12 14.5c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M16 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/></svg></span>
       <span class="ov-title">Onsens</span>
       <p class="ov-desc">From quiet local baths in Iiyama to the famous public baths of Nozawa Onsen village. Some private family options too.</p>
       <span class="ov-tag">5 min – 40 min drive →</span>
     </a>
     <a class="overview-card" href="#monkeys">
-      <span class="ov-icon" aria-hidden="true">🐒</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="6"/><circle cx="4.8" cy="10.5" r="2.3"/><circle cx="19.2" cy="10.5" r="2.3"/><ellipse cx="12" cy="15" rx="3.4" ry="2.6"/><path d="M10.4 10.6h.01M13.6 10.6h.01"/></svg></span>
       <span class="ov-title">Snow Monkeys</span>
       <p class="ov-desc">Jigokudani — the only place in the world where wild macaques bathe in natural hot springs. A short forest walk to reach them.</p>
       <span class="ov-tag">~35 min drive →</span>
     </a>
     <a class="overview-card" href="#outdoors">
-      <span class="ov-icon" aria-hidden="true">🥾</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l3.6 5.4H8.4z"/><path d="M12 7.6l4.8 6.4H7.2z"/><path d="M12 12.4l6 7H6z"/><path d="M12 19.4V22"/></svg></span>
       <span class="ov-title">The Green Season</span>
       <p class="ov-desc">Mt. Kosha, Kayanotaira Kogen forest, the Shin-etsu Trail. Plus quiet country roads and Madarao mountain trails for bikes.</p>
       <span class="ov-tag">May – November →</span>
     </a>
     <a class="overview-card" href="#train">
-      <span class="ov-icon" aria-hidden="true">🚃</span>
-      <span class="ov-title">The iiyama Line</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="14" rx="2.5"/><path d="M5 10.5h14"/><circle cx="9" cy="13.8" r="1"/><circle cx="15" cy="13.8" r="1"/><path d="M9 21l1.8-4M15 21l-1.8-4"/></svg></span>
+      <span class="ov-title">The Iiyama Line</span>
       <p class="ov-desc">A scenic train line. Beautiful during cherry blossom season. Connects to Nagano and the Shinkansen.</p>
       <span class="ov-tag">Local line guide →</span>
     </a>
     <a class="overview-card" href="#blossoms">
-      <span class="ov-icon" aria-hidden="true">🌸</span>
+      <span class="ov-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6.2" r="2.9"/><circle cx="17.5" cy="10.2" r="2.9"/><circle cx="15.4" cy="16.7" r="2.9"/><circle cx="8.6" cy="16.7" r="2.9"/><circle cx="6.5" cy="10.2" r="2.9"/><circle cx="12" cy="12" r="1.5"/></svg></span>
       <span class="ov-title">Cherry Blossoms</span>
       <p class="ov-desc">Late April turns the Chikuma River valley pink. Takada Castle Park — one of Japan's top three blossom spots — is an hour away.</p>
       <span class="ov-tag">Late April – early May →</span>
@@ -765,7 +713,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 
   <div class="food-grid">
     <div class="food-card">
-      <span class="food-icon" aria-hidden="true">🍴</span>
+      <span class="food-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3v6.5a2.2 2.2 0 0 0 4.4 0V3"/><path d="M8.7 9.5V21"/><path d="M16.5 21V3"/><path d="M16.5 3c2 .6 2.8 2.4 2.8 4.6s-1 3.4-2.8 3.4"/></svg></span>
       <span class="food-cat">Restaurants</span>
       <h3 class="food-h">Local Dining</h3>
       <ul class="food-list">
@@ -780,7 +728,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
     </div>
 
     <div class="food-card">
-      <span class="food-icon" aria-hidden="true">☕</span>
+      <span class="food-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8.5h12v5.5a4.2 4.2 0 0 1-4.2 4.2H8.2A4.2 4.2 0 0 1 4 14z"/><path d="M16 9.8h1.8a2.2 2.2 0 0 1 0 4.4H16"/><path d="M3 21h14"/></svg></span>
       <span class="food-cat">Cafés &amp; Bakeries</span>
       <h3 class="food-h">Morning &amp; Light Bites</h3>
       <ul class="food-list">
@@ -788,7 +736,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
         <li><strong>パティスリー レーヴ (Pâtisserie Rêve)</strong> — Cakes, desserts, and sweets</li>
         <li><strong>ラスベリー (Raspberry)</strong> — Small local café</li>
       </ul>
-      <span class="food-icon" aria-hidden="true" style="margin-top:16px;">🛍</span>
+      <span class="food-icon" aria-hidden="true" style="margin-top:16px;"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 8h13.6l-1.1 12.2a1 1 0 0 1-1 .8H7.3a1 1 0 0 1-1-.8z"/><path d="M9.2 8V6.2a2.8 2.8 0 0 1 5.6 0V8"/></svg></span>
       <span class="food-cat" style="margin-top:0;">Convenience &amp; Groceries</span>
       <h3 class="food-h" style="font-size:17px;">Everyday Essentials</h3>
       <ul class="food-list">
@@ -798,7 +746,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
     </div>
 
     <div class="food-highlight">
-      <h3 class="food-highlight-h">🍶 Tsudoy — The bar next door</h3>
+      <h3 class="food-highlight-h"><span class="food-inline" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v3.2l2.8 3.8V20a1 1 0 0 1-1 1H8.2a1 1 0 0 1-1-1V10L10 6.2z"/><path d="M7.4 13.2h9.4"/></svg></span> Tsudoy — The bar next door</h3>
       <p class="food-highlight-p">
         The bar next to Lawson. The owner <strong>Daiso-san is an absolute legend</strong> — he speaks excellent English and will warmly welcome you every time you enter. He'll happily give advice about the area and anything you want to know. Please go here and spend some money! Supporting locals is a big part of what staying at this house is about, plus who doesn't like cheap drinks and chatting with locals.
         <br><br>
@@ -824,7 +772,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   <img class="section-hero-img" src="assets/img/onsen-banner.webp" alt="Japanese outdoor onsen in snow" loading="lazy">
 
   <div class="onsen-etiquette reveal">
-    <div class="etiq-icon" aria-hidden="true">♨</div>
+    <div class="etiq-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 19c2 0 2.2-1 4-1s2.2 1 4 1 2.2-1 4-1 2.2 1 4 1"/><path d="M8 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M12 14.5c-1-1.4-1-2.6 0-4s1-2.6 0-4"/><path d="M16 15c-1-1.4-1-2.6 0-4s1-2.6 0-4"/></svg></div>
     <div>
       <h3 class="etiq-h">What to expect</h3>
       <ul class="etiq-list">
@@ -833,7 +781,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
         <li class="etiq-item">Towels stay out of the water</li>
         <li class="etiq-item">Quiet, respectful behaviour</li>
         <li class="etiq-item">Some tattoo restrictions</li>
-        <li class="etiq-item">⭐ = private family options available</li>
+        <li class="etiq-item">★ = private family options available</li>
       </ul>
       <p style="font-size:13px;color:var(--stone);margin-top:12px;">If you're new to onsens, the routine is easy to learn and quickly becomes a highlight of any stay in Japan.</p>
     </div>
@@ -861,9 +809,9 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
     <ul class="onsen-list">
       <li class="onsen-item"><span class="onsen-name">Madarao Kogen Onsen</span><span class="onsen-note">— Easy stop near the ski base</span></li>
       <li class="onsen-item"><span class="onsen-name">Hotel Tangram Onsen</span><span class="onsen-note">— Large, comfortable baths open to day visitors</span></li>
-      <li class="onsen-item"><span class="onsen-name">Hotel Tangram — Private Family Bath</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Bookable private rooms, very family-friendly</span></li>
+      <li class="onsen-item"><span class="onsen-name">Hotel Tangram — Private Family Bath</span><span class="onsen-star"> ★</span><span class="onsen-note">— Bookable private rooms, very family-friendly</span></li>
       <li class="onsen-item"><span class="onsen-name">Akatsuki no Yu (Togari)</span><span class="onsen-note">— Well-known public onsen close to the slopes</span></li>
-      <li class="onsen-item"><span class="onsen-name">Akatsuki no Yu — Private Use</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Private family use by arrangement. Ask locally</span></li>
+      <li class="onsen-item"><span class="onsen-name">Akatsuki no Yu — Private Use</span><span class="onsen-star"> ★</span><span class="onsen-note">— Private family use by arrangement. Ask locally</span></li>
       <li class="onsen-item"><span class="onsen-name">Nozomi no Yu (Togari)</span><span class="onsen-note">— Traditional bathhouse with a local feel</span></li>
     </ul>
   </div>
@@ -878,7 +826,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
       <li class="onsen-item"><span class="onsen-name">Oyu</span><span class="onsen-note">— The main and most iconic bathhouse in the village</span></li>
       <li class="onsen-item"><span class="onsen-name">Matsuba no Yu</span><span class="onsen-note">— Central and easy to access</span></li>
       <li class="onsen-item"><span class="onsen-name">Kumanotearai-yu</span><span class="onsen-note">— Scenic public bath by the river</span></li>
-      <li class="onsen-item"><span class="onsen-name">Ryokan Kawahiro — Private Bath</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Bookable private bath, suitable for families</span></li>
+      <li class="onsen-item"><span class="onsen-name">Ryokan Kawahiro — Private Bath</span><span class="onsen-star"> ★</span><span class="onsen-note">— Bookable private bath, suitable for families</span></li>
     </ul>
   </div>
 
@@ -892,7 +840,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
       <li class="onsen-item"><span class="onsen-name">Shibu Oyu</span><span class="onsen-note">— Central bathhouse on the historic street</span></li>
       <li class="onsen-item"><span class="onsen-name">Yudanaka Oyu</span><span class="onsen-note">— Easy-access public onsen near the station</span></li>
       <li class="onsen-item"><span class="onsen-name">Kanaguya</span><span class="onsen-note">— Famous historic ryokan, limited day access</span></li>
-      <li class="onsen-item"><span class="onsen-name">Kaede no Yu</span><span class="onsen-star"> ⭐</span><span class="onsen-note">— Modern facility with bookable private baths, family and tattoo-friendly</span></li>
+      <li class="onsen-item"><span class="onsen-name">Kaede no Yu</span><span class="onsen-star"> ★</span><span class="onsen-note">— Modern facility with bookable private baths, family and tattoo-friendly</span></li>
     </ul>
   </div>
 </div>
@@ -1070,7 +1018,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <div class="tab-panel" id="tab-train" role="tabpanel" aria-labelledby="tab-btn-train" tabindex="0">
   <div class="train-hero reveal">
     <div class="train-hero-bg"></div>
-    <h2 class="train-hero-h">The <em>iiyama Line</em></h2>
+    <h2 class="train-hero-h">The <em>Iiyama Line</em></h2>
     <p class="train-hero-p">One of Japan's great scenic rail journeys — a single-track rural line through the mountains of northern Nagano. Especially spectacular during cherry blossom season in late April, when the tracks pass through a tunnel of pink blossoms along the Chikuma River valley.</p>
   </div>
 
@@ -1093,7 +1041,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
       <ul style="list-style:none;">
         <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);">
           <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Tokyo → House</strong>
-          Shinkansen to Nagano (~2 hrs), then iiyama Line to Kijimadaira (~1.5 hrs)
+          Shinkansen to Nagano (~2 hrs), then Iiyama Line to Kijimadaira (~1.5 hrs)
         </li>
         <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);">
           <strong style="color:var(--text);font-weight:400;display:block;margin-bottom:3px;">Snow Monkeys day trip</strong>
@@ -1112,10 +1060,10 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
   </div>
 
   <a class="pdf-link reveal" href="assets/iiyama_line_en.pdf" target="_blank" rel="noopener">
-    <span class="pdf-icon" aria-hidden="true">📄</span>
+    <span class="pdf-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H7.4a1.4 1.4 0 0 0-1.4 1.4v15.2A1.4 1.4 0 0 0 7.4 21h9.2a1.4 1.4 0 0 0 1.4-1.4V7z"/><path d="M13.8 3v4.2H18"/><path d="M9 13h6M9 16.6h6"/></svg></span>
     <div>
       <span class="pdf-label">Download</span>
-      <span class="pdf-name">iiyama Line Guide — Kiji Yuki</span>
+      <span class="pdf-name">Iiyama Line Guide — Kiji Yuki</span>
       <span class="pdf-sub">Full PDF guide to the line, stops, and seasonal highlights</span>
     </div>
     <span style="margin-left:auto;font-size:18px;color:var(--stone);">↗</span>
@@ -1126,7 +1074,7 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
 <div class="tab-panel" id="tab-blossoms" role="tabpanel" aria-labelledby="tab-btn-blossoms" tabindex="0">
   <span class="s-eyebrow">Spring · Late April – Early May</span>
   <h2 class="s-title">Cherry <em>Blossoms</em></h2>
-  <p class="s-intro">Northern Nagano has some of Japan's finest cherry blossom viewing — without the crowds of Tokyo or Kyoto. The Chikuma River valley turns pink in late April, the iiyama Line passes through tunnels of blossoms, and Takada Castle Park in nearby Joetsu is one of Japan's top three blossom spots.</p>
+  <p class="s-intro">Northern Nagano has some of Japan's finest cherry blossom viewing — without the crowds of Tokyo or Kyoto. The Chikuma River valley turns pink in late April, the Iiyama Line passes through tunnels of blossoms, and Takada Castle Park in nearby Joetsu is one of Japan's top three blossom spots.</p>
 
   <img class="section-hero-img reveal"
     src="assets/img/cherry-blossoms-takada.jpg"
@@ -1177,15 +1125,15 @@ hr.div { border:none; border-top:1px solid var(--border); margin:48px 0; }
     <div class="hike-card">
       <div class="hike-body">
         <span class="hike-tag">From the house · Unmissable</span>
-        <h3 class="hike-name">The iiyama Line in Bloom</h3>
-        <p class="hike-desc">In late April the iiyama Line runs through a corridor of cherry blossoms along the Chikuma River. Board at Kijimadaira or Iiyama and ride south toward Nagano for one of Japan's great seasonal train journeys.</p>
+        <h3 class="hike-name">The Iiyama Line in Bloom</h3>
+        <p class="hike-desc">In late April the Iiyama Line runs through a corridor of cherry blossoms along the Chikuma River. Board at Kijimadaira or Iiyama and ride south toward Nagano for one of Japan's great seasonal train journeys.</p>
       </div>
     </div>
   </div>
 
   <div class="reveal" style="background:var(--forest);padding:28px 32px;margin-top:4px;">
     <p style="font-family:'Shippori Mincho B1',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:8px;">Planning around the blossoms?</p>
-    <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.8;">Blossom timing shifts by up to two weeks each year. Check the <a href="https://www.jnto.go.jp/sakura/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);">JNTO Sakura forecast ↗</a> as you get closer to your dates. For the iiyama Line ride, see the <button onclick="switchTab('train', document.getElementById('tab-btn-train'))" style="background:none;border:none;color:rgba(255,255,255,0.85);cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;padding:0;text-decoration:underline;text-underline-offset:3px;">iiyama Line guide →</button></p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.8;">Blossom timing shifts by up to two weeks each year. Check the <a href="https://www.japan-guide.com/sakura/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);">japan-guide sakura forecast ↗</a> as you get closer to your dates. For the Iiyama Line ride, see the <button onclick="switchTab('train', document.getElementById('tab-btn-train'))" style="background:none;border:none;color:rgba(255,255,255,0.85);cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;padding:0;text-decoration:underline;text-underline-offset:3px;">Iiyama Line guide →</button></p>
   </div>
 </div>
 

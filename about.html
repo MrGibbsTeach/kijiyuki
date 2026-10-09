@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,46 +19,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
+/* page-specific overrides on the shared heading base in main.css */
+.page-header { max-width: 960px; padding-top: 110px; }
+.page-title { font-size: clamp(40px, 6vw, 72px); }
 
-/* ─── PAGE HEADER ────────────────────────────────────── */
-.page-header {
-  padding: 110px 48px 0;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.page-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 400;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeUp 0.8s 0.2s forwards;
-}
-.page-eyebrow::after {
-  content: '';
-  flex: 0 0 60px;
-  height: 1px;
-  background: var(--rust);
-  opacity: 0.4;
-}
-.page-title {
-  font-family: 'Shippori Mincho B1', serif;
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 400;
-  line-height: 1.08;
-  color: var(--text);
-  margin-bottom: 28px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.9s 0.35s forwards;
-}
-.page-title em { font-style: italic; color: var(--forest); }
 .page-address {
   display: inline-flex;
   align-items: center;
@@ -76,9 +40,6 @@
 }
 .page-address:hover { color: var(--forest); border-color: var(--forest); }
 .page-address svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; flex-shrink: 0; }
-
-
-/* ─── HERO IMAGE ─────────────────────────────────────── */
 .page-hero {
   max-width: 960px;
   margin: 40px auto 0;
@@ -100,15 +61,11 @@
   margin-top: 10px;
   text-align: right;
 }
-
-/* ─── MAIN ESSAY LAYOUT ──────────────────────────────── */
 .essay-wrap {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 48px;
 }
-
-/* Two-column layout: sidebar + main text */
 .essay-body {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -153,10 +110,7 @@
 }
 .sidebar-nav li a:hover { color: var(--forest); }
 .sidebar-nav li:last-child a { border-bottom: none; }
-
 .essay-main { min-width: 0; }
-
-/* ─── SECTION BLOCKS ─────────────────────────────────── */
 .essay-section {
   margin-bottom: 56px;
   opacity: 0;
@@ -164,7 +118,6 @@
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .essay-section.visible { opacity: 1; transform: translateY(0); }
-
 .es-label {
   font-size: 10px;
   letter-spacing: 0.24em;
@@ -183,7 +136,6 @@
   line-height: 1.25;
 }
 .es-h em { font-style: italic; color: var(--forest); }
-
 .es-body {
   font-size: 16px;
   color: var(--text-2);
@@ -192,8 +144,6 @@
 .es-body p + p { margin-top: 18px; }
 .es-body strong { color: var(--text); font-weight: 400; }
 .es-body a { color: var(--forest); text-underline-offset: 3px; }
-
-/* ─── PULL QUOTE ─────────────────────────────────────── */
 .pull-quote {
   font-family: 'Shippori Mincho B1', serif;
   font-size: clamp(20px, 2.5vw, 26px);
@@ -205,8 +155,6 @@
   padding: 4px 0 4px 28px;
   margin: 32px 0;
 }
-
-/* ─── PRINCIPLE LISTS ────────────────────────────────── */
 .principle-list {
   list-style: none;
   margin: 24px 0;
@@ -231,15 +179,11 @@
   width: 20px;
   margin-top: 2px;
 }
-
-/* ─── DIVIDER ─────────────────────────────────────────── */
 .es-divider {
   border: none;
   border-top: 1px solid var(--border);
   margin: 48px 0;
 }
-
-/* ─── PHOTO ROW ─────────────────────────────────────── */
 .photo-row {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -254,8 +198,6 @@
   object-fit: cover;
   display: block;
 }
-
-/* ─── CLOSING SECTION ────────────────────────────────── */
 .closing {
   background: var(--forest);
   padding: 56px 48px;
@@ -310,8 +252,6 @@
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
-
-/* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 900px) {
   .btn-nav { display: none; }
 
@@ -336,7 +276,6 @@
   .closing-btns { flex-direction: row; flex-wrap: wrap; gap: 10px; }
   .btn-white, .btn-ghost { flex: 1; min-width: 140px; }
 }
-
 @media (max-width: 560px) {
   .photo-row { grid-template-columns: 1fr; }
   .page-title { font-size: clamp(32px, 9vw, 48px); }
@@ -553,7 +492,7 @@
           </li>
           <li>
             <span class="pl-marker">?</span>
-            <span><strong>What's the best time to visit?</strong> Winter (January–March) for skiing and powder snow. Late April for cherry blossoms along the iiyama Line. Summer for hiking and cycling with no crowds. Autumn for foliage and cool air.</span>
+            <span><strong>What's the best time to visit?</strong> Winter (January–March) for skiing and powder snow. Late April for cherry blossoms along the Iiyama Line. Summer for hiking and cycling with no crowds. Autumn for foliage and cool air.</span>
           </li>
         </ul>
       </div>
