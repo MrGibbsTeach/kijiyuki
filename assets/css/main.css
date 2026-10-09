@@ -1,6 +1,13 @@
 /* ─── RESET ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Every <img> carries width/height attributes so the layout cannot shift.
+   Those attributes are also CSS presentational hints, which pin a fixed
+   pixel height and defeat any rule that sets only aspect-ratio.
+   height:auto neutralises the hint; rules with an explicit height still
+   win on specificity. Do not remove. */
+img { height: auto; }
+
 /* ─── VARIABLES ─────────────────────────────────────────── */
 :root {
   --cream:   #F3F3EF;
