@@ -1,7 +1,7 @@
 # Kiji Yuki — Website
 
 **Status:** live
-**Last updated:** 2026-10-09
+**Last updated:** 2026-11-16
 
 ## What this is
 
@@ -44,8 +44,11 @@ to avoid is transactional framing, not hospitality information.
 - **Domain:** kijiyuki.com, registered through Cloudflare
 - **Host:** Vercel, auto-deploys from `main`
 - **Repo:** https://github.com/MrGibbsTeach/kijiyuki
-- **Local path:** `D:\Nextcloud\Clayton\Work\kijiyuki`
-  (moved from OneDrive to Nextcloud; git works fine from here)
+- **Local path:** `C:\Code\kijiyuki` (canonical working folder)
+  - **2026-11-16:** Old Nextcloud/OneDrive working copy
+    (`D:\Nextcloud\Clayton\Work\kijiyuki`) removed on 2026-11-16 —
+    do not reference it again. If a file isn't where expected, check
+    `C:\Code\kijiyuki` first, don't assume the project moved or was deleted.
 
 **The live site serves `www.kijiyuki.com`.** The apex `kijiyuki.com`
 308-redirects to it. Note the `<link rel="canonical">` tags still point at the
